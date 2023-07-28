@@ -1,0 +1,26 @@
+/*
+Theme Name: Capitaine
+Theme URI: https://capitainewp.io
+Author: Maxime BERNARD-JACQUET
+Author URI: https://dysign.fr
+Description: Mon premier thème !
+Requires at least: WordPress 6.0
+Version: 1.0
+*/
+body {
+    background-color: #fefefe;
+}
+.header img {
+    display: block;
+    width: 20%;
+    margin: auto;
+}
+.form_search {
+    display: flex;
+    align-items: center;
+}
+form input[type="image"] {
+    width: 16px;
+    height: auto;
+    margin-left: 5px;
+}
