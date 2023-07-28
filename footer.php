@@ -11,6 +11,7 @@
 </footer>
 <!-- id/class -->
 <?php wp_footer(); ?>
+</main><!-- classe main -->
 </body>
 
 </html>

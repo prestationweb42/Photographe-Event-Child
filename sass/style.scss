@@ -8,6 +8,9 @@ Version:      1.0
 Tags:         photographe, évènement, mariage
 Text Domain:  Photographe Event
 */
+
+@import "reset-css/reset-css";
+@import "font/font";
 @import "front-page/front-page";
 @import "header/header";
 @import "footer/footer";
