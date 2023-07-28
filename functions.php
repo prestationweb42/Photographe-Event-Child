@@ -30,6 +30,8 @@ add_theme_support('title-tag');
 function child_enqueue_styles()
 {
     wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/sass/style.css', array(), 100);
+    wp_register_script('child-script', get_theme_file_uri() . '/js/main.js', array(), '0.0.1', true);
+    wp_enqueue_script('child-script');
 }
 
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');

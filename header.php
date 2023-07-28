@@ -12,7 +12,7 @@
 
     <?php wp_body_open(); ?>
     <main class="main">
-        <header class="header">
+        <header class="header_desktop">
             <!-- Assignation du menu principal -->
             <!-- Logo avec lien sur accueil -->
             <a href="<?php echo home_url('/'); ?>" class="header_logo_link">
@@ -23,8 +23,25 @@
                 array(
                     'theme_location' => 'main',
                     'container' => 'ul', // afin d'éviter d'avoir une div autour 
-                    'menu_class' => 'site__header__menu', // ma classe personnalisée 
+                    'menu_class' => 'header__menu__desktop', // ma classe personnalisée 
                 )
             );
             ?>
+            <div class="btn_menu">
+                <div class="line"></div>
+            </div>
+        </header>
+        <!-- Menu Mobile -->
+        <header class="header_mobile">
+            <div class="header_mobile_container">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'main',
+                        'container' => 'ul', // afin d'éviter d'avoir une div autour 
+                        'menu_class' => 'header__menu__mobile', // ma classe personnalisée 
+                    )
+                );
+                ?>
+            </div>
         </header>
