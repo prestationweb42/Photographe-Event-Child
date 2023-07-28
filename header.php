@@ -16,7 +16,7 @@
         <!-- Assignation du menu principal -->
         <!-- Logo avec lien sur accueil -->
         <a href="<?php echo home_url('/'); ?>" class="logo_menu">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/logo.png" alt="Logo">
         </a>
         <?php
         wp_nav_menu(
