@@ -1,26 +1,10 @@
 /*
-Theme Name: Capitaine
-Theme URI: https://capitainewp.io
-Author: Maxime BERNARD-JACQUET
-Author URI: https://dysign.fr
-Description: Mon premier thème !
-Requires at least: WordPress 6.0
-Version: 1.0
+Theme Name:   Photographe Event
+Theme URI:    https://photographe-event.fr
+Author:       Nathalie Mota
+Author URI:   https://prestationweb42.fr
+Description:  Thème personnalisé Photographe Event
+Version:      1.0
+Tags:         photographe, évènement, mariage
+Text Domain:  Photographe Event
 */
-body {
-    background-color: #fefefe;
-}
-.header img {
-    display: block;
-    width: 20%;
-    margin: auto;
-}
-.form_search {
-    display: flex;
-    align-items: center;
-}
-form input[type="image"] {
-    width: 16px;
-    height: auto;
-    margin-left: 5px;
-}
