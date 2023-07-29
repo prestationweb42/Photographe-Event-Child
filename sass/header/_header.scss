@@ -137,6 +137,7 @@
 .header_mobile {
     position: relative;
     display: none;
+    z-index: 2;
     .header_mobile_container {
         position: fixed;
         top: 80px;
