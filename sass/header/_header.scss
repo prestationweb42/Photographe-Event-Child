@@ -160,12 +160,29 @@
                 line-height: 65px;
                 color: #fff;
                 text-transform: uppercase;
+                @media screen and (max-width: 375px) {
+                    font-size: 35px;
+                    line-height: 40px;
+                }
+                @media screen and (max-width: 320px) {
+                    font-size: 30px;
+                    line-height: 35px;
+                }
             }
         }
     }
     &.is-active {
         overflow: hidden;
         display: block;
-        animation: fadeInBurger 500ms ease-in both;
+        animation: fadeInMenuPopup 500ms ease-in both;
+    }
+}
+/* Animation Menu Popup */
+@keyframes fadeInMenuPopup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

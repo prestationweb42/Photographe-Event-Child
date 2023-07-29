@@ -326,8 +326,30 @@ table {
   color: #fff;
   text-transform: uppercase;
 }
+@media screen and (max-width: 375px) {
+  .header_mobile .header_mobile_container .header__menu__mobile li a {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header_mobile .header_mobile_container .header__menu__mobile li a {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
 .header_mobile.is-active {
   overflow: hidden;
   display: block;
-  animation: fadeInBurger 500ms ease-in both;
+  animation: fadeInMenuPopup 500ms ease-in both;
+}
+
+/* Animation Menu Popup */
+@keyframes fadeInMenuPopup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
