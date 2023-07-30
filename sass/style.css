@@ -10,6 +10,7 @@ Tags:         photographe, évènement, mariage
 Text Domain:  Photographe Event
 */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap");
 html,
 body,
 div,
@@ -141,21 +142,6 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-.hero_section {
-  width: 100%;
-  height: 90vh;
-  background: url("../assets/imgs/nathalie-11.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 145%;
-  position: relative;
-}
-.hero_section h1 svg {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 .main {
@@ -368,6 +354,21 @@ table {
     opacity: 1;
   }
 }
+.hero_section {
+  width: 100%;
+  height: 90vh;
+  background: url("../assets/imgs/nathalie-11.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 145%;
+  position: relative;
+}
+.hero_section h1 svg {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
 #footer_menu {
   display: flex;
   justify-content: center;
@@ -413,4 +414,143 @@ table {
     margin-top: 30px;
     margin-bottom: 20px;
   }
+}
+
+.popup_overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3764705882);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.popup_overlay .popup_form {
+  background: white;
+  border: 5px solid #000;
+  border-radius: 2px;
+  max-width: 680px;
+  height: auto;
+  padding: 30px;
+  position: relative;
+}
+@media screen and (max-width: 425px) {
+  .popup_overlay .popup_form {
+    max-width: 90%;
+  }
+}
+.popup_overlay .popup_form .popup_form_header {
+  height: 100px;
+}
+.popup_overlay .popup_form .popup_form_header h1 {
+  font-size: 60px;
+  font-style: italic;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .popup_overlay .popup_form .popup_form_header h1 {
+    font-size: 40px;
+  }
+}
+.popup_overlay .popup_form .popup_form_header .popup-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  border-radius: 20px;
+  height: 35px;
+  width: 35px;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 0;
+}
+.popup_overlay .popup_form .popup_form_header .popup-close .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 900, "GRAD" 0, "opsz" 48;
+}
+.popup_overlay.is-open {
+  display: flex;
+}
+
+.wpcf7-form {
+  width: 500px;
+  height: 600px;
+}
+@media screen and (max-width: 425px) {
+  .wpcf7-form {
+    max-width: 100%;
+  }
+}
+.wpcf7-form label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+}
+.wpcf7-form .form_group {
+  width: 260px;
+  height: 40px;
+  margin: 0 auto 50px auto;
+}
+@media screen and (max-width: 425px) {
+  .wpcf7-form .form_group {
+    max-width: 100%;
+  }
+}
+.wpcf7-form .form_group input {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #b8bbc2;
+}
+.wpcf7-form .form_textarea {
+  width: 260px;
+  margin: 30px auto 20px auto;
+}
+@media screen and (max-width: 425px) {
+  .wpcf7-form .form_textarea {
+    max-width: 100%;
+  }
+}
+.wpcf7-form .form_textarea textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #b8bbc2;
+}
+.wpcf7-form .form_submit {
+  width: 260px;
+  margin: auto;
+}
+@media screen and (max-width: 425px) {
+  .wpcf7-form .form_submit {
+    max-width: 100%;
+  }
+}
+.wpcf7-form .form_submit input[type=submit] {
+  width: 100%;
+  height: 50px;
+  background-color: #d8d8d8;
+  border: 1px solid #b8bbc2;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: space mono;
+  font-weight: 400;
+}
+.wpcf7-form .form_submit input[type=submit]:hover {
+  color: #fff;
+  background-color: #000;
+  transition: background-color 300ms ease-in-out;
+}
+.wpcf7-form .wpcf7-response-output {
+  margin: 0 auto !important;
 }

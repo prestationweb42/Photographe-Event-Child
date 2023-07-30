@@ -30,8 +30,32 @@ add_theme_support('title-tag');
 function child_enqueue_styles()
 {
     wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/sass/style.css', array(), 100);
+    wp_enqueue_style('font-awesome-bundle-script', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', array(), false, 'all');
     wp_register_script('child-script', get_theme_file_uri() . '/js/main.js', array(), '0.0.1', true);
     wp_enqueue_script('child-script');
 }
 
+
+
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
+
+// change HEADER menu CONTACT Link
+add_filter('wp_nav_menu_items', 'add_header_link', 10, 2);
+function add_header_link($items, $args)
+{
+    if ($args->theme_location === 'main') {
+        $new_item       = array('<li class="menu-item menu-item-23"><a href="#">CONTACT</a></li>');
+        $items          = preg_replace('/<\/li>\s<li/', '</li>,<li',  $items);
+
+        $array_items    = explode(
+            ',',
+            $items
+        );
+        array_splice($array_items, 2, 0, $new_item);
+        $items          = implode(
+            '',
+            $array_items
+        );
+    }
+    return $items;
+}
