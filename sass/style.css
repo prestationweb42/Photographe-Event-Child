@@ -363,6 +363,31 @@ table {
   background-size: 145%;
   position: relative;
 }
+@media screen and (max-width: 1024px) {
+  .hero_section {
+    height: 70vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero_section {
+    height: 65vh;
+  }
+}
+@media screen and (max-width: 425px) {
+  .hero_section {
+    height: 36vh;
+  }
+}
+@media screen and (max-width: 375px) {
+  .hero_section {
+    height: 32vh;
+  }
+}
+@media screen and (max-width: 320px) {
+  .hero_section {
+    height: 27vh;
+  }
+}
 .hero_section h1 svg {
   position: absolute;
   top: 50%;
