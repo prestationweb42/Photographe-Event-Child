@@ -56,6 +56,10 @@
                 line-height: 23px;
                 text-transform: uppercase;
             }
+            a:hover {
+                font-weight: 700;
+                transition: all 200ms ease-in-out;
+            }
             @media screen and (max-width: 768px) {
                 display: none;
             }
