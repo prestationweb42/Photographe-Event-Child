@@ -403,12 +403,23 @@ table {
   min-height: auto;
   margin: 0 auto;
 }
+@media screen and (max-width: 1024px) {
+  .sort_section {
+    width: 100%;
+  }
+}
 .sort_section .search_container {
   width: 100%;
   height: 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 1024px) {
+  .sort_section .search_container {
+    flex-direction: column;
+    background-color: antiquewhite;
+  }
 }
 .sort_section .search_container .search_container_left {
   width: auto;
@@ -428,6 +439,11 @@ table {
   height: 90vh;
   margin: 0 auto;
 }
+@media screen and (max-width: 1024px) {
+  .photos_section {
+    width: 100%;
+  }
+}
 .photos_section a {
   display: inline-block;
 }
@@ -435,6 +451,11 @@ table {
   margin-top: 50px;
   width: 700px;
   height: auto;
+}
+@media screen and (max-width: 1024px) {
+  .photos_section a img {
+    width: 100%;
+  }
 }
 
 #footer_menu {
