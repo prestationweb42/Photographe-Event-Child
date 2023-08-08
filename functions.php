@@ -33,6 +33,8 @@ function child_enqueue_styles()
     wp_enqueue_style('font-awesome-bundle-script', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', array(), false, 'all');
     wp_register_script('child-script', get_theme_file_uri() . '/js/main.js', array(), '0.0.1', true);
     wp_enqueue_script('child-script');
+    wp_register_script('jquery-script', get_theme_file_uri() . '/js/j-query.js', array('jquery'), '0.0.1', true);
+    wp_enqueue_script('jquery-script');
 }
 
 
