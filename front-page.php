@@ -87,6 +87,7 @@
             };
             // définition des arguments
             $args = array(
+                'orderby' => 'rand',
                 'post_type' => 'photo',
                 'posts_per_page' => 2,
                 'tax_query' => array(
