@@ -392,6 +392,19 @@ table {
     height: 22vh;
   }
 }
+.hero_section .hero_img {
+  width: 100%;
+  height: 100%;
+}
+.hero_section .hero_img img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
 .hero_section h1 svg {
   position: absolute;
   top: 50%;
