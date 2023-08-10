@@ -125,3 +125,36 @@
         }
     }
 }
+// Setting Section Btn All Photos
+.section_btn_all_post_imgs {
+    width: 100%;
+    height: auto;
+    .btn_post_all_imgs {
+        width: 270px;
+        height: 50px;
+        margin: 50px auto;
+        .link_post_all_imgs {
+            width: 100%;
+            height: 100%;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+            background-color: #d8d8d8;
+            background-color: #d8d8d8;
+            @media screen and (max-width: 1024px) {
+                width: 200px;
+            }
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        .post_all_imgs_link:hover {
+            font-weight: 700;
+            color: #fff;
+            background-color: #000;
+            transition: all 300ms ease-in-out;
+        }
+    }
+}
