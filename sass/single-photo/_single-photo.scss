@@ -1,208 +1,216 @@
 /* CSS single-photo.php */
-.post_photo {
-    max-width: 1440px;
-    height: 800px;
+#main_single_photo_page {
+    max-width: 1200px;
+    height: auto;
     margin: auto;
-    font-family: "Space Mono", monospace;
-    display: flex;
-    @media screen and (max-width: 1024px) {
-        height: 600px;
-    }
-    @media screen and (max-width: 768px) {
-        flex-direction: column-reverse;
-        height: auto;
-    }
-    .post_photo_desc {
-        width: 50%;
-        border-bottom: 1px solid black;
-        position: relative;
+
+    /* Setting section description */
+    .section_post_photos {
+        max-width: 100%;
+        height: 800px;
+        font-family: "Space Mono", monospace;
+        display: flex;
+        @media screen and (max-width: 1024px) {
+            height: 600px;
+        }
         @media screen and (max-width: 768px) {
-            width: 100%;
+            flex-direction: column-reverse;
             height: auto;
         }
-        .post_photo_desc_content {
-            position: absolute;
-            bottom: 20px;
-            @media screen and (max-width: 1024px) {
-                left: 20px;
-            }
+        .post_photo_desc {
+            width: 50%;
+            border-bottom: 1px solid black;
+            position: relative;
             @media screen and (max-width: 768px) {
-                position: relative;
-                width: 90%;
-                height: 320px;
-                top: 30px;
-                left: 0;
-                margin: auto;
-            }
-            .post_photo_title {
-                font-size: 66px;
-                text-transform: uppercase;
-                font-style: italic;
-                color: #000;
-                @media screen and (max-width: 1024px) {
-                    font-size: 56px;
-                }
-                @media screen and (max-width: 768px) {
-                    font-size: 46px;
-                    text-align: center;
-                }
-                @media screen and (max-width: 768px) {
-                    text-align: left;
-                    // margin-left: 20px;
-                }
-            }
-            .post_photo_text {
-                font-size: 14px;
-                line-height: 21px;
-                text-transform: uppercase;
-                color: #000;
-                margin-top: 15px;
-                // @media screen and (max-width: 768px) {
-                //     margin-left: 20px;
-                // }
-            }
-        }
-    }
-    .post_photo_img {
-        width: 50%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @media screen and (max-width: 768px) {
-            width: 100%;
-        }
-        img {
-            max-width: 100%;
-            height: 100%;
-            object-fit: contain;
-            @media screen and (max-width: 768px) {
+                width: 100%;
                 height: auto;
-                width: 90%;
+            }
+            .post_photo_desc_content {
+                position: absolute;
+                bottom: 20px;
+                @media screen and (max-width: 1024px) {
+                    left: 20px;
+                }
+                @media screen and (max-width: 768px) {
+                    position: relative;
+                    width: 90%;
+                    height: 320px;
+                    top: 30px;
+                    left: 0;
+                    margin: auto;
+                }
+                .post_photo_title {
+                    font-size: 66px;
+                    text-transform: uppercase;
+                    font-style: italic;
+                    color: #000;
+                    @media screen and (max-width: 1024px) {
+                        font-size: 56px;
+                    }
+                    @media screen and (max-width: 768px) {
+                        font-size: 46px;
+                        text-align: center;
+                    }
+                    @media screen and (max-width: 768px) {
+                        text-align: left;
+                        // margin-left: 20px;
+                    }
+                }
+                .post_photo_text {
+                    font-size: 14px;
+                    line-height: 21px;
+                    text-transform: uppercase;
+                    color: #000;
+                    margin-top: 15px;
+                    // @media screen and (max-width: 768px) {
+                    //     margin-left: 20px;
+                    // }
+                }
             }
         }
-    }
-}
-
-/* Setting Section Contact */
-.post_contact {
-    width: 100%;
-    height: 230px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-bottom: 1px solid black;
-    .post_contact_content {
-        width: 50%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @media screen and (max-width: 768px) {
-            height: 100px;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: start;
-            width: 280px;
-        }
-        p {
-            @media screen and (max-width: 1024px) {
-                margin-left: 15px;
-            }
-            @media screen and (max-width: 768px) {
-                margin-left: 0px;
-            }
-        }
-        .post_contact_link {
-            width: 270px;
-            height: 50px;
-            color: #000;
+        .post_photo_img {
+            width: 50%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 2px;
-            background-color: #d8d8d8;
-            @media screen and (max-width: 1024px) {
-                width: 200px;
-            }
             @media screen and (max-width: 768px) {
                 width: 100%;
             }
-        }
-        .post_contact_link:hover {
-            font-weight: 700;
-            color: #fff;
-            background-color: #000;
-            transition: all 300ms ease-in-out;
-        }
-    }
-    .post_navigation {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        background-color: azure;
-        @media screen and (max-width: 768px) {
-            display: none;
-        }
-    }
-}
-/* Setting Section Ohter Imgs */
-.post_other_imgs {
-    width: 100%;
-    height: auto;
-    .post_other_text {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        height: 100px;
-        p {
-            text-transform: uppercase;
-        }
-    }
-    .post_other_imgs_container {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        .post_other_imgs {
-            width: 49%;
-            height: 500px;
             img {
-                display: block;
                 max-width: 100%;
                 height: 100%;
                 object-fit: contain;
-                margin: auto;
+                object-position: 50% 50%;
+                @media screen and (max-width: 768px) {
+                    height: auto;
+                    width: 90%;
+                }
             }
         }
     }
-    .post_all_imgs {
-        width: 270px;
-        height: 50px;
-        margin: 50px auto;
-        .post_all_imgs_link {
-            width: 100%;
-            height: 100%;
-            color: #000;
+
+    /* Setting Section Contact */
+    .section_post_contact {
+        width: 100%;
+        height: 230px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom: 1px solid black;
+        .post_contact_content {
+            width: 50%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            border-radius: 2px;
-            background-color: #d8d8d8;
-            background-color: #d8d8d8;
-            @media screen and (max-width: 1024px) {
-                width: 200px;
-            }
             @media screen and (max-width: 768px) {
-                width: 100%;
+                height: 100px;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: start;
+                width: 280px;
+            }
+            p {
+                @media screen and (max-width: 1024px) {
+                    margin-left: 15px;
+                }
+                @media screen and (max-width: 768px) {
+                    margin-left: 0px;
+                }
+            }
+            .post_contact_link {
+                width: 270px;
+                height: 50px;
+                color: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 2px;
+                background-color: #d8d8d8;
+                @media screen and (max-width: 1024px) {
+                    width: 200px;
+                }
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+            .post_contact_link:hover {
+                font-weight: 700;
+                color: #fff;
+                background-color: #000;
+                transition: all 300ms ease-in-out;
             }
         }
-        .post_all_imgs_link:hover {
-            font-weight: 700;
-            color: #fff;
-            background-color: #000;
-            transition: all 300ms ease-in-out;
+        .post_navigation {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: azure;
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    /* Setting Section Ohter Imgs */
+    .section_post_other_imgs {
+        width: 100%;
+        height: auto;
+        .post_other_text {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 100px;
+            p {
+                text-transform: uppercase;
+            }
+        }
+        .post_other_imgs_container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            .post_other_imgs {
+                width: 49%;
+                height: 550px;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                }
+            }
+        }
+        .post_all_imgs {
+            width: 270px;
+            height: 50px;
+            margin: 50px auto;
+            .post_all_imgs_link {
+                width: 100%;
+                height: 100%;
+                color: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 2px;
+                background-color: #d8d8d8;
+                background-color: #d8d8d8;
+                @media screen and (max-width: 1024px) {
+                    width: 200px;
+                }
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+            .post_all_imgs_link:hover {
+                font-weight: 700;
+                color: #fff;
+                background-color: #000;
+                transition: all 300ms ease-in-out;
+            }
         }
     }
 }
