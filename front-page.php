@@ -88,7 +88,7 @@
             // définition des arguments
             $args = array(
                 'post_type' => 'photo',
-                'posts_per_page' => 20,
+                'posts_per_page' => 2,
                 'tax_query' => array(
                     'relation' => 'AND',
                     array(
@@ -118,8 +118,13 @@
     </div>
     <?php endwhile;
             wp_reset_postdata() ?>
-
 </section><!-- section_post_imgs_container -->
+<section class="section_btn_all_post_imgs">
+    <div class="btn_post_all_imgs">
+        <a class="link_post_all_imgs" href="#">
+            <span>Toutes les photos</span></a>
+    </div>
+</section><!-- btn_all_post_imgs -->
 <?php endwhile;
 endif; ?>
 <?php get_footer(); ?>
