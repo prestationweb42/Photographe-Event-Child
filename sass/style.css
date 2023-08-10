@@ -403,23 +403,10 @@ table {
   min-height: auto;
   margin: 0 auto;
   padding: 50px 0;
+  /* link single page -> to delete */
 }
 @media screen and (max-width: 1024px) {
   .sort_section {
-    width: 100%;
-  }
-}
-.sort_section a {
-  display: inline-block;
-}
-.sort_section a img {
-  width: 30%;
-  margin: 30px auto 30px auto;
-  display: block;
-  height: auto;
-}
-@media screen and (max-width: 1024px) {
-  .sort_section a img {
     width: 100%;
   }
 }
@@ -475,6 +462,20 @@ table {
 .sort_section #form_filter .search_list .list_item_title:hover > ul {
   display: block;
 }
+.sort_section a {
+  display: inline-block;
+}
+.sort_section a img {
+  width: 30%;
+  margin: 30px auto 30px auto;
+  display: block;
+  height: auto;
+}
+@media screen and (max-width: 1024px) {
+  .sort_section a img {
+    width: 50%;
+  }
+}
 
 .section_post_imgs_container {
   width: 1300px;
@@ -492,6 +493,27 @@ table {
 .section_post_imgs_container .post_img {
   width: 49%;
   height: 550px;
+}
+@media screen and (max-width: 768px) {
+  .section_post_imgs_container .post_img {
+    width: 90%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  .section_post_imgs_container .post_img {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .section_post_imgs_container .post_img {
+    height: 340px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .section_post_imgs_container .post_img {
+    height: 300px;
+  }
 }
 .section_post_imgs_container .post_img img {
   display: block;
@@ -512,6 +534,11 @@ table {
   height: 50px;
   margin: 50px auto;
 }
+@media screen and (max-width: 1024px) {
+  .section_btn_all_post_imgs .btn_post_all_imgs {
+    width: 250px;
+  }
+}
 .section_btn_all_post_imgs .btn_post_all_imgs .link_post_all_imgs {
   width: 100%;
   height: 100%;
@@ -522,11 +549,6 @@ table {
   border-radius: 2px;
   background-color: #d8d8d8;
   background-color: #d8d8d8;
-}
-@media screen and (max-width: 1024px) {
-  .section_btn_all_post_imgs .btn_post_all_imgs .link_post_all_imgs {
-    width: 200px;
-  }
 }
 @media screen and (max-width: 768px) {
   .section_btn_all_post_imgs .btn_post_all_imgs .link_post_all_imgs {
