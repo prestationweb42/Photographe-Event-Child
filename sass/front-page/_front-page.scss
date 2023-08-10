@@ -32,53 +32,96 @@
     width: 1300px;
     min-height: auto;
     margin: 0 auto;
-    @media screen and (max-width: 1024px) {
-        width: 100%;
-    }
-    .search_container {
-        width: 100%;
-        height: 150px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @media screen and (max-width: 1024px) {
-            flex-direction: column;
-            background-color: antiquewhite;
-        }
-        .search_container_left {
-            width: auto;
-        }
-        .select_format {
-            width: 260px;
-            height: 43px;
-            border: 1px solid #b8bbc2;
-            border-radius: 8px;
-        }
-        .select_format:nth-child(2) {
-            margin-left: 30px;
-        }
-    }
-}
-// Setting Photos Section
-.photos_section {
-    width: 1300px;
-    height: 90vh;
-    margin: 0 auto;
+    padding: 50px 0;
     @media screen and (max-width: 1024px) {
         width: 100%;
     }
     a {
-        // width: auto;
         display: inline-block;
-        // background-color: azure;
-
         img {
-            margin-top: 50px;
-            width: 700px;
+            width: 30%;
+            margin: 30px auto 30px auto;
+            display: block;
             height: auto;
             @media screen and (max-width: 1024px) {
                 width: 100%;
             }
+        }
+    }
+    #form_filter {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        background-color: antiquewhite;
+        .search_list {
+            width: 260px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            border: 1px solid black;
+            @media screen and (max-width: 1024px) {
+                flex-direction: column;
+            }
+            .list_item_title {
+                width: 100%;
+                height: 50px;
+                position: relative;
+                .span_title {
+                    padding-left: 30px;
+                    line-height: 50px;
+                }
+                .span_logo {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                .sub_list {
+                    // margin-top: 20px;
+                    display: none;
+                    .sub_item {
+                        width: 100%;
+                        height: 50px;
+                        padding-left: 30px;
+                        line-height: 50px;
+                    }
+                    .sub_item:hover {
+                        height: 50px;
+                        background: #ffd6d6;
+                    }
+                }
+            }
+            .list_item_title:hover > ul {
+                display: block;
+            }
+        }
+    }
+}
+// Setting Photos Section
+.section_post_imgs_container {
+    width: 1300px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    gap: 20px;
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+    }
+    .post_img {
+        width: 49%;
+        height: 550px;
+        // margin-bottom: 20px;
+        img {
+            display: block;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
         }
     }
 }
