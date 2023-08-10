@@ -957,6 +957,11 @@ table {
   font-size: 18px;
   text-transform: uppercase;
 }
+@media screen and (max-width: 1024px) {
+  #main_single_photo_page .section_post_other_imgs .post_other_text h3 {
+    margin-left: 20px;
+  }
+}
 #main_single_photo_page .section_post_other_imgs .post_other_imgs_container {
   width: 100%;
   height: auto;
@@ -972,6 +977,21 @@ table {
   #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
     width: 90%;
     margin: auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
+    height: 340px;
+  }
+}
+@media screen and (max-width: 375px) {
+  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
+    height: 300px;
   }
 }
 #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs img {
