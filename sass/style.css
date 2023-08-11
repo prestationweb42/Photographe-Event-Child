@@ -1040,6 +1040,7 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 300ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
   #main_single_photo_page .section_btn_load_all_imgs span {
