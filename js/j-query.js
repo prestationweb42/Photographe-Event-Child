@@ -32,7 +32,7 @@ jQuery(function ($) {
                 $(".post_other_imgs_container").append(response);
                 single_page++;
             } else {
-                $(".btn_load_more").hide();
+                $(".btn_load_all_imgs").hide();
             }
         });
     });
