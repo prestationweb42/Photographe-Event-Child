@@ -1,9 +1,6 @@
-// $(".link_post_all_imgs").click(function () {
-//     alert("Hello World !");
-// });
 var page = 2;
 jQuery(function ($) {
-    $("body").on("click", ".btn_post_all_imgs", function () {
+    $("body").on("click", ".btn_load_more", function () {
         var data = {
             action: "load_posts_by_ajax",
             page: page,
@@ -15,7 +12,7 @@ jQuery(function ($) {
                 $(".section_post_imgs_container").append(response);
                 page++;
             } else {
-                $(".btn_post_all_imgs").hide();
+                $(".btn_load_more").hide();
             }
         });
     });
