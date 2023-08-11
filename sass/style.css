@@ -982,32 +982,32 @@ table {
   flex-wrap: wrap;
   gap: 20px;
 }
-#main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
+#main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_img {
   width: 49%;
   height: 550px;
 }
 @media screen and (max-width: 768px) {
-  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
+  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_img {
     width: 90%;
     margin: auto;
   }
 }
 @media screen and (max-width: 425px) {
-  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
+  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_img {
     height: 400px;
   }
 }
 @media screen and (max-width: 375px) {
-  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
+  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_img {
     height: 340px;
   }
 }
 @media screen and (max-width: 375px) {
-  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs {
+  #main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_img {
     height: 300px;
   }
 }
-#main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_other_imgs img {
+#main_single_photo_page .section_post_other_imgs .post_other_imgs_container .post_img img {
   display: block;
   width: 100%;
   height: 100%;
