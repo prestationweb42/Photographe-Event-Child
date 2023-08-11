@@ -32,11 +32,18 @@ function child_enqueue_styles()
     wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/sass/style.css', array(), 100);
     wp_enqueue_style('font-awesome-bundle-script', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', array(), false, 'all');
     wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/js/main.js', array(), '0.0.1', true);
-    wp_enqueue_script('jquery-script', get_stylesheet_directory_uri() . '/js/j-query.js', array('jquery'), '0.0.1', true);
+    wp_enqueue_script('jquery-script', get_stylesheet_directory_uri() . '/js/j-query.js', array('jquery'), null, true);
+}
+/**
+ * include custom jQuery
+ */
+function shapeSpace_include_custom_jquery()
+{
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js', array(), null, true);
 }
 
-
-
+add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
 
 // change HEADER menu CONTACT Link
