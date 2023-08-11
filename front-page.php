@@ -163,7 +163,7 @@
     <div class="btn_load_more">
         <span>Charger Plus</span>
     </div>
-</section><!-- btn_all_post_imgs -->
+</section><!-- .btn_load_more -->
 <?php endwhile;
 endif; ?>
 <?php get_footer(); ?>
