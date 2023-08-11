@@ -128,6 +128,7 @@
                 'orderby' => 'rand',
                 'post_type' => 'photo',
                 'posts_per_page' => 2,
+                'paged' => 1,
                 'tax_query' => array(
                     'relation' => 'AND',
                     array(
@@ -158,10 +159,9 @@
     <?php endwhile;
             wp_reset_postdata() ?>
 </section><!-- section_post_imgs_container -->
-<section class="section_btn_all_post_imgs">
+<section class="section_btn_load_more">
     <div class="btn_post_all_imgs">
-        <a class="link_post_all_imgs" href="#">
-            <span>Toutes les photos</span></a>
+        <span>Charger Plus</span>
     </div>
 </section><!-- btn_all_post_imgs -->
 <?php endwhile;
