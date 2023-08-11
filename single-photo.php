@@ -85,11 +85,12 @@
                     <?php endwhile;
                     wp_reset_postdata() ?>
                 </article>
-                <div class="btn_post_all_imgs">
-                    <a class="post_all_imgs_link" href="#">
-                        <span>Toutes les photos</span></a>
-                </div>
             </section><!-- .section_post_other_imgs -->
+            <section class="section_btn_load_all_imgs">
+                <div class="btn_load_all_imgs">
+                    <span>Toutes les Photos</span>
+                </div>
+            </section><!-- btn_all_post_imgs -->
         </main><!-- #main_single_photo_page -->
 <?php endwhile;
 endif; ?>
