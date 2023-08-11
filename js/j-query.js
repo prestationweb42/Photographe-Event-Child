@@ -1,30 +1,22 @@
-// jQuery(document).ready(function ($) {
-//     $("#form-filter").on("submit", function (e) {
-//         e.preventDefault();
-
-//         var formData = $(this).serialize();
-
-//         $.ajax({
-//             url: ajaxurl, // Assurez-vous que cette variable soit correctement définie dans votre template
-//             type: "POST",
-//             data: formData + "&action=filtrer_images", // "filtrer_images" est le nom de l'action WordPress pour le traitement AJAX
-//             success: function (response) {
-//                 // Mettez à jour la liste d'images avec les résultats de la requête
-//                 $("#liste-images").html(response);
-//             },
-//         });
-//     });
+// $(".link_post_all_imgs").click(function () {
+//     alert("Hello World !");
 // });
-//
-// $(document).ready(function () {
-//     $(".sub_item").click(function () {
-//         $(".span_title").val("toto");
-//     });
-// });
+var page = 2;
+jQuery(function ($) {
+    $("body").on("click", ".btn_post_all_imgs", function () {
+        var data = {
+            action: "load_posts_by_ajax",
+            page: page,
+            security: photo.security,
+        };
 
-// $(document).ready(function () {
-//     $("#btn-alert").click(function () {
-//         alert("Hello World! Welcome to Tutorialdeep.");
-//     });
-// });
-
+        $.post(photo.ajaxurl, data, function (response) {
+            if ($.trim(response) != "") {
+                $(".section_post_imgs_container").append(response);
+                page++;
+            } else {
+                $(".btn_post_all_imgs").hide();
+            }
+        });
+    });
+});
