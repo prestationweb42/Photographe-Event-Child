@@ -919,6 +919,7 @@ table {
   align-items: center;
   border-radius: 2px;
   background-color: #d8d8d8;
+  transition: all 300ms ease-in-out;
 }
 #main_single_photo_page .section_post_contact .post_contact_text .post_contact_link span {
   font-size: 16px;
