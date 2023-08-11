@@ -33,10 +33,7 @@
             while ($query->have_posts()) : $query->the_post();
             ?>
                 <div class="hero_img">
-                    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
-                    if ($image_id) {
-                        echo wp_get_attachment_image($image_id, 'medium-large');
-                    } ?>
+                    <?php get_template_part('template-parts/post-img'); ?>
                 </div>
             <?php endwhile;
             wp_reset_postdata() ?>
@@ -48,7 +45,7 @@
                     </text>
                 </svg>
             </h1>
-        </section>
+        </section><!-- .hero_section-->
         <section class="sort_section">
             <!-- Sort form box -->
             <form id="form_filter" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post">
