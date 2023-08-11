@@ -160,7 +160,7 @@
             wp_reset_postdata() ?>
 </section><!-- section_post_imgs_container -->
 <section class="section_btn_load_more">
-    <div class="btn_post_all_imgs">
+    <div class="btn_load_more">
         <span>Charger Plus</span>
     </div>
 </section><!-- btn_all_post_imgs -->
