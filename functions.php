@@ -69,22 +69,22 @@ function load_posts_by_ajax_callback()
     $args = array(
         'post_type' => 'photo',
         'post_status' => 'publish',
-        'posts_per_page' => '2',
+        'posts_per_page' => '-1',
         'paged' => $_POST['page'],
     );
     $blog_posts = new WP_Query($args);
 ?>
-<?php if ($blog_posts->have_posts()) : ?>
-<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-<div class="post_img">
-    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+    <?php if ($blog_posts->have_posts()) : ?>
+        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+            <div class="post_img">
+                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
+            </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 <?php
     wp_die();
 }
