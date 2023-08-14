@@ -32,12 +32,12 @@
             object-fit: cover;
             object-position: 50% 50%;
         }
-        //
-        h1 svg {
-            position: absolute;
-            top: 50%;
-            transform: translate(0, -50%);
-        }
+    }
+    //
+    h1 svg {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
     }
 }
 // Setting Sort Section
