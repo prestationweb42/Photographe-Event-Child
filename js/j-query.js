@@ -2,7 +2,7 @@ var front_page = 2;
 jQuery(function ($) {
     $("body").on("click", ".btn_load_more", function () {
         var data = {
-            action: "load_posts_by_ajax",
+            action: "load_front_posts_by_ajax",
             page: front_page,
             security: photo.security,
         };
@@ -22,7 +22,7 @@ var single_page = 2;
 jQuery(function ($) {
     $("body").on("click", ".btn_load_all_imgs", function () {
         var data = {
-            action: "load_posts_by_ajax",
+            action: "load_single_posts_by_ajax",
             page: single_page,
             security: photo.security,
         };
