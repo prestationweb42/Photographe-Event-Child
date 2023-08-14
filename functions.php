@@ -61,9 +61,38 @@ function photo_scripts()
     wp_enqueue_script('jquery-script');
 }
 /**
- * Load post Ajax
+ * Load more post Ajax Front page
  */
-function load_posts_by_ajax_callback()
+function load_front_posts_by_ajax_callback()
+{
+    check_ajax_referer('load_more_posts', 'security');
+    $args = array(
+        'post_type' => 'photo',
+        'post_status' => 'publish',
+        'posts_per_page' => '2',
+        'paged' => $_POST['page'],
+    );
+    $blog_posts = new WP_Query($args);
+?>
+<?php if ($blog_posts->have_posts()) : ?>
+<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+<div class="post_img">
+    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+                if ($image_id) {
+                    echo wp_get_attachment_image($image_id, 'medium-large');
+                } ?>
+</div>
+<?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
+<?php endif; ?>
+<?php
+    wp_die();
+}
+//
+/**
+ * Load all post Ajax Single page
+ */
+function load_single_posts_by_ajax_callback()
 {
     check_ajax_referer('load_more_posts', 'security');
     $args = array(
@@ -74,17 +103,17 @@ function load_posts_by_ajax_callback()
     );
     $blog_posts = new WP_Query($args);
 ?>
-    <?php if ($blog_posts->have_posts()) : ?>
-        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-            <div class="post_img">
-                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+<?php if ($blog_posts->have_posts()) : ?>
+<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+<div class="post_img">
+    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-            </div>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php endif; ?>
+</div>
+<?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
+<?php endif; ?>
 <?php
     wp_die();
 }
@@ -92,8 +121,10 @@ function load_posts_by_ajax_callback()
 add_action('wp_enqueue_scripts', 'photo_scripts');
 add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
-add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
-add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
+add_action('wp_ajax_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
+add_action('wp_ajax_nopriv_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
+add_action('wp_ajax_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
+add_action('wp_ajax_nopriv_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
 
 // change HEADER menu CONTACT Link
 add_filter('wp_nav_menu_items', 'add_header_link', 10, 2);
