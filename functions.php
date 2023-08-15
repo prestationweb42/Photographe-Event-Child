@@ -74,17 +74,25 @@ function load_front_posts_by_ajax_callback()
     );
     $blog_posts = new WP_Query($args);
 ?>
-<?php if ($blog_posts->have_posts()) : ?>
-<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-<div class="post_img">
-    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+    <?php if ($blog_posts->have_posts()) : ?>
+        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+            <div class="post_img">
+                <div class="post_img_loop">
+                    <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
+                    <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
+                    <div class="text"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+                    </div>
+                    <div class="text"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-full-screen.svg">
+                    </div>
+                </div>
+                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
+            </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 <?php
     wp_die();
 }
@@ -103,17 +111,17 @@ function load_single_posts_by_ajax_callback()
     );
     $blog_posts = new WP_Query($args);
 ?>
-<?php if ($blog_posts->have_posts()) : ?>
-<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-<div class="post_img">
-    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+    <?php if ($blog_posts->have_posts()) : ?>
+        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+            <div class="post_img">
+                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
+            </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 <?php
     wp_die();
 }
