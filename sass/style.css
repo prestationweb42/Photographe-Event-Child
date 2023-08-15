@@ -805,6 +805,78 @@ a img {
   margin: 0 auto !important;
 }
 
+.lightbox_overlay {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+.lightbox_overlay .lightbox_wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.lightbox_overlay .lightbox_wrapper .before_arrow,
+.lightbox_overlay .lightbox_wrapper .after_arrow {
+  position: absolute;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lightbox_overlay .lightbox_wrapper .before_arrow {
+  width: 220px;
+  left: 10%;
+}
+.lightbox_overlay .lightbox_wrapper .after_arrow {
+  width: 200px;
+  right: 10%;
+}
+.lightbox_overlay .lightbox_wrapper .close_lightbox {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+}
+.lightbox_overlay .lightbox_wrapper .lightbox_img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(231, 231, 231);
+  width: 700px;
+  height: 500px;
+  padding: 30px;
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .lightbox_img {
+    max-width: 90%;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .lightbox_img h1 {
+  font-size: 60px;
+  font-style: italic;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .lightbox_img h1 {
+    font-size: 40px;
+  }
+}
+.lightbox_overlay.active-lightbox {
+  display: flex;
+}
+.lightbox_overlay .lightbox_photo_text {
+  font-size: 30px;
+  color: #000000;
+}
+
 /* CSS single-photo.php */
 #main_single_photo_page {
   max-width: 1200px;
