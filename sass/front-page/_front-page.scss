@@ -40,9 +40,9 @@
         transform: translate(0, -50%);
     }
 }
-// Setting Sort Section
+// Setting Filter Section
 #section_selects {
-    width: 1300px;
+    max-width: 1300px;
     min-height: auto;
     margin: 0 auto;
     padding: 50px 0;
@@ -66,16 +66,33 @@
         justify-content: end;
         // background-color: rgb(123, 139, 106);
     }
-    .custom_select_box {
+    .wrapper_select {
+        position: relative;
         width: 48%;
         height: 52px;
-        font-size: 14px;
-        font-weight: 500;
-        font-family: "Poppins";
-        text-transform: uppercase;
-        padding: 0 1.5em;
-        border: 1px solid black;
-        border-radius: 8px;
+        select {
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: "Poppins";
+            text-transform: uppercase;
+            padding: 0 20px;
+            border: 1px solid black;
+            border-radius: 8px;
+            position: relative;
+            background-color: #ffffff;
+            appearance: none;
+        }
+        .custom_arrow {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 100%;
+            background: rgba(0, 255, 145, 0.27);
+            z-index: 1000;
+        }
     }
 }
 //
@@ -92,14 +109,13 @@ a {
         }
     }
 }
-// Setting Photos Section
+// Setting Section Photos + Overlay Loop
 .section_post_imgs_container {
-    width: 1300px;
+    max-width: 1300px;
     height: auto;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
     gap: 20px;
     @media screen and (max-width: 1024px) {
         width: 100%;
@@ -107,6 +123,7 @@ a {
     .post_img {
         width: 49%;
         height: 550px;
+        position: relative;
         @media screen and (max-width: 768px) {
             width: 90%;
             margin: auto;
@@ -127,6 +144,54 @@ a {
             object-fit: cover;
             object-position: 50% 50%;
         }
+    }
+    .post_img_loop {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        transform: scale(1); // mettre a 0
+        transition: 300ms;
+        .icon_eye {
+            height: 30px;
+            width: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .icon_fullscreen {
+            height: 35px;
+            width: auto;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        .text_category,
+        .text_reference {
+            width: auto;
+            font-size: 14px;
+            font-family: "Space Mono", sans-serif;
+            text-transform: uppercase;
+            color: #fff;
+            position: absolute;
+        }
+        .text_reference {
+            bottom: 20px;
+            left: 20px;
+        }
+        .text_category {
+            bottom: 20px;
+            right: 20px;
+        }
+    }
+    .post_img:hover .post_img_loop {
+        transform: scale(1);
     }
 }
 // Setting Section Btn All Photos
