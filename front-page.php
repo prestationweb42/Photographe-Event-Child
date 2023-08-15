@@ -2,9 +2,9 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <section class="hero_section">
+<section class="hero_section">
 
-            <?php
+    <?php
             // récupération de la catégorie
             $category = array('mariage', 'concert', 'television', 'reception');
 
@@ -32,80 +32,71 @@
             // Boucle d'execution de wp query
             while ($query->have_posts()) : $query->the_post();
             ?>
-                <div class="hero_img">
-                    <?php get_template_part('template-parts/post-img'); ?>
-                </div>
-            <?php endwhile;
+    <div class="hero_img">
+        <?php get_template_part('template-parts/post-img'); ?>
+    </div>
+    <?php endwhile;
             wp_reset_postdata() ?>
 
-            <h1 class="hero_section_title">
-                <svg viewbox="0 0 10 2">
-                    <text x="5" y="1" text-anchor="middle" font-size="0.7" fill="none" stroke-width=".02" stroke="#fff" font-family="space mono" font-style="italic" font-weight=900 text-transform="uppercase">PHOTOGRAPHE
-                        EVENT
-                    </text>
-                </svg>
-            </h1>
-        </section><!-- .hero_section-->
-        <section class="sort_section">
-            <!-- Sort form box -->
-            <form id="form_filter" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="post">
-                <!-- Sort category box -->
-                <ul class="search_list">
-                    <li class="list_item_title">
-                        <span class="span_title">Catégorie</span>
-                        <span class="span_logo">&#9660;</span>
-                        <ul class="sub_list">
-                            <?php
-                            $terms = get_terms('categorie');
-                            foreach ($terms as $term) {
-                                echo '<li class="sub_item"><a href="?categoryfilter=' . $term->slug . '">' . $term->name . '</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- Sort format box -->
-                <ul class="search_list">
-                    <li class="list_item_title">
-                        <span class="span_title">Format</span>
-                        <span class="span_logo">&#9660;</span>
-                        <ul class="sub_list">
-                            <?php
-                            $terms = get_terms('format');
-                            foreach ($terms as $term) {
-                                echo '<li class="sub_item"><a href="?formafilter=' . $term->slug . '">' . $term->name . '</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- Sort date box -->
-                <ul class="search_list">
-                    <li class="list_item_title">
-                        <span class="span_title">Date</span>
-                        <span class="span_logo">&#9660;</span>
-                        <ul class="sub_list">
-                            <?php
-                            $terms = get_terms('format');
-                            foreach ($terms as $term) {
-                                echo '<li class="sub_item"><a href="?formafilter=' . $term->slug . '">' . $term->name . '</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- <button type="submit" value="Filtrer"></button> -->
-                <button id="btn-alert" class="btn btn-primary">Alert me!</button>
-            </form> <!-- form_filter -->
+    <h1 class="hero_section_title">
+        <svg viewbox="0 0 10 2">
+            <text x="5" y="1" text-anchor="middle" font-size="0.7" fill="none" stroke-width=".02" stroke="#fff"
+                font-family="space mono" font-style="italic" font-weight=900 text-transform="uppercase">PHOTOGRAPHE
+                EVENT
+            </text>
+        </svg>
+    </h1>
+</section><!-- .hero_section-->
 
+<section id="section_selects">
+    <article id="left_box_select">
+        <!-- Select filter category -->
+        <div class="wrapper_select">
+            <select name="category" id="filter_category" class="custom_select_box">
+                <option value="" class="span_title">Catégories</option>
+                <?php
+                        $terms = get_terms('categorie');
+                        foreach ($terms as $term) {
+                            echo '<option value="' . $term->slug . '" class="sub_item">' . $term->name . '</option>';
+                        }
+                        ?>
+            </select>
+            <div class="custom_arrow"></div>
+        </div>
+        <!-- Select filter format -->
+        <div class="wrapper_select">
+            <select name="format" id="filter_format" class="custom_select_box">
+                <option value="" class="span_title">Formats</option>
+                <?php
+                        $terms = get_terms('format');
+                        foreach ($terms as $term) {
+                            echo '<option value="' . $term->slug . '" class="sub_item">' . $term->name . '</option>';
+                        }
+                        ?>
+            </select>
+            <div class="custom_arrow"></div>
+        </div>
+    </article>
+    <article id="right_box_select">
+        <!-- Select filter date -->
+        <div class="wrapper_select">
+            <select name="format" id="filter_date" class="custom_select_box">
+                <option value="" class="span_title">Date</option>
+                <?php
+                        $terms = get_terms('format');
+                        foreach ($terms as $term) {
+                            echo '<option value="' . $term->slug . '" class="sub_item">' . $term->name . '</option>';
+                        }
+                        ?>
+            </select>
+            <div class="custom_arrow"></div>
+        </div>
+    </article>
+</section><!-- #section_selects -->
 
-            <a href="http://localhost:8888/PhotographeEvent/photo/nathalie-0/">
-                <img src="http://localhost:8888/PhotographeEvent/wp-content/uploads/2023/08/nathalie-11.webp" alt="">
-            </a>
-        </section><!-- sort_section -->
-        <!-- section post images container -->
-        <section class="section_post_imgs_container">
-            <?php
+<!-- section post images container -->
+<section class="section_post_imgs_container">
+    <?php
             // récupération de la catégorie
             if (isset($_GET['categoryfilter'])) {
                 $category = $_GET['categoryfilter'];
@@ -146,18 +137,32 @@
             // Boucle d'execution de wp query
             while ($query->have_posts()) : $query->the_post();
             ?>
-                <!-- Template part -->
-                <div class="post_img">
-                    <?php get_template_part('template-parts/post-img'); ?>
-                </div>
-            <?php endwhile;
-            wp_reset_postdata() ?>
-        </section><!-- section_post_imgs_container -->
-        <section class="section_btn_load_more">
-            <div class="btn_load_more">
-                <span>Charger Plus</span>
+    <!-- Template part -->
+    <div class="post_img">
+        <div class="post_img_loop">
+            <div class="text_category"><?php the_field('categories'); ?></div>
+            <div class="text_reference"><?php the_field('reference'); ?></div>
+            <div class="icon_eye"><img
+                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
             </div>
-        </section><!-- .section_btn_load_more -->
+            <div class="icon_fullscreen"><img
+                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
+            </div>
+        </div>
+        <?php get_template_part('template-parts/post-img'); ?>
+    </div>
+    <?php endwhile;
+            wp_reset_postdata() ?>
+</section><!-- section_post_imgs_container -->
+<section class=" section_btn_load_more">
+    <div class="btn_load_more">
+        <span>Charger Plus</span>
+    </div>
+</section><!-- .section_btn_load_more -->
+
+<a href="http://localhost:8888/PhotographeEvent/photo/nathalie-0/">
+    <img src="http://localhost:8888/PhotographeEvent/wp-content/uploads/2023/08/nathalie-11.webp" alt="">
+</a>
 <?php endwhile;
 endif; ?>
 <?php get_footer(); ?>
