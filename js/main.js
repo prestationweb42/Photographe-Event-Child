@@ -27,7 +27,8 @@ const menuContactMobile = document.querySelector(
     });
 });
 // Close Modale Form
-popUpOverlay.addEventListener("click", () => {
+const btnClosePopUp = document.querySelector(".popup-close");
+btnClosePopUp.addEventListener("click", () => {
     popUpOverlay.classList.remove("is-open");
 });
 // Btn Contact Single Page Photo Open Modale
