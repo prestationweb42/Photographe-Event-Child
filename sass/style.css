@@ -411,87 +411,81 @@ table {
   transform: translate(0, -50%);
 }
 
-.sort_section {
-  width: 1300px;
+#section_selects {
+  max-width: 1300px;
   min-height: auto;
   margin: 0 auto;
   padding: 50px 0;
-  /* link single page -> to delete */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 @media screen and (max-width: 1024px) {
-  .sort_section {
+  #section_selects {
     width: 100%;
   }
 }
-.sort_section #form_filter {
-  width: 100%;
-  height: auto;
+#section_selects #left_box_select {
+  width: 50%;
+  height: 100px;
   display: flex;
-  justify-content: space-around;
-  background-color: antiquewhite;
-}
-.sort_section #form_filter .search_list {
-  width: 260px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: start;
-  border: 1px solid black;
 }
-@media screen and (max-width: 1024px) {
-  .sort_section #form_filter .search_list {
-    flex-direction: column;
-  }
+#section_selects #right_box_select {
+  width: 50%;
+  height: 100px;
+  display: flex;
+  justify-content: end;
 }
-.sort_section #form_filter .search_list .list_item_title {
-  width: 100%;
-  height: 50px;
+#section_selects .wrapper_select {
   position: relative;
+  width: 48%;
+  height: 52px;
 }
-.sort_section #form_filter .search_list .list_item_title .span_title {
-  padding-left: 30px;
-  line-height: 50px;
-}
-.sort_section #form_filter .search_list .list_item_title .span_logo {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.sort_section #form_filter .search_list .list_item_title .sub_list {
-  display: none;
-}
-.sort_section #form_filter .search_list .list_item_title .sub_list .sub_item {
+#section_selects .wrapper_select select {
   width: 100%;
-  height: 50px;
-  padding-left: 30px;
-  line-height: 50px;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  padding: 0 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  position: relative;
+  background-color: #ffffff;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
-.sort_section #form_filter .search_list .list_item_title .sub_list .sub_item:hover {
-  height: 50px;
-  background: #ffd6d6;
+#section_selects .wrapper_select .custom_arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: rgba(0, 255, 145, 0.27);
+  z-index: 1000;
 }
-.sort_section #form_filter .search_list .list_item_title:hover > ul {
-  display: block;
-}
-.sort_section a {
+
+/* link single page -> to delete */
+a {
   display: inline-block;
 }
-.sort_section a img {
-  width: 30%;
+a img {
+  width: 20%;
   margin: 30px auto 30px auto;
   display: block;
   height: auto;
 }
 @media screen and (max-width: 1024px) {
-  .sort_section a img {
-    width: 50%;
+  a img {
+    width: 30%;
   }
 }
 
 .section_post_imgs_container {
-  width: 1300px;
+  max-width: 1300px;
   height: auto;
   margin: 0 auto;
   display: flex;
@@ -506,6 +500,7 @@ table {
 .section_post_imgs_container .post_img {
   width: 49%;
   height: 550px;
+  position: relative;
 }
 @media screen and (max-width: 768px) {
   .section_post_imgs_container .post_img {
@@ -536,6 +531,54 @@ table {
      object-fit: cover;
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
+}
+.section_post_imgs_container .post_img_loop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: 300ms;
+}
+.section_post_imgs_container .post_img_loop .icon_eye {
+  height: 30px;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.section_post_imgs_container .post_img_loop .icon_fullscreen {
+  height: 35px;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.section_post_imgs_container .post_img_loop .text_category,
+.section_post_imgs_container .post_img_loop .text_reference {
+  width: auto;
+  font-size: 14px;
+  font-family: "Space Mono", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+}
+.section_post_imgs_container .post_img_loop .text_reference {
+  bottom: 20px;
+  left: 20px;
+}
+.section_post_imgs_container .post_img_loop .text_category {
+  bottom: 20px;
+  right: 20px;
+}
+.section_post_imgs_container .post_img:hover .post_img_loop {
+  transform: scale(1);
 }
 
 .section_btn_load_more {
