@@ -27,8 +27,7 @@ const menuContactMobile = document.querySelector(
     });
 });
 // Close Modale Form
-const btnClosePopUp = document.querySelector(".popup-close");
-btnClosePopUp.addEventListener("click", () => {
+popUpOverlay.addEventListener("click", () => {
     popUpOverlay.classList.remove("is-open");
 });
 // Btn Contact Single Page Photo Open Modale
@@ -49,7 +48,7 @@ const lightboxOpen = document.querySelectorAll(".icon_fullscreen");
 lightboxOpen.forEach(el => {
     el.addEventListener("click", () => {
         lightboxOverlay.classList.add("active-lightbox");
-        console.log('toto');
+        console.log("toto");
     });
 });
 lightboxOverlay.addEventListener("click", () => {
