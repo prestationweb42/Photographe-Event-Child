@@ -29,15 +29,18 @@
         .before_arrow {
             width: 220px;
             left: 10%;
+            cursor: pointer;
         }
         .after_arrow {
             width: 200px;
             right: 10%;
+            cursor: pointer;
         }
-        .close_lightbox{
+        .close_lightbox {
             position: absolute;
             top: 10%;
             right: 20%;
+            cursor: pointer;
         }
         .lightbox_img {
             position: absolute;
