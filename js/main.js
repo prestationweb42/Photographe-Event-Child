@@ -52,6 +52,9 @@ lightboxOpen.forEach(el => {
         console.log("toto");
     });
 });
-lightboxOverlay.addEventListener("click", () => {
+// Close Lightbox - Btn Class
+const closeLightbox = document.querySelector(".close_lightbox");
+// Function Close Lightbox
+closeLightbox.addEventListener("click", () => {
     lightboxOverlay.classList.remove("active-lightbox");
 });
