@@ -57,3 +57,59 @@ const closeLightbox = document.querySelector(".close_lightbox");
 closeLightbox.addEventListener("click", () => {
     lightboxOverlay.classList.remove("active-lightbox");
 });
+/**
+ * Animation Filter Categories
+ */
+const titleBoxCategory = document.getElementById("title_box_category");
+const spanTitleCategory = document.getElementById("span_title_category");
+const spanIconCategory = document.getElementById("span_icon_category");
+const listItemCategory = document.getElementById("list_items_category");
+const itemsCategory = document.querySelectorAll("#item_category");
+titleBoxCategory.addEventListener("click", () => {
+    titleBoxCategory.classList.toggle("title_filter_box_clicked");
+    spanIconCategory.classList.toggle("span_icon_filter_rotate");
+    listItemCategory.classList.toggle("menu_open");
+});
+itemsCategory.forEach(itemCategory => {
+    itemCategory.addEventListener("click", () => {
+        spanTitleCategory.innerText = itemCategory.innerText;
+        titleBoxCategory.classList.toggle("title_filter_box_clicked");
+        spanIconCategory.classList.toggle("span_icon_filter_rotate");
+        listItemCategory.classList.toggle("menu_open");
+        //
+        itemsCategory.forEach(itemCategory => {
+            itemCategory.classList.remove("list_item_active");
+        });
+        itemCategory.classList.add("list_item_active");
+    });
+});
+
+// const wrapperSelectBox = document.querySelectorAll(".wrapper_select_boxes");
+// wrapperSelectBox.forEach(el => {
+//     const titleFilterBox = el.querySelector(".title_filter_box");
+//     const spanTitleFilter = el.querySelector(".span_title_filter");
+//     const spanIconFilter = el.querySelector(".span_icon_filter");
+//     const listItemsFilter = el.querySelector(".list_items_filter");
+//     const listItems = el.querySelectorAll(".list_item");
+//     //
+//     titleFilterBox.addEventListener("click", () => {
+//         titleFilterBox.classList.toggle("title_filter_box_clicked");
+//         spanIconFilter.classList.toggle("span_icon_filter_rotate");
+//         listItemsFilter.classList.toggle("menu_open");
+//     });
+//     //
+//     listItems.forEach(listItem => {
+//         listItem.addEventListener("click", () => {
+//             spanTitleFilter.innerText = listItem.innerText;
+//             titleFilterBox.classList.toggle("title_filter_box_clicked");
+//             spanIconFilter.classList.toggle("span_icon_filter_rotate");
+//             listItemsFilter.classList.toggle("menu_open");
+//             //
+//             listItems.forEach(listItem => {
+//                 listItem.classList.remove("list_item_active");
+//             });
+//             listItem.classList.add("list_item_active");
+//         });
+//     });
+//     //
+// });
