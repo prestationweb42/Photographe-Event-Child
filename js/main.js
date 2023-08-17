@@ -113,12 +113,27 @@ itemsFormat.forEach(itemFormat => {
  * Animation Filter Dates
  */
 const titleBoxDate = document.getElementById("title_box_date");
-// const spanTitleDate = document.getElementById("span_title_date");
+const spanTitleDate = document.getElementById("span_title_date");
 const spanIconDate = document.getElementById("span_icon_date");
 const listItemDate = document.getElementById("list_items_date");
-// const itemsDate = document.querySelectorAll("#item_date");
+const itemsDate = document.querySelectorAll("#item_date");
 titleBoxDate.addEventListener("click", () => {
     titleBoxDate.classList.toggle("title_filter_box_clicked");
     spanIconDate.classList.toggle("span_icon_filter_rotate");
     listItemDate.classList.toggle("menu_open");
 });
+itemsDate.forEach(itemDate => {
+    itemDate.addEventListener("click", () => {
+        spanTitleDate.innerText = itemDate.innerText;
+        titleBoxDate.classList.toggle("title_filter_box_clicked");
+        spanIconDate.classList.toggle("span_icon_filter_rotate");
+        listItemDate.classList.toggle("menu_open");
+        //
+        itemsDate.forEach(itemDate => {
+            itemDate.classList.remove("list_item_active");
+        });
+        itemDate.classList.add("list_item_active");
+    });
+});
+//
+
