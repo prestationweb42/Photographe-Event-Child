@@ -51,46 +51,58 @@
 <section id="section_selects">
     <article id="left_box_select">
         <!-- Select filter category -->
-        <div class="wrapper_select">
-            <select name="category" id="filter_category" class="custom_select_box">
-                <option value="" class="span_title">Catégories</option>
+        <div class="wrapper_select_boxes">
+            <div id="title_box_category" class="title_filter_box">
+                <span id="span_title_category" class="span_title_filter">Catégories</span>
+                <span id="span_icon_category" class="span_icon_filter">&#8964;
+                </span>
+            </div>
+            <ul id="list_items_category" class="list_items_filter">
                 <?php
                         $terms = get_terms('categorie');
                         foreach ($terms as $term) {
-                            echo '<option value="' . $term->slug . '" class="sub_item">' . $term->name . '</option>';
+                            // echo '<li class="sub_item"><a href="?categoryfilter=' . $term->slug . '">' . $term->name . '</a></li>';
+                            echo '<li id="item_category" class="list_item"><a href="' . $term->slug . '">' . $term->name . '</a></li>';
                         }
                         ?>
-            </select>
-            <div class="custom_arrow"></div>
-        </div>
+            </ul>
+        </div><!-- .wrapper_select_boxes -->
         <!-- Select filter format -->
-        <div class="wrapper_select">
-            <select name="format" id="filter_format" class="custom_select_box">
-                <option value="" class="span_title">Formats</option>
+        <div class="wrapper_select_boxes">
+            <div id="title_box_format" class="title_filter_box">
+                <span id="span_title_format" class="span_title_filter">Formats</span>
+                <span id="span_icon_format" class="span_icon_filter">&#8964;
+                </span>
+            </div>
+            <ul id="list_items_format" class="list_items_filter">
                 <?php
                         $terms = get_terms('format');
                         foreach ($terms as $term) {
-                            echo '<option value="' . $term->slug . '" class="sub_item">' . $term->name . '</option>';
+                            // echo '<li class="sub_item"><a href="?categoryfilter=' . $term->slug . '">' . $term->name . '</a></li>';
+                            echo '<li id="item_format" class="list_item"><a href="' . $term->slug . '">' . $term->name . '</a></li>';
                         }
                         ?>
-            </select>
-            <div class="custom_arrow"></div>
-        </div>
+            </ul>
+        </div><!-- .wrapper_select_boxes -->
     </article>
     <article id="right_box_select">
         <!-- Select filter date -->
-        <div class="wrapper_select">
-            <select name="format" id="filter_date" class="custom_select_box">
-                <option value="" class="span_title">Date</option>
+        <div class="wrapper_select_boxes">
+            <div id="title_box_date" class="title_filter_box">
+                <span id="span_title_date" class="span_title_filter">Trier par</span>
+                <span id="span_icon_date" class="span_icon_filter">&#8964;
+                </span>
+            </div>
+            <ul id="list_items_date" class="list_items_filter">
                 <?php
                         $terms = get_terms('format');
                         foreach ($terms as $term) {
-                            echo '<option value="' . $term->slug . '" class="sub_item">' . $term->name . '</option>';
+                            // echo '<li class="sub_item"><a href="?categoryfilter=' . $term->slug . '">' . $term->name . '</a></li>';
+                            echo '<li id="item_date" class="list_item"><a href="' . $term->slug . '">' . $term->name . '</a></li>';
                         }
                         ?>
-            </select>
-            <div class="custom_arrow"></div>
-        </div>
+            </ul>
+        </div><!-- .wrapper_select_boxes -->
     </article>
 </section><!-- #section_selects -->
 
