@@ -49,7 +49,6 @@ const lightboxOpen = document.querySelectorAll(".icon_fullscreen");
 lightboxOpen.forEach(el => {
     el.addEventListener("click", () => {
         lightboxOverlay.classList.add("active-lightbox");
-        console.log("toto");
     });
 });
 // Close Lightbox - Btn Class
