@@ -83,33 +83,42 @@ itemsCategory.forEach(itemCategory => {
         itemCategory.classList.add("list_item_active");
     });
 });
-
-// const wrapperSelectBox = document.querySelectorAll(".wrapper_select_boxes");
-// wrapperSelectBox.forEach(el => {
-//     const titleFilterBox = el.querySelector(".title_filter_box");
-//     const spanTitleFilter = el.querySelector(".span_title_filter");
-//     const spanIconFilter = el.querySelector(".span_icon_filter");
-//     const listItemsFilter = el.querySelector(".list_items_filter");
-//     const listItems = el.querySelectorAll(".list_item");
-//     //
-//     titleFilterBox.addEventListener("click", () => {
-//         titleFilterBox.classList.toggle("title_filter_box_clicked");
-//         spanIconFilter.classList.toggle("span_icon_filter_rotate");
-//         listItemsFilter.classList.toggle("menu_open");
-//     });
-//     //
-//     listItems.forEach(listItem => {
-//         listItem.addEventListener("click", () => {
-//             spanTitleFilter.innerText = listItem.innerText;
-//             titleFilterBox.classList.toggle("title_filter_box_clicked");
-//             spanIconFilter.classList.toggle("span_icon_filter_rotate");
-//             listItemsFilter.classList.toggle("menu_open");
-//             //
-//             listItems.forEach(listItem => {
-//                 listItem.classList.remove("list_item_active");
-//             });
-//             listItem.classList.add("list_item_active");
-//         });
-//     });
-//     //
-// });
+/**
+ * Animation Filter Formats
+ */
+const titleBoxFormat = document.getElementById("title_box_format");
+const spanTitleFormat = document.getElementById("span_title_format");
+const spanIconFormat = document.getElementById("span_icon_format");
+const listItemFormat = document.getElementById("list_items_format");
+const itemsFormat = document.querySelectorAll("#item_format");
+titleBoxFormat.addEventListener("click", () => {
+    titleBoxFormat.classList.toggle("title_filter_box_clicked");
+    spanIconFormat.classList.toggle("span_icon_filter_rotate");
+    listItemFormat.classList.toggle("menu_open");
+});
+itemsFormat.forEach(itemFormat => {
+    itemFormat.addEventListener("click", () => {
+        spanTitleFormat.innerText = itemFormat.innerText;
+        titleBoxFormat.classList.toggle("title_filter_box_clicked");
+        spanIconFormat.classList.toggle("span_icon_filter_rotate");
+        listItemFormat.classList.toggle("menu_open");
+        //
+        itemsFormat.forEach(itemFormat => {
+            itemFormat.classList.remove("list_item_active");
+        });
+        itemFormat.classList.add("list_item_active");
+    });
+});
+/**
+ * Animation Filter Dates
+ */
+const titleBoxDate = document.getElementById("title_box_date");
+// const spanTitleDate = document.getElementById("span_title_date");
+const spanIconDate = document.getElementById("span_icon_date");
+const listItemDate = document.getElementById("list_items_date");
+// const itemsDate = document.querySelectorAll("#item_date");
+titleBoxDate.addEventListener("click", () => {
+    titleBoxDate.classList.toggle("title_filter_box_clicked");
+    spanIconDate.classList.toggle("span_icon_filter_rotate");
+    listItemDate.classList.toggle("menu_open");
+});
