@@ -816,6 +816,7 @@ a img {
   z-index: 999;
   top: 0;
   left: 0;
+  display: none;
 }
 .lightbox_overlay .lightbox_wrapper {
   position: relative;
@@ -832,7 +833,7 @@ a img {
   transform: translateY(-50%);
 }
 .lightbox_overlay .lightbox_wrapper .before_arrow {
-  width: 220px;
+  width: 200px;
   left: 10%;
   cursor: pointer;
 }
