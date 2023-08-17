@@ -437,35 +437,67 @@ table {
   display: flex;
   justify-content: end;
 }
-#section_selects .wrapper_select {
+#section_selects .wrapper_select_boxes {
   position: relative;
   width: 48%;
   height: 52px;
 }
-#section_selects .wrapper_select select {
+#section_selects .wrapper_select_boxes .title_filter_box {
   width: 100%;
   height: 100%;
+  padding: 0 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+#section_selects .wrapper_select_boxes .title_filter_box .span_title_filter {
   font-size: 14px;
   font-weight: 500;
   font-family: "Poppins";
   text-transform: uppercase;
-  padding: 0 20px;
-  border: 1px solid black;
-  border-radius: 8px;
-  position: relative;
-  background-color: #ffffff;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
-#section_selects .wrapper_select .custom_arrow {
-  position: absolute;
-  top: 0;
-  right: 0;
+#section_selects .wrapper_select_boxes .title_filter_box .span_icon_filter {
   width: 30px;
-  height: 100%;
-  background: rgba(0, 255, 145, 0.27);
-  z-index: 1000;
+  height: 30px;
+  font-size: 24px;
+  line-height: 15px;
+  display: flex;
+  justify-content: center;
+  background-color: #6280fb;
+}
+#section_selects .wrapper_select_boxes .title_filter_box .span_icon_filter_rotate {
+  transform: rotate(180deg);
+}
+#section_selects .wrapper_select_boxes .list_items_filter {
+  width: 100%;
+  padding: 20px;
+  background-color: #b9bc70;
+  position: absolute;
+  display: none;
+  z-index: 2;
+}
+#section_selects .wrapper_select_boxes .list_items_filter .list_item {
+  padding: 20px 0;
+}
+#section_selects .wrapper_select_boxes .list_items_filter .list_item:hover {
+  padding: 20px 0;
+  background-color: #c29462;
+}
+#section_selects .wrapper_select_boxes .title_filter_box:hover {
+  background-color: #c29462;
+}
+#section_selects .wrapper_select_boxes .title_filter_box_clicked {
+  border: 5px solid black;
+}
+#section_selects .wrapper_select_boxes .menu_open {
+  display: block;
+}
+#section_selects .wrapper_select_boxes .list_item_active {
+  background-color: #000;
 }
 
 /* link single page -> to delete */
