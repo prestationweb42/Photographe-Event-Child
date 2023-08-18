@@ -71,6 +71,14 @@ titleBoxCategory.addEventListener("click", () => {
     listItemCategory.classList.toggle("menu_open");
 });
 itemsCategory.forEach(itemCategory => {
+    itemCategory.addEventListener("mouseover", () => {
+        itemCategory.classList.add("list_item_hover");
+        itemCategory.classList.remove("list_item_pressing");
+    });
+    itemCategory.addEventListener("mousedown", () => {
+        itemCategory.classList.remove("list_item_hover");
+        itemCategory.classList.add("list_item_pressing");
+    });
     itemCategory.addEventListener("click", () => {
         spanTitleCategory.innerText = itemCategory.innerText;
         titleBoxCategory.classList.toggle("title_filter_box_clicked");
@@ -97,6 +105,14 @@ titleBoxFormat.addEventListener("click", () => {
     listItemFormat.classList.toggle("menu_open");
 });
 itemsFormat.forEach(itemFormat => {
+    itemFormat.addEventListener("mouseover", () => {
+        itemFormat.classList.add("list_item_hover");
+        itemFormat.classList.remove("list_item_pressing");
+    });
+    itemFormat.addEventListener("mousedown", () => {
+        itemFormat.classList.remove("list_item_hover");
+        itemFormat.classList.add("list_item_pressing");
+    });
     itemFormat.addEventListener("click", () => {
         spanTitleFormat.innerText = itemFormat.innerText;
         titleBoxFormat.classList.toggle("title_filter_box_clicked");
@@ -123,6 +139,14 @@ titleBoxDate.addEventListener("click", () => {
     listItemDate.classList.toggle("menu_open");
 });
 itemsDate.forEach(itemDate => {
+    itemDate.addEventListener("mouseover", () => {
+        itemDate.classList.add("list_item_hover");
+        itemDate.classList.remove("list_item_pressing");
+    });
+    itemDate.addEventListener("mousedown", () => {
+        itemDate.classList.remove("list_item_hover");
+        itemDate.classList.add("list_item_pressing");
+    });
     itemDate.addEventListener("click", () => {
         spanTitleDate.innerText = itemDate.innerText;
         titleBoxDate.classList.toggle("title_filter_box_clicked");
@@ -136,4 +160,3 @@ itemsDate.forEach(itemDate => {
     });
 });
 //
-
