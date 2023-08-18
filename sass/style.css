@@ -165,6 +165,17 @@ table {
     justify-content: space-between;
   }
 }
+.main .header_desktop .header_logo_link {
+  width: 250px;
+}
+@media screen and (max-width: 768px) {
+  .main .header_desktop .header_logo_link {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translateY(-50%);
+  }
+}
 .main .header_desktop .header_logo_link .header_logo_img {
   width: 250px;
 }
@@ -176,24 +187,14 @@ table {
     transform: translate(20%, -50%);
   }
 }
-@media screen and (max-width: 768px) {
-  .main .header_desktop .header_logo_link .header_logo_img {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(20%, -50%);
-  }
-}
 @media screen and (max-width: 425px) {
   .main .header_desktop .header_logo_link .header_logo_img {
-    top: 50%;
     left: 0;
     transform: translate(10%, -50%);
   }
 }
 @media screen and (max-width: 375px) {
   .main .header_desktop .header_logo_link .header_logo_img {
-    top: 50%;
     left: 0;
     transform: translate(5%, -50%);
   }
