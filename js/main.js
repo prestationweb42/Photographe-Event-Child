@@ -78,9 +78,9 @@ itemsCategory.forEach(itemCategory => {
         listItemCategory.classList.toggle("menu_open");
         //
         itemsCategory.forEach(itemCategory => {
-            itemCategory.classList.remove("list_item_active");
+            itemCategory.classList.remove("list_item_select");
         });
-        itemCategory.classList.add("list_item_active");
+        itemCategory.classList.add("list_item_select");
     });
 });
 /**
@@ -104,9 +104,9 @@ itemsFormat.forEach(itemFormat => {
         listItemFormat.classList.toggle("menu_open");
         //
         itemsFormat.forEach(itemFormat => {
-            itemFormat.classList.remove("list_item_active");
+            itemFormat.classList.remove("list_item_select");
         });
-        itemFormat.classList.add("list_item_active");
+        itemFormat.classList.add("list_item_select");
     });
 });
 /**
@@ -130,9 +130,9 @@ itemsDate.forEach(itemDate => {
         listItemDate.classList.toggle("menu_open");
         //
         itemsDate.forEach(itemDate => {
-            itemDate.classList.remove("list_item_active");
+            itemDate.classList.remove("list_item_select");
         });
-        itemDate.classList.add("list_item_active");
+        itemDate.classList.add("list_item_select");
     });
 });
 //
