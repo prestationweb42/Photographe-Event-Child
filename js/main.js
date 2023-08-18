@@ -71,14 +71,20 @@ titleBoxCategory.addEventListener("click", () => {
     listItemCategory.classList.toggle("menu_open");
 });
 itemsCategory.forEach(itemCategory => {
+    // Animation filter List
     itemCategory.addEventListener("mouseover", () => {
         itemCategory.classList.add("list_item_hover");
-        itemCategory.classList.remove("list_item_pressing");
+    });
+    itemCategory.addEventListener("mouseout", () => {
+        itemCategory.classList.remove("list_item_hover");
     });
     itemCategory.addEventListener("mousedown", () => {
-        itemCategory.classList.remove("list_item_hover");
         itemCategory.classList.add("list_item_pressing");
     });
+    itemCategory.addEventListener("mouseup", () => {
+        itemCategory.classList.remove("list_item_pressing");
+    });
+    // Animation filter Box
     itemCategory.addEventListener("click", () => {
         spanTitleCategory.innerText = itemCategory.innerText;
         titleBoxCategory.classList.toggle("title_filter_box_clicked");
@@ -105,14 +111,20 @@ titleBoxFormat.addEventListener("click", () => {
     listItemFormat.classList.toggle("menu_open");
 });
 itemsFormat.forEach(itemFormat => {
+    // Animation filter List
     itemFormat.addEventListener("mouseover", () => {
         itemFormat.classList.add("list_item_hover");
-        itemFormat.classList.remove("list_item_pressing");
+    });
+    itemFormat.addEventListener("mouseout", () => {
+        itemFormat.classList.remove("list_item_hover");
     });
     itemFormat.addEventListener("mousedown", () => {
-        itemFormat.classList.remove("list_item_hover");
         itemFormat.classList.add("list_item_pressing");
     });
+    itemFormat.addEventListener("mouseup", () => {
+        itemFormat.classList.remove("list_item_pressing");
+    });
+    // Animation filter Box
     itemFormat.addEventListener("click", () => {
         spanTitleFormat.innerText = itemFormat.innerText;
         titleBoxFormat.classList.toggle("title_filter_box_clicked");
@@ -139,14 +151,20 @@ titleBoxDate.addEventListener("click", () => {
     listItemDate.classList.toggle("menu_open");
 });
 itemsDate.forEach(itemDate => {
+    // Animation filter List
     itemDate.addEventListener("mouseover", () => {
         itemDate.classList.add("list_item_hover");
-        itemDate.classList.remove("list_item_pressing");
+    });
+    itemDate.addEventListener("mouseout", () => {
+        itemDate.classList.remove("list_item_hover");
     });
     itemDate.addEventListener("mousedown", () => {
-        itemDate.classList.remove("list_item_hover");
         itemDate.classList.add("list_item_pressing");
     });
+    itemDate.addEventListener("mouseup", () => {
+        itemDate.classList.remove("list_item_pressing");
+    });
+    // Animation filter Box
     itemDate.addEventListener("click", () => {
         spanTitleDate.innerText = itemDate.innerText;
         titleBoxDate.classList.toggle("title_filter_box_clicked");
