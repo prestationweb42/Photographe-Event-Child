@@ -16,7 +16,13 @@
         }
 
         .header_logo_link {
-            // margin-left: 150px;
+            width: 250px;
+            @media screen and (max-width: 768px) {
+                position: absolute;
+                width: 250px;
+                height: 50px;
+                transform: translateY(-50%);
+            }
             .header_logo_img {
                 width: 250px;
                 @media screen and (max-width: 768px) {
@@ -25,19 +31,11 @@
                     left: 5%;
                     transform: translate(20%, -50%);
                 }
-                @media screen and (max-width: 768px) {
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    transform: translate(20%, -50%);
-                }
                 @media screen and (max-width: 425px) {
-                    top: 50%;
                     left: 0;
                     transform: translate(10%, -50%);
                 }
                 @media screen and (max-width: 375px) {
-                    top: 50%;
                     left: 0;
                     transform: translate(5%, -50%);
                 }
