@@ -10,6 +10,8 @@
     top: 0;
     left: 0;
     display: none;
+    //
+    // transition: opacity 0.5s ease-in-out; /* Ajouter une transition d'opacité */
     .popup_container {
         background: white;
         border: 5px solid #000;
@@ -35,8 +37,35 @@
                 object-fit: cover;
             }
         }
+        &.is-display {
+            // display: flex;
+            animation-name: scaleIn;
+            animation-duration: 1000ms;
+            animation-timing-function: ease-in-out;
+        }
     }
     &.is-open {
         display: flex;
+        animation: fadieIn 400ms ease-in-out; /* Ajouter une transition d'opacité */
+    }
+}
+@keyframes scaleIn {
+    from {
+        scale: 0;
+        opacity: 0;
+        rotate: -180deg;
+    }
+    to {
+        scale: 1;
+        opacity: 1;
+        rotate: 0deg;
+    }
+}
+@keyframes fadieIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

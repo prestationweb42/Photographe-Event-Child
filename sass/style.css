@@ -789,10 +789,36 @@ a img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.popup_overlay .popup_container.is-display {
+  animation-name: scaleIn;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+}
 .popup_overlay.is-open {
   display: flex;
+  animation: fadieIn 400ms ease-in-out; /* Ajouter une transition d'opacité */
 }
 
+@keyframes scaleIn {
+  from {
+    scale: 0;
+    opacity: 0;
+    rotate: -180deg;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+    rotate: 0deg;
+  }
+}
+@keyframes fadieIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .wpcf7-form {
   width: 500px;
   height: 600px;
