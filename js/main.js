@@ -26,11 +26,6 @@ const menuContactMobile = document.querySelector(
         popUpOverlay.classList.toggle("is-open");
     });
 });
-// Close Modale Form
-const btnClosePopUp = document.querySelector(".popup-close");
-btnClosePopUp.addEventListener("click", () => {
-    popUpOverlay.classList.remove("is-open");
-});
 // Btn Contact Single Page Photo Open Modale
 const contactSinglePageModal = document.querySelector(".post_contact_link");
 if (contactSinglePageModal) {
@@ -38,6 +33,22 @@ if (contactSinglePageModal) {
         popUpOverlay.classList.toggle("is-open");
     });
 }
+// Function Close Modale Form
+function closeModal() {
+    popUpOverlay.classList.remove("is-open");
+}
+// Listener event close modal click outside
+popUpOverlay.addEventListener("click", event => {
+    if (event.target === popUpOverlay) {
+        closeModal();
+    }
+});
+// Listener event close modal press key escape
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && popUpOverlay.classList.contains("is-open")) {
+        closeModal();
+    }
+});
 /**
  * Animation Lightbox Modale
  */
