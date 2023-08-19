@@ -172,7 +172,7 @@ table {
   .main .header_desktop .header_logo_link {
     position: absolute;
     width: 250px;
-    height: 50px;
+    height: 60px;
     transform: translateY(-50%);
   }
 }
