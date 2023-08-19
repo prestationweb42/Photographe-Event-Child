@@ -26,6 +26,9 @@
             height: 40px;
             border-radius: 8px;
             border: 1px solid #b8bbc2;
+            @media screen and (max-width: 320px) {
+                max-width: 97%;
+            }
         }
     }
     // Styles Textarea
@@ -39,6 +42,9 @@
             width: 100%;
             border-radius: 8px;
             border: 1px solid #b8bbc2;
+            @media screen and (max-width: 320px) {
+                max-width: 97%;
+            }
         }
     }
     // Styles BTN Submit
