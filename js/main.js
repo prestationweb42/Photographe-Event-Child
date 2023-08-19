@@ -12,30 +12,33 @@ menuBurger.addEventListener("click", () => {
  */
 // Class Modal
 const popUpOverlay = document.querySelector(".popup_overlay");
-// Link Contact Header
+const popUpContainer = document.querySelector(".popup_container");
+// Link Contact Menu Header
 const menuContactHeader = document.querySelector(
     ".header__menu__desktop .menu-item-23 a"
 );
-// Link Contact Mobile
+// Link Contact Menu Mobile
 const menuContactMobile = document.querySelector(
     ".header__menu__mobile .menu-item-23 a"
 );
+// function Open Modale Form
+function toggleModal() {
+    popUpOverlay.classList.toggle("is-open");
+    popUpContainer.classList.toggle("is-display");
+}
 // Open Modale Form
 [menuContactHeader, menuContactMobile].forEach(el => {
-    el.addEventListener("click", () => {
-        popUpOverlay.classList.toggle("is-open");
-    });
+    el.addEventListener("click", toggleModal);
 });
-// Btn Contact Single Page Photo Open Modale
+// Open Modale Btn Contact Single Page Photo
 const contactSinglePageModal = document.querySelector(".post_contact_link");
 if (contactSinglePageModal) {
-    contactSinglePageModal.addEventListener("click", () => {
-        popUpOverlay.classList.toggle("is-open");
-    });
+    contactSinglePageModal.addEventListener("click", toggleModal);
 }
 // Function Close Modale Form
 function closeModal() {
     popUpOverlay.classList.remove("is-open");
+    popUpContainer.classList.remove("is-display");
 }
 // Listener event close modal click outside
 popUpOverlay.addEventListener("click", event => {
@@ -45,7 +48,11 @@ popUpOverlay.addEventListener("click", event => {
 });
 // Listener event close modal press key escape
 document.addEventListener("keydown", event => {
-    if (event.key === "Escape" && popUpOverlay.classList.contains("is-open")) {
+    if (
+        event.key === "Escape" &&
+        popUpOverlay.classList.contains("is-open") &&
+        popUpContainer.classList.contains("is-display")
+    ) {
         closeModal();
     }
 });
