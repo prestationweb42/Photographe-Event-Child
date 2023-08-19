@@ -517,7 +517,7 @@ table {
   animation: fadeIn_open_list_items 0.3s ease-in-out;
 }
 #section_selects .wrapper_select_boxes:nth-child(2) {
-  margin-right: 26%;
+  margin-right: 25.8%;
 }
 @media screen and (max-width: 1024px) {
   #section_selects .wrapper_select_boxes:nth-child(2) {
