@@ -1,21 +1,11 @@
 <div class="popup_overlay">
-    <div class="popup_form">
-        <div class="popup_form_header">
-            <!-- <h3><?php echo $titre; ?> </h3> -->
-            <h1>CONTACT</h1>
-            <span class="popup-close">
-                <!-- <i class="fa fa-times"></i> -->
-                <!-- <i class="fa-sharp fa-solid fa-xmark-large"></i> -->
-                <!-- x -->
-                <span class="material-symbols-outlined">
-                    close
-                </span>
-            </span>
+    <div class="popup_container">
+        <div class="popup_header_img">
+            <img src="	http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/contact_header.png"
+                alt="image contact">
         </div>
-
-
         <?php
-        // On insère le formulaire de demandes de renseignements
+        // Shortcode Contact form
         echo do_shortcode('[contact-form-7 id="29" title="contact-form"]');
         ?>
     </div>
