@@ -79,9 +79,9 @@ itemsCategory.forEach(itemCategory => {
         listItemCategory.classList.toggle("menu_open");
         //
         itemsCategory.forEach(itemCategory => {
-            itemCategory.classList.remove("list_item_select");
+            itemCategory.classList.remove("list_item_selected");
         });
-        itemCategory.classList.add("list_item_select");
+        itemCategory.classList.add("list_item_selected");
     });
 });
 /**
@@ -106,9 +106,9 @@ itemsFormat.forEach(itemFormat => {
         listItemFormat.classList.toggle("menu_open");
         //
         itemsFormat.forEach(itemFormat => {
-            itemFormat.classList.remove("list_item_select");
+            itemFormat.classList.remove("list_item_selected");
         });
-        itemFormat.classList.add("list_item_select");
+        itemFormat.classList.add("list_item_selected");
     });
 });
 /**
@@ -133,9 +133,9 @@ itemsDate.forEach(itemDate => {
         listItemDate.classList.toggle("menu_open");
         //
         itemsDate.forEach(itemDate => {
-            itemDate.classList.remove("list_item_select");
+            itemDate.classList.remove("list_item_selected");
         });
-        itemDate.classList.add("list_item_select");
+        itemDate.classList.add("list_item_selected");
     });
 });
 // Animation filter All List
