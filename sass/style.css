@@ -762,53 +762,32 @@ a img {
   left: 0;
   display: none;
 }
-.popup_overlay .popup_form {
+.popup_overlay .popup_container {
   background: white;
   border: 5px solid #000;
   border-radius: 2px;
-  max-width: 680px;
+  max-width: 600px;
   height: auto;
-  padding: 30px;
+  overflow-x: hidden;
   position: relative;
 }
 @media screen and (max-width: 425px) {
-  .popup_overlay .popup_form {
+  .popup_overlay .popup_container {
     max-width: 90%;
   }
 }
-.popup_overlay .popup_form .popup_form_header {
-  height: 100px;
+.popup_overlay .popup_container .popup_header_img {
+  width: 145%;
+  height: 105%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  transform: translateX(-15%);
 }
-.popup_overlay .popup_form .popup_form_header h1 {
-  font-size: 60px;
-  font-style: italic;
-  text-align: center;
-}
-@media screen and (max-width: 425px) {
-  .popup_overlay .popup_form .popup_form_header h1 {
-    font-size: 40px;
-  }
-}
-.popup_overlay .popup_form .popup_form_header .popup-close {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  border-radius: 20px;
-  height: 35px;
-  width: 35px;
-  border: 1px solid black;
-  background: white;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.4s ease;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 0;
-}
-.popup_overlay .popup_form .popup_form_header .popup-close .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 900, "GRAD" 0, "opsz" 48;
+.popup_overlay .popup_container .popup_header_img img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .popup_overlay.is-open {
   display: flex;
@@ -817,6 +796,7 @@ a img {
 .wpcf7-form {
   width: 500px;
   height: 600px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 425px) {
   .wpcf7-form {
@@ -845,6 +825,11 @@ a img {
   border-radius: 8px;
   border: 1px solid #b8bbc2;
 }
+@media screen and (max-width: 320px) {
+  .wpcf7-form .form_group input {
+    max-width: 97%;
+  }
+}
 .wpcf7-form .form_textarea {
   width: 260px;
   margin: 30px auto 20px auto;
@@ -858,6 +843,11 @@ a img {
   width: 100%;
   border-radius: 8px;
   border: 1px solid #b8bbc2;
+}
+@media screen and (max-width: 320px) {
+  .wpcf7-form .form_textarea textarea {
+    max-width: 97%;
+  }
 }
 .wpcf7-form .form_submit {
   width: 260px;
