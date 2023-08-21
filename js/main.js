@@ -102,6 +102,14 @@ itemsCategory.forEach(itemCategory => {
         itemCategory.classList.add("list_item_selected");
     });
 });
+// Close filter Categories
+document.addEventListener("click", event => {
+    if (!titleBoxCategory.contains(event.target)) {
+        titleBoxCategory.classList.remove("title_filter_box_clicked");
+        spanIconCategory.classList.remove("span_icon_filter_rotate");
+        listItemCategory.classList.remove("menu_open");
+    }
+});
 /**
  * Animation Filter Formats
  */
@@ -129,6 +137,14 @@ itemsFormat.forEach(itemFormat => {
         itemFormat.classList.add("list_item_selected");
     });
 });
+// Close filter Formats
+document.addEventListener("click", event => {
+    if (!titleBoxFormat.contains(event.target)) {
+        titleBoxFormat.classList.remove("title_filter_box_clicked");
+        spanIconFormat.classList.remove("span_icon_filter_rotate");
+        listItemFormat.classList.remove("menu_open");
+    }
+});
 /**
  * Animation Filter Dates
  */
@@ -155,6 +171,14 @@ itemsDate.forEach(itemDate => {
         });
         itemDate.classList.add("list_item_selected");
     });
+});
+// Close filter Dates
+document.addEventListener("click", event => {
+    if (!titleBoxDate.contains(event.target)) {
+        titleBoxDate.classList.remove("title_filter_box_clicked");
+        spanIconDate.classList.remove("span_icon_filter_rotate");
+        listItemDate.classList.remove("menu_open");
+    }
 });
 // Animation filter All List
 function animationAllList(items) {
