@@ -930,22 +930,54 @@ a img {
   height: 50px;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .lightbox_overlay .lightbox_wrapper .before_arrow,
+  .lightbox_overlay .lightbox_wrapper .after_arrow {
+    top: 85%;
+  }
 }
 .lightbox_overlay .lightbox_wrapper .before_arrow {
   width: 200px;
   left: 10%;
-  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .lightbox_overlay .lightbox_wrapper .before_arrow {
+    left: 11%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .before_arrow {
+    left: 6%;
+  }
 }
 .lightbox_overlay .lightbox_wrapper .after_arrow {
   width: 200px;
   right: 10%;
-  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .lightbox_overlay .lightbox_wrapper .after_arrow {
+    right: 11%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .after_arrow {
+    top: 91%;
+    right: 6%;
+  }
 }
 .lightbox_overlay .lightbox_wrapper .close_lightbox {
   position: absolute;
   top: 10%;
   right: 20%;
   cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .lightbox_overlay .lightbox_wrapper .close_lightbox {
+    top: 20%;
+    right: 10%;
+  }
 }
 .lightbox_overlay .lightbox_wrapper .lightbox_img {
   position: absolute;
@@ -957,9 +989,14 @@ a img {
   height: 500px;
   padding: 30px;
 }
+@media screen and (max-width: 1024px) {
+  .lightbox_overlay .lightbox_wrapper .lightbox_img {
+    width: 80%;
+  }
+}
 @media screen and (max-width: 425px) {
   .lightbox_overlay .lightbox_wrapper .lightbox_img {
-    max-width: 90%;
+    width: 90%;
   }
 }
 .lightbox_overlay .lightbox_wrapper .lightbox_img h1 {
