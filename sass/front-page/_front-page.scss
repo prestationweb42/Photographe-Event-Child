@@ -199,7 +199,7 @@ a {
             object-position: 50% 50%;
         }
     }
-    .post_img_loop {
+    .post_img_overlay {
         position: absolute;
         left: 0;
         right: 0;
@@ -208,7 +208,7 @@ a {
         overflow: hidden;
         width: 100%;
         height: 100%;
-        transform: scale(1); // mettre a 0
+        transform: scale(0); // mettre a 0
         transition: 300ms;
         .icon_eye {
             height: 30px;
@@ -244,7 +244,7 @@ a {
             right: 20px;
         }
     }
-    .post_img:hover .post_img_loop {
+    .post_img:hover .post_img_overlay {
         transform: scale(1);
     }
 }

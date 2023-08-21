@@ -151,7 +151,7 @@
             ?>
     <!-- Template part -->
     <div class="post_img">
-        <div class="post_img_loop">
+        <div class="post_img_overlay">
             <div class="text_category"><?php the_field('categories'); ?></div>
             <div class="text_reference"><?php the_field('reference'); ?></div>
             <div class="icon_eye"><img
