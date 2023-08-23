@@ -37,24 +37,4 @@ jQuery(function ($) {
         });
     });
 });
-//
-$(document).ready(function () {
-    $(".span_title_filter").on("change", function () {
-        // var selectedValue = $('select[name="selection"]').val();
-        // var selectedValue = $(".title_filter_box").val();
-        var selectedValue = $(".span_title_filter").text();
-        console.log(selectedValue);
-
-        // Envoyer la valeur à PHP via une requête AJAX ou autre
-        $.ajax({
-            type: "POST",
-            url: "/",
-            data: { selectedValue: selectedValue },
-            success: function (response) {
-                // Traiter la réponse du serveur si nécessaire
-                console.log("toto");
-            },
-        });
-    });
-});
 
