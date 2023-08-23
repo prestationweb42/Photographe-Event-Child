@@ -6,17 +6,26 @@ register_nav_menus(array(
     'footer' => 'Bas de page',
 ));
 
+// change HEADER menu CONTACT Link
+add_filter('wp_nav_menu_items', 'add_header_link', 10, 2);
+function add_header_link($items, $args)
+{
+    if ($args->theme_location === 'main') {
+        $new_item       = array('<li class="menu-item menu-item-23"><a href="#">CONTACT</a></li>');
+        $items          = preg_replace('/<\/li>\s<li/', '</li>,<li',  $items);
 
-// Ajouter la sidebar
-register_sidebar(array(
-    'id' => 'blog-sidebar',
-    'name' => 'Blog',
-    'before_widget'  => '<div class="site__sidebar__widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title' => '<p class="site__sidebar__widget__title">',
-    'after_title' => '</p>',
-));
-
+        $array_items    = explode(
+            ',',
+            $items
+        );
+        array_splice($array_items, 2, 0, $new_item);
+        $items          = implode(
+            '',
+            $array_items
+        );
+    }
+    return $items;
+}
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support('post-thumbnails');
@@ -74,25 +83,27 @@ function load_front_posts_by_ajax_callback()
     );
     $blog_posts = new WP_Query($args);
 ?>
-    <?php if ($blog_posts->have_posts()) : ?>
-        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-            <div class="post_img">
-                <div class="post_img_loop">
-                    <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
-                    <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
-                    <div class="text"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
-                    </div>
-                    <div class="text"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-full-screen.svg">
-                    </div>
-                </div>
-                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+<?php if ($blog_posts->have_posts()) : ?>
+<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+<div class="post_img">
+    <div class="post_img_loop">
+        <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
+        <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
+        <div class="text"><img
+                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+        </div>
+        <div class="text"><img
+                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-full-screen.svg">
+        </div>
+    </div>
+    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-            </div>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php endif; ?>
+</div>
+<?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
+<?php endif; ?>
 <?php
     wp_die();
 }
@@ -111,17 +122,17 @@ function load_single_posts_by_ajax_callback()
     );
     $blog_posts = new WP_Query($args);
 ?>
-    <?php if ($blog_posts->have_posts()) : ?>
-        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-            <div class="post_img">
-                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+<?php if ($blog_posts->have_posts()) : ?>
+<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+<div class="post_img">
+    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-            </div>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php endif; ?>
+</div>
+<?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
+<?php endif; ?>
 <?php
     wp_die();
 }
@@ -133,24 +144,3 @@ add_action('wp_ajax_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callbac
 add_action('wp_ajax_nopriv_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
 add_action('wp_ajax_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
 add_action('wp_ajax_nopriv_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
-
-// change HEADER menu CONTACT Link
-add_filter('wp_nav_menu_items', 'add_header_link', 10, 2);
-function add_header_link($items, $args)
-{
-    if ($args->theme_location === 'main') {
-        $new_item       = array('<li class="menu-item menu-item-23"><a href="#">CONTACT</a></li>');
-        $items          = preg_replace('/<\/li>\s<li/', '</li>,<li',  $items);
-
-        $array_items    = explode(
-            ',',
-            $items
-        );
-        array_splice($array_items, 2, 0, $new_item);
-        $items          = implode(
-            '',
-            $array_items
-        );
-    }
-    return $items;
-}
