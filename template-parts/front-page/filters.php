@@ -11,7 +11,7 @@
             <?php
             $terms = get_terms('categorie');
             foreach ($terms as $term) {
-                echo '<li id="item_category" class="list_item" data-filter=' . $term->slug . '>' . $term->name . '</li>';
+                echo '<li id="item_category" class="list_item selected_filter_category" data-filter=' . $term->slug . '>' . $term->name . '</li>';
             }
             ?>
         </ul>
@@ -28,7 +28,7 @@
             <?php
             $terms = get_terms('format');
             foreach ($terms as $term) {
-                echo '<li id="item_format" class="list_item" data-filter=' . $term->slug . '>' . $term->name . '</li>';
+                echo '<li id="item_format" class="list_item selected_filter_format" data-filter=' . $term->slug . '>' . $term->name . '</li>';
             }
             ?>
         </ul>
