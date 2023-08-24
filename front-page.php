@@ -48,108 +48,31 @@
     </h1>
 </section><!-- .hero_section-->
 
-<section id="section_selects">
+<!-- Include Section Filters -->
+<?php get_template_part('template-parts/front-page/filters'); ?>
 
-    <!-- Select filter category -->
-    <div class="wrapper_select_boxes">
-        <div id="title_box_category" class="title_filter_box">
-            <span id="span_title_category" class="span_title_filter">Catégories</span>
-            <span id="span_icon_category" class="span_icon_filter">&#8964;
-            </span>
-        </div>
-        <ul id="list_items_category" class="list_items_filter menu_close">
-            <?php
-                    $terms = get_terms('categorie');
-                    foreach ($terms as $term) {
-                        // echo '<li class="sub_item"><a href="?categoryfilter=' . $term->slug . '">' . $term->name . '</a></li>';
-                        // echo '<li id="item_category" class="list_item"><a href="' . $term->slug . '">' . $term->name . '</a></li>';
-                        echo '<li id="item_category" class="list_item">' . $term->name . '</li>';
-                    }
-                    ?>
-        </ul>
-    </div><!-- .wrapper_select_boxes -->
-    <!-- Select filter format -->
-    <div class="wrapper_select_boxes">
-        <div id="title_box_format" class="title_filter_box">
-            <span id="span_title_format" class="span_title_filter">Formats</span>
-            <span id="span_icon_format" class="span_icon_filter">&#8964;
-            </span>
-        </div>
-        <ul id="list_items_format" class="list_items_filter">
-            <?php
-                    $terms = get_terms('format');
-                    foreach ($terms as $term) {
-                        // echo '<li class="sub_item"><a href="?categoryfilter=' . $term->slug . '">' . $term->name . '</a></li>';
-                        // echo '<li id="item_format" class="list_item"><a href="' . $term->slug . '">' . $term->name . '</a></li>';
-                        echo '<li id="item_format" class="list_item">' . $term->name . '</li>';
-                    }
-                    ?>
-        </ul>
-    </div><!-- .wrapper_select_boxes -->
-    <!-- Select filter date -->
-    <div class="wrapper_select_boxes">
-        <div id="title_box_date" class="title_filter_box">
-            <span id="span_title_date" class="span_title_filter">Trier par</span>
-            <span id="span_icon_date" class="span_icon_filter">&#8964;
-            </span>
-        </div>
-        <ul id="list_items_date" class="list_items_filter">
-            <?php
-                    $terms = get_terms('date');
-                    foreach ($terms as $term) {
-                        // echo '<li class="sub_item"><a href="?categoryfilter=' . $term->slug . '">' . $term->name . '</a></li>';
-                        // echo '<li id="item_date" class="list_item"><a href="' . $term->slug . '">' . $term->name . '</a></li>';
-                        echo '<li id="item_date" class="list_item">' . $term->name . '</li>';
-                    }
-                    ?>
-        </ul>
-    </div><!-- .wrapper_select_boxes -->
-</section><!-- #section_selects -->
+<!-- Les résultats filtrés seront affichés ici -->
+<div id="result_div">
+</div>
 
 <!-- section post images container -->
 <section class="section_post_imgs_container">
     <?php
-            // récupération de la catégorie
-            if (isset($_GET['categoryfilter'])) {
-                $category = $_GET['categoryfilter'];
-            } else {
-                $category = array('mariage', 'concert', 'television', 'reception');
-            }
-
-            // récupération du format
-            if (isset($_GET['formafilter'])) {
-                $format = $_GET['formafilter'];
-            } else {
-                $format = array('paysage', 'portrait');
-            };
-            // définition des arguments
+            // Post per page definition
+            $post_per_page = 2;
+            // Argument definition
             $args = array(
-                'orderby' => 'rand',
+                // 'orderby' => 'title',
                 'post_type' => 'photo',
-                'posts_per_page' => 2,
-                'paged' => 1,
-                'tax_query' => array(
-                    'relation' => 'AND',
-                    array(
-                        'taxonomy' => 'format',
-                        'field' => 'slug',
-                        'terms' => $format,
-                        // 'terms' => 'paysage',
-                    ),
-                    array(
-                        'taxonomy' => 'categorie',
-                        'field' => 'slug',
-                        'terms' => $category,
-                        // 'terms' => 'mariage',
-                    ),
-                ),
+                'posts_per_page' => $post_per_page,
+                // 'paged' => 10,
             );
-            // Définition / execution de wp query
+            // Definition / Execution of wp-query
             $query = new WP_Query($args);
-            // Boucle d'execution de wp query
+            // Execution loop of wp-query
             while ($query->have_posts()) : $query->the_post();
             ?>
-    <!-- Template part -->
+    <!-- Overlay Img -->
     <div class="post_img">
         <div class="post_img_overlay">
             <div class="text_category"><?php the_field('categories'); ?></div>
@@ -161,6 +84,7 @@
                     src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
             </div>
         </div>
+        <!-- Overlay Img -->
         <?php get_template_part('template-parts/post-img'); ?>
     </div>
     <?php endwhile;
@@ -168,7 +92,7 @@
 </section><!-- section_post_imgs_container -->
 <section class=" section_btn_load_more">
     <div class="btn_load_more">
-        <span>Charger Plus</span>
+        <span id="loadMoreBtn">Charger Plus</span>
     </div>
 </section><!-- .section_btn_load_more -->
 
