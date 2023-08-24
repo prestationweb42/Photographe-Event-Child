@@ -16,6 +16,7 @@
             ?>
         </ul>
     </div><!-- .wrapper_select_boxes -->
+
     <!-- Select filter format -->
     <div class="wrapper_select_boxes">
         <div id="title_box_format" class="title_filter_box">
@@ -33,9 +34,6 @@
         </ul>
     </div><!-- .wrapper_select_boxes -->
 
-    <!-- Container for displaying filtered results -->
-    <div id="filtered_results"></div>
-
     <!-- Select filter date -->
     <div class="wrapper_select_boxes">
         <div id="title_box_date" class="title_filter_box">
@@ -52,48 +50,4 @@
             ?>
         </ul>
     </div><!-- .wrapper_select_boxes -->
-
 </section><!-- #section_selects -->
-<script>
-const ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-const categoryFilterButtons = document.querySelectorAll("#list_items_category .list_item");
-const formatFilterButtons = document.querySelectorAll("#list_items_format .list_item");
-const filteredResultsContainer = document.getElementById("filtered_results");
-
-categoryFilterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const selectedCategory = button.getAttribute("data-filter");
-        console.log(selectedCategory);
-        fetchFilteredResults(selectedCategory, "categorie");
-    });
-});
-
-formatFilterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const selectedFormat = button.getAttribute("data-filter");
-        fetchFilteredResults(selectedFormat, "format");
-    });
-});
-
-function fetchFilteredResults(filterValue, filterType) {
-    // You can add loading indicators or other UI changes here
-
-    const data = new FormData();
-    data.append("action", "custom_filter_action"); // Create a WordPress AJAX action
-    data.append("filter_value", filterValue);
-    data.append("filter_type", filterType);
-
-    fetch(ajaxurl, {
-            method: "POST",
-            body: data,
-        })
-        .then(response => response.text())
-        .then(result => {
-            // Update the results container with the filtered content
-            filteredResultsContainer.innerHTML = result;
-        })
-        .catch(error => {
-            console.error("Error fetching filtered results:", error);
-        });
-}
-</script>
