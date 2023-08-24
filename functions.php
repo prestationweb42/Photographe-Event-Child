@@ -83,27 +83,25 @@ function load_front_posts_by_ajax_callback()
     );
     $blog_posts = new WP_Query($args);
 ?>
-<?php if ($blog_posts->have_posts()) : ?>
-<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-<div class="post_img">
-    <div class="post_img_loop">
-        <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
-        <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
-        <div class="text"><img
-                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
-        </div>
-        <div class="text"><img
-                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-full-screen.svg">
-        </div>
-    </div>
-    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+    <?php if ($blog_posts->have_posts()) : ?>
+        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+            <div class="post_img">
+                <div class="post_img_loop">
+                    <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
+                    <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
+                    <div class="text"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+                    </div>
+                    <div class="text"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-full-screen.svg">
+                    </div>
+                </div>
+                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
+            </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 <?php
     wp_die();
 }
@@ -122,18 +120,18 @@ function load_single_posts_by_ajax_callback()
     );
     $blog_posts = new WP_Query($args);
 ?>
-<?php if ($blog_posts->have_posts()) : ?>
-<?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-<div class="post_img">
-    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+    <?php if ($blog_posts->have_posts()) : ?>
+        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
+            <div class="post_img">
+                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
-<?php
+            </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
+    <?php
     wp_die();
 }
 //
@@ -144,3 +142,75 @@ add_action('wp_ajax_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callbac
 add_action('wp_ajax_nopriv_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
 add_action('wp_ajax_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
 add_action('wp_ajax_nopriv_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
+//
+/**
+ * Undocumented function
+ *
+ * @return void
+ */
+function enqueue_scripts_ajax()
+{
+    // Enqueue your scripts here
+    wp_enqueue_script('filters-script', get_stylesheet_directory_uri() . '/js/filters.js', array('jquery'), null, true);
+
+    // Localize the script with new data
+    $translation_array = array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+    );
+    // Localize the script with data
+    wp_localize_script('ajax-script', 'photo', $translation_array);
+}
+add_action('wp_enqueue_scripts', 'enqueue_scripts_ajax');
+//
+// Ajoutez ceci à votre fichier functions.php
+function filter_results()
+{
+    $filter1 = isset($_POST['filter1']) ? sanitize_text_field($_POST['filter1']) : '';
+    $filter2 = isset($_POST['filter2']) ? sanitize_text_field($_POST['filter2']) : '';
+
+    var_dump($filter1, $filter2);
+
+    $args = array(
+        'post_type' => 'photo',  // Remplacez par le type de post approprié
+        'posts_per_page' => -1,  // Afficher tous les résultats
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'categorie',
+                'field' => 'slug',
+                'terms' => $filter1
+            ),
+            array(
+                'taxonomy' => 'format', // Taxonomie du deuxième filtre
+                'field' => 'slug',
+                'terms' => $filter2
+            )
+        )
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            // Affichez ici le contenu de chaque résultat comme vous le souhaitez
+            // the_content(); // Exemple d'affichage du contenu de l'article
+    ?>
+            <p> <?php the_title(); ?></p> <!-- Exemple d'affichage du titre de l'article -->
+            <div class="post_img">
+                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+                if ($image_id) {
+                    echo wp_get_attachment_image($image_id, 'large');
+                } ?>
+            </div>
+<?php
+        }
+        wp_reset_postdata();
+    } else {
+        echo 'Aucun résultat trouvé.';
+    }
+
+    die();
+}
+add_action('wp_ajax_filter_results', 'filter_results');
+add_action('wp_ajax_nopriv_filter_results', 'filter_results');
