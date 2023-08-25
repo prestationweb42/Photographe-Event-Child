@@ -171,7 +171,7 @@ function filter_results()
     $filter2 = isset($_POST['filter2']) ? sanitize_text_field($_POST['filter2']) : '';
     $filter3 = isset($_POST['filter3']) ? sanitize_text_field($_POST['filter3']) : '';
 
-    var_dump($filter1, $filter2, $filter3);
+    // var_dump($filter1, $filter2, $filter3);
 
     $args = array(
         'post_type' => 'photo',
@@ -203,8 +203,18 @@ function filter_results()
             $query->the_post();
             // Display content
     ?>
-<p> <?php the_title(); ?></p> <!-- Exemple d'affichage du titre de l'article -->
+<!--<p> <?php the_title(); ?></p> Exemple d'affichage du titre de l'article -->
 <div class="post_img">
+    <div class="post_img_overlay">
+        <div class="text_category"><?php the_field('categories'); ?></div>
+        <div class="text_reference"><?php the_field('reference'); ?></div>
+        <div class="icon_eye"><img
+                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+        </div>
+        <div class="icon_fullscreen"><img
+                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
+        </div>
+    </div>
     <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'large');
@@ -214,7 +224,12 @@ function filter_results()
         }
         wp_reset_postdata();
     } else {
-        echo 'Aucun résultat trouvé.';
+        echo '<div class="nothing_result">';
+        echo '<p>Aucun résultat trouvé </p>';
+        echo '<p>Pour la catégorie <span>' . $filter1 . '</span></p>';
+        echo '<p>Au format <span>' . $filter2 . '</span></p>';
+        echo '<p>En date de <span>' . $filter3 . '</span></p>';
+        echo '</div>';
     }
 
     die();
