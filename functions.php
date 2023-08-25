@@ -175,7 +175,7 @@ function filter_results()
 
     $args = array(
         'post_type' => 'photo',
-        'posts_per_page' => 2,
+        'posts_per_page' => -1,
         'tax_query' => array(
             'relation' => 'AND',
             array(
