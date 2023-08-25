@@ -56,7 +56,7 @@
 </div>
 
 <!-- section post images container -->
-<section class="section_post_imgs_container">
+<section class="section_post_imgs_container display_none">
     <?php
             // Post per page definition
             $post_per_page = 2;
