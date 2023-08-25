@@ -150,6 +150,24 @@
     }
 }
 //
+.nothing_result {
+    width: 50%;
+    min-height: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-size: 30px;
+        margin: 20px auto;
+        span {
+            color: #e00000;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+}
 /* link single page -> to delete */
 a {
     display: inline-block;
@@ -178,6 +196,7 @@ a {
         width: 49%;
         height: 550px;
         position: relative;
+        margin: 0 auto;
         @media screen and (max-width: 768px) {
             width: 90%;
             margin: auto;
