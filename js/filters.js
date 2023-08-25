@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         xhr.open("POST", photo.ajaxurl, true);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                document.getElementById("result_div").innerHTML =
+                document.getElementById("result_filtered").innerHTML =
                     xhr.responseText;
 
                 // Appel de la fonction pour vérifier les filtres après avoir chargé les résultats
