@@ -51,9 +51,10 @@
 <!-- Include Section Filters -->
 <?php get_template_part('template-parts/front-page/filters'); ?>
 
-<!-- Les résultats filtrés seront affichés ici -->
-<div id="result_div">
-</div>
+<!-- Display results filtered  -->
+<section id="result_filtered" class="section_post_imgs_container">
+</section>
+
 
 <!-- section post images container -->
 <section class="section_post_imgs_container display_none">
@@ -89,12 +90,12 @@
     </div>
     <?php endwhile;
             wp_reset_postdata() ?>
+    <div class=" div_btn_load_more">
+        <div class="btn_load_more">
+            <span id="loadMoreBtn">Charger Plus</span>
+        </div>
+    </div><!-- .div_btn_load_more -->
 </section><!-- section_post_imgs_container -->
-<section class=" section_btn_load_more">
-    <div class="btn_load_more">
-        <span id="loadMoreBtn">Charger Plus</span>
-    </div>
-</section><!-- .section_btn_load_more -->
 
 <a href="http://localhost:8888/PhotographeEvent/photo/nathalie-0/">
     <img src="http://localhost:8888/PhotographeEvent/wp-content/uploads/2023/08/nathalie-11.webp" alt="">

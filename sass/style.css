@@ -662,22 +662,21 @@ a img {
 .section_post_imgs_container .post_img:hover .post_img_overlay {
   transform: scale(1);
 }
-
-.section_btn_load_more {
+.section_post_imgs_container .div_btn_load_more {
   width: 100%;
   height: auto;
 }
-.section_btn_load_more .btn_load_more {
+.section_post_imgs_container .div_btn_load_more .btn_load_more {
   width: 270px;
   height: 50px;
   margin: 50px auto;
 }
 @media screen and (max-width: 1024px) {
-  .section_btn_load_more .btn_load_more {
+  .section_post_imgs_container .div_btn_load_more .btn_load_more {
     width: 250px;
   }
 }
-.section_btn_load_more .btn_load_more span {
+.section_post_imgs_container .div_btn_load_more .btn_load_more span {
   width: 100%;
   height: 100%;
   color: #000;
@@ -690,11 +689,11 @@ a img {
   transition: all 300ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  .section_btn_load_more .btn_load_more span {
+  .section_post_imgs_container .div_btn_load_more .btn_load_more span {
     width: 100%;
   }
 }
-.section_btn_load_more .btn_load_more span:hover {
+.section_post_imgs_container .div_btn_load_more .btn_load_more span:hover {
   font-weight: 700;
   color: #fff;
   background-color: #000;
