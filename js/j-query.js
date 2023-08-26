@@ -9,7 +9,7 @@ jQuery(function ($) {
 
         $.post(photo.ajaxurl, data, function (response) {
             if ($.trim(response) != "") {
-                $(".section_post_imgs_container").append(response);
+                $("#section_display_more").append(response);
                 front_page++;
             } else {
                 $(".btn_load_more").hide();
