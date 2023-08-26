@@ -51,12 +51,12 @@
 <!-- Include Section Filters -->
 <?php get_template_part('template-parts/front-page/filters'); ?>
 
-<!-- Display results filtered  -->
+<!-- Section Display Results Filtered  -->
 <section id="section_result_filtered" class="section_post_imgs_container">
 </section>
 
 
-<!-- section post images container -->
+<!-- Section Display More images -->
 <section id="section_display_more" class=" section_post_imgs_container display_none">
     <?php
             // Post per page definition
