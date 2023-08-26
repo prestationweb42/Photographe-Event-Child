@@ -663,21 +663,22 @@ a img {
 .section_post_imgs_container .post_img:hover .post_img_overlay {
   transform: scale(1);
 }
-.section_post_imgs_container .div_btn_load_more {
+
+.div_btn_load_more {
   width: 100%;
   height: auto;
 }
-.section_post_imgs_container .div_btn_load_more .btn_load_more {
+.div_btn_load_more .btn_load_more {
   width: 270px;
   height: 50px;
   margin: 50px auto;
 }
 @media screen and (max-width: 1024px) {
-  .section_post_imgs_container .div_btn_load_more .btn_load_more {
+  .div_btn_load_more .btn_load_more {
     width: 250px;
   }
 }
-.section_post_imgs_container .div_btn_load_more .btn_load_more span {
+.div_btn_load_more .btn_load_more span {
   width: 100%;
   height: 100%;
   color: #000;
@@ -690,11 +691,11 @@ a img {
   transition: all 300ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  .section_post_imgs_container .div_btn_load_more .btn_load_more span {
+  .div_btn_load_more .btn_load_more span {
     width: 100%;
   }
 }
-.section_post_imgs_container .div_btn_load_more .btn_load_more span:hover {
+.div_btn_load_more .btn_load_more span:hover {
   font-weight: 700;
   color: #fff;
   background-color: #000;
