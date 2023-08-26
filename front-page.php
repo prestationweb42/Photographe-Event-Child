@@ -57,7 +57,7 @@
 
 
 <!-- Section Display More images -->
-<section id="section_display_more" class=" section_post_imgs_container display_none">
+<section id="section_display_more" class="section_post_imgs_container display_none">
     <?php
             // Post per page definition
             $post_per_page = 2;
@@ -90,12 +90,12 @@
     </div>
     <?php endwhile;
             wp_reset_postdata() ?>
-    <div class=" div_btn_load_more">
-        <div class="btn_load_more">
-            <span id="loadMoreBtn">Charger Plus</span>
-        </div>
-    </div><!-- .div_btn_load_more -->
 </section><!-- section_post_imgs_container -->
+<div class="div_btn_load_more">
+    <div class="btn_load_more">
+        <span id="loadMoreBtn">Charger Plus</span>
+    </div>
+</div><!-- .div_btn_load_more -->
 
 <a href="http://localhost:8888/PhotographeEvent/photo/nathalie-0/">
     <img src="http://localhost:8888/PhotographeEvent/wp-content/uploads/2023/08/nathalie-11.webp" alt="">
