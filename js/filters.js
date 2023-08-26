@@ -3,18 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let selectedFilterCategory = "concert";
     let selectedFilterFormat = "paysage";
     let selectedFilterDate = "2022";
-    // let selectedFilterCategory = null;
-    // let selectedFilterFormat = null;
-    // let selectedFilterDate = null;
     const defaultImagesSection = document.querySelector(".display_none");
+    const btnLoadMore = document.querySelector(".div_btn_load_more");
     let initialFiltersSet = true;
 
     // Fonction pour vérifier les filtres et gérer l'affichage de la section par défaut
     function checkFiltersAndDisplayDefaultSection() {
         if (initialFiltersSet) {
             defaultImagesSection.style.display = "block";
+            btnLoadMore.style.display = "block";
         } else {
             defaultImagesSection.style.display = "none";
+            btnLoadMore.style.display = "none";
         }
     }
 
