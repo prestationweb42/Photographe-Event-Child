@@ -52,12 +52,12 @@
 <?php get_template_part('template-parts/front-page/filters'); ?>
 
 <!-- Display results filtered  -->
-<section id="result_filtered" class="section_post_imgs_container">
+<section id="section_result_filtered" class="section_post_imgs_container">
 </section>
 
 
 <!-- section post images container -->
-<section class="section_post_imgs_container display_none">
+<section id="section_display_more" class=" section_post_imgs_container display_none">
     <?php
             // Post per page definition
             $post_per_page = 2;
