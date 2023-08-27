@@ -104,41 +104,11 @@ function load_front_posts_by_ajax_callback()
     wp_die();
 }
 //
-/**
- * Load all post Ajax Single page
- */
-function load_single_posts_by_ajax_callback()
-{
-    check_ajax_referer('load_more_posts', 'security');
-    $args = array(
-        'post_type' => 'photo',
-        'post_status' => 'publish',
-        'posts_per_page' => '-1',
-        'paged' => $_POST['page'],
-    );
-    $query_all_imgs = new WP_Query($args);
-?>
-    <?php if ($query_all_imgs->have_posts()) : ?>
-        <?php while ($query_all_imgs->have_posts()) : $query_all_imgs->the_post(); ?>
-            <div class="post_img">
-                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
-                if ($image_id) {
-                    echo wp_get_attachment_image($image_id, 'medium-large');
-                } ?>
-            </div>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php endif; ?>
-<?php
-    wp_die();
-}
-//
 add_action('wp_enqueue_scripts', 'photo_scripts');
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
 add_action('wp_ajax_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
 add_action('wp_ajax_nopriv_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
-add_action('wp_ajax_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
-add_action('wp_ajax_nopriv_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
 //
 require_once get_template_directory() . '/inc/load_jquery_function.php';
+require_once get_template_directory() . '/inc/load_all_imgs_function.php';
 require_once get_template_directory() . '/inc/filtered_function.php';
