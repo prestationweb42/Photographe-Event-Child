@@ -3,7 +3,7 @@
 /**
  * Load more post Ajax Front page
  */
-function load_front_posts_by_ajax_callback()
+function load_more_imgs()
 {
     check_ajax_referer('load_more_posts', 'security');
     $args = array(
@@ -45,5 +45,5 @@ function load_front_posts_by_ajax_callback()
 }
 
 
-add_action('wp_ajax_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
-add_action('wp_ajax_nopriv_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
+add_action('wp_ajax_load_front_posts_by_ajax', 'load_more_imgs');
+add_action('wp_ajax_nopriv_load_front_posts_by_ajax', 'load_more_imgs');
