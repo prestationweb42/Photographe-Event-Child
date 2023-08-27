@@ -72,14 +72,18 @@
             $query = new WP_Query($args);
             // Execution loop of wp-query
             while ($query->have_posts()) : $query->the_post();
+                $post_url = get_permalink();
             ?>
     <!-- Overlay Img -->
     <div class="post_img">
         <div class="post_img_overlay">
             <div class="text_category"><?php the_field('categories'); ?></div>
             <div class="text_reference"><?php the_field('reference'); ?></div>
-            <div class="icon_eye"><img
-                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+            <div class="icon_eye">
+                <a href="<?php echo $post_url; ?>">
+                    <img
+                        src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+                </a>
             </div>
             <div class="icon_fullscreen"><img
                     src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
