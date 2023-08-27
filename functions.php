@@ -81,27 +81,34 @@ function load_front_posts_by_ajax_callback()
         'posts_per_page' => '2',
         'paged' => $_POST['page'],
     );
-    $blog_posts = new WP_Query($args);
+    $query_more_imgs = new WP_Query($args);
 ?>
-    <?php if ($blog_posts->have_posts()) : ?>
-        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-            <div class="post_img">
-                <div class="post_img_overlay">
-                    <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
-                    <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
-                    <div class="icon_eye"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
-                    </div>
-                    <div class="icon_fullscreen"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
-                    </div>
-                </div>
-                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+<?php if ($query_more_imgs->have_posts()) : ?>
+<?php while ($query_more_imgs->have_posts()) : $query_more_imgs->the_post();
+            $post_url = get_permalink();
+        ?>
+<div class="post_img">
+    <div class="post_img_overlay">
+        <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
+        <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
+        <div class="icon_eye">
+            <a href="<?php echo $post_url; ?>">
+                <img
+                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+            </a>
+        </div>
+        <div class="icon_fullscreen"><img
+                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
+        </div>
+    </div>
+    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-            </div>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php endif; ?>
+</div>
+<?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
+<?php endif; ?>
 <?php
     wp_die();
 }
@@ -118,20 +125,20 @@ function load_single_posts_by_ajax_callback()
         'posts_per_page' => '-1',
         'paged' => $_POST['page'],
     );
-    $blog_posts = new WP_Query($args);
+    $query_all_imgs = new WP_Query($args);
 ?>
-    <?php if ($blog_posts->have_posts()) : ?>
-        <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-            <div class="post_img">
-                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+<?php if ($query_all_imgs->have_posts()) : ?>
+<?php while ($query_all_imgs->have_posts()) : $query_all_imgs->the_post(); ?>
+<div class="post_img">
+    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-            </div>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php endif; ?>
-    <?php
+</div>
+<?php endwhile; ?>
+<?php wp_reset_postdata(); ?>
+<?php endif; ?>
+<?php
     wp_die();
 }
 //
@@ -201,23 +208,29 @@ function filter_results()
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
+            $post_url = get_permalink();
             // Display content
     ?>
-            <!--<p> <?php the_title(); ?></p> Exemple d'affichage du titre de l'article -->
-            <div class="post_img">
-                <div class="post_img_overlay">
-                    <div class="text_category"><?php the_field('categories'); ?></div>
-                    <div class="text_reference"><?php the_field('reference'); ?></div>
-                    <div class="icon_eye"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
-                    </div>
-                    <div class="icon_fullscreen"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
-                    </div>
-                </div>
-                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+<!--<p> <?php the_title(); ?></p> Exemple d'affichage du titre de l'article -->
+<div class="post_img">
+    <div class="post_img_overlay">
+        <div class="text_category"><?php the_field('categories'); ?></div>
+        <div class="text_reference"><?php the_field('reference'); ?></div>
+        <div class="icon_eye">
+            <a href="<?php echo $post_url; ?>">
+                <img
+                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+            </a>
+        </div>
+        <div class="icon_fullscreen"><img
+                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
+        </div>
+    </div>
+    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'large');
                 } ?>
-            </div>
+</div>
 <?php
         }
         wp_reset_postdata();
