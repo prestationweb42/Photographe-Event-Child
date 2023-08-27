@@ -532,7 +532,7 @@ table {
 
 .nothing_result {
   width: 50%;
-  min-height: 550px;
+  height: 550px;
   margin: auto;
   display: flex;
   background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/not-found.webp");
@@ -540,9 +540,30 @@ table {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .nothing_result {
+    width: 90%;
+    background-position: 50% 50%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .nothing_result {
+    height: 400px;
+  }
+}
 .nothing_result p {
   font-size: 24px;
   margin: 20px auto;
+}
+@media screen and (max-width: 425px) {
+  .nothing_result p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .nothing_result p {
+    font-size: 16px;
+  }
 }
 .nothing_result p span {
   color: #e00000;
