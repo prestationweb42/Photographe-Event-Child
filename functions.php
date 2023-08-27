@@ -43,14 +43,7 @@ function child_enqueue_styles()
     wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/js/main.js', array(), '0.0.1', true);
     // wp_enqueue_script('jquery-script', get_stylesheet_directory_uri() . '/js/j-query.js', array('jquery'), null, true);
 }
-/**
- * include custom jQuery
- */
-function shapeSpace_include_custom_jquery()
-{
-    wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js', array(), null, true);
-}
+
 /**
  * Load more Ajax
  */
@@ -83,32 +76,30 @@ function load_front_posts_by_ajax_callback()
     );
     $query_more_imgs = new WP_Query($args);
 ?>
-<?php if ($query_more_imgs->have_posts()) : ?>
-<?php while ($query_more_imgs->have_posts()) : $query_more_imgs->the_post();
+    <?php if ($query_more_imgs->have_posts()) : ?>
+        <?php while ($query_more_imgs->have_posts()) : $query_more_imgs->the_post();
             $post_url = get_permalink();
         ?>
-<div class="post_img">
-    <div class="post_img_overlay">
-        <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
-        <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
-        <div class="icon_eye">
-            <a href="<?php echo $post_url; ?>">
-                <img
-                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
-            </a>
-        </div>
-        <div class="icon_fullscreen"><img
-                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
-        </div>
-    </div>
-    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+            <div class="post_img">
+                <div class="post_img_overlay">
+                    <div class="text_category">Catégorie : <?php the_field('categories'); ?></div>
+                    <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
+                    <div class="icon_eye">
+                        <a href="<?php echo $post_url; ?>">
+                            <img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+                        </a>
+                    </div>
+                    <div class="icon_fullscreen"><img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
+                    </div>
+                </div>
+                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
+            </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 <?php
     wp_die();
 }
@@ -127,27 +118,27 @@ function load_single_posts_by_ajax_callback()
     );
     $query_all_imgs = new WP_Query($args);
 ?>
-<?php if ($query_all_imgs->have_posts()) : ?>
-<?php while ($query_all_imgs->have_posts()) : $query_all_imgs->the_post(); ?>
-<div class="post_img">
-    <?php $image_id = get_field('image'); // On récupère cette fois l'ID
+    <?php if ($query_all_imgs->have_posts()) : ?>
+        <?php while ($query_all_imgs->have_posts()) : $query_all_imgs->the_post(); ?>
+            <div class="post_img">
+                <?php $image_id = get_field('image'); // On récupère cette fois l'ID
                 if ($image_id) {
                     echo wp_get_attachment_image($image_id, 'medium-large');
                 } ?>
-</div>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
+            </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 <?php
     wp_die();
 }
 //
 add_action('wp_enqueue_scripts', 'photo_scripts');
-add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
 add_action('wp_enqueue_scripts', 'child_enqueue_styles');
 add_action('wp_ajax_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
 add_action('wp_ajax_nopriv_load_front_posts_by_ajax', 'load_front_posts_by_ajax_callback');
 add_action('wp_ajax_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
 add_action('wp_ajax_nopriv_load_single_posts_by_ajax', 'load_single_posts_by_ajax_callback');
 //
+require_once get_template_directory() . '/inc/load_jquery_function.php';
 require_once get_template_directory() . '/inc/filtered_function.php';
