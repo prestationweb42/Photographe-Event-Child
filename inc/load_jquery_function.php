@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Doculent include custom jQuery
+ * Document include custom jQuery
  */
 function shapeSpace_include_custom_jquery()
 {
