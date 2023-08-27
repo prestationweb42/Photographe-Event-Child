@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     //
-    let selectedFilterCategory = "concert";
+    let selectedFilterCategory = "mariage";
     let selectedFilterFormat = "paysage";
     let selectedFilterDate = "2022";
     const defaultImagesSection = document.querySelector(".display_none");
