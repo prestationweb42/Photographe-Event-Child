@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //
+    // Initialization of filters.
     let selectedFilterCategory = "mariage";
     let selectedFilterFormat = "paysage";
     let selectedFilterDate = "2022";
+    // Varaibles
     const defaultImagesSection = document.querySelector(".display_none");
     const btnLoadMore = document.querySelector(".div_btn_load_more");
     let initialFiltersSet = true;
 
-    // Fonction pour vérifier les filtres et gérer l'affichage de la section par défaut
+    // Function to check filters and manage default section display
     function checkFiltersAndDisplayDefaultSection() {
         if (initialFiltersSet) {
             defaultImagesSection.style.display = "block";
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("section_result_filtered").innerHTML =
                     xhr.responseText;
 
-                // Appel de la fonction pour vérifier les filtres après avoir chargé les résultats
+                // Calling the function to check filters after loading the results
                 checkFiltersAndDisplayDefaultSection();
             }
         };
@@ -38,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("filter3", selectedFilterDate);
 
         xhr.send(formData);
-        // Au chargement initial, vérifier si tous les filtres sont vides et masquer la section par défaut si nécessaire
+        // During initial loading, check if all filters are empty and hide the default section if necessary
         checkFiltersAndDisplayDefaultSection();
     }
-    // Gestionnaire de clic sur les éléments de filtrage
+    // Filtering element click handler
     const filterItemsCategory = document.querySelectorAll("#item_category");
     const filterItemsFormat = document.querySelectorAll("#item_format");
     const filterItemsDate = document.querySelectorAll("#item_date");
