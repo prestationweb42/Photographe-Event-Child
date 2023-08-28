@@ -186,19 +186,6 @@
         }
     }
 }
-/* link single page -> to delete */
-a {
-    display: inline-block;
-    img {
-        width: 20%;
-        margin: 30px auto 30px auto;
-        display: block;
-        height: auto;
-        @media screen and (max-width: 1024px) {
-            width: 30%;
-        }
-    }
-}
 // Setting Section Photos + Overlay Loop
 .section_post_imgs_container {
     max-width: 1300px;

@@ -571,22 +571,6 @@ table {
   text-transform: uppercase;
 }
 
-/* link single page -> to delete */
-a {
-  display: inline-block;
-}
-a img {
-  width: 20%;
-  margin: 30px auto 30px auto;
-  display: block;
-  height: auto;
-}
-@media screen and (max-width: 1024px) {
-  a img {
-    width: 30%;
-  }
-}
-
 .section_post_imgs_container {
   max-width: 1300px;
   height: auto;

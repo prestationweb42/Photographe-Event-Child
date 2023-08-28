@@ -101,9 +101,6 @@
     </div>
 </div><!-- .div_btn_load_more -->
 
-<a href="http://localhost:8888/PhotographeEvent/photo/nathalie-0/">
-    <img src="http://localhost:8888/PhotographeEvent/wp-content/uploads/2023/08/nathalie-11.webp" alt="">
-</a>
 <?php endwhile;
 endif; ?>
 <?php get_footer(); ?>
