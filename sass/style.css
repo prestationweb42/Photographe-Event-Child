@@ -172,17 +172,14 @@ table {
   .main .header_desktop .header_logo_link {
     position: absolute;
     width: 250px;
-    height: 60px;
-    transform: translateY(-50%);
   }
 }
 .main .header_desktop .header_logo_link .header_logo_img {
-  width: 250px;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   .main .header_desktop .header_logo_link .header_logo_img {
     position: absolute;
-    top: 50%;
     left: 5%;
     transform: translate(20%, -50%);
   }

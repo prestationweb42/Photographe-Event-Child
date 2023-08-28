@@ -20,14 +20,11 @@
             @media screen and (max-width: 768px) {
                 position: absolute;
                 width: 250px;
-                height: 60px;
-                transform: translateY(-50%);
             }
             .header_logo_img {
-                width: 250px;
+                width: 100%;
                 @media screen and (max-width: 768px) {
                     position: absolute;
-                    top: 50%;
                     left: 5%;
                     transform: translate(20%, -50%);
                 }
