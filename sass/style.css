@@ -966,39 +966,77 @@ table {
   transform: translateY(-50%);
   cursor: pointer;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1150px) {
   .lightbox_overlay .lightbox_wrapper .before_arrow,
   .lightbox_overlay .lightbox_wrapper .after_arrow {
-    top: 85%;
+    display: none;
   }
 }
 .lightbox_overlay .lightbox_wrapper .before_arrow {
   width: 200px;
   left: 10%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
   .lightbox_overlay .lightbox_wrapper .before_arrow {
-    left: 11%;
+    left: 5%;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1200px) {
   .lightbox_overlay .lightbox_wrapper .before_arrow {
-    left: 6%;
+    left: 2%;
   }
 }
 .lightbox_overlay .lightbox_wrapper .after_arrow {
   width: 200px;
   right: 10%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
   .lightbox_overlay .lightbox_wrapper .after_arrow {
-    right: 11%;
+    right: 5%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .lightbox_overlay .lightbox_wrapper .after_arrow {
+    right: 2%;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .after_chevron,
+.lightbox_overlay .lightbox_wrapper .before_chevron {
+  position: absolute;
+  font-size: 60px;
+  color: #fff;
+  font-weight: 100;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 1150px) {
+  .lightbox_overlay .lightbox_wrapper .after_chevron,
+  .lightbox_overlay .lightbox_wrapper .before_chevron {
+    display: block;
   }
 }
 @media screen and (max-width: 425px) {
-  .lightbox_overlay .lightbox_wrapper .after_arrow {
-    top: 91%;
-    right: 6%;
+  .lightbox_overlay .lightbox_wrapper .after_chevron,
+  .lightbox_overlay .lightbox_wrapper .before_chevron {
+    font-size: 40px;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .before_chevron {
+  left: 2%;
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .before_chevron {
+    left: 1%;
+  }
+}
+.lightbox_overlay .lightbox_wrapper .after_chevron {
+  right: 2%;
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .after_chevron {
+    right: 1%;
   }
 }
 .lightbox_overlay .lightbox_wrapper .close_lightbox {
@@ -1019,36 +1057,42 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgb(231, 231, 231);
-  width: 700px;
-  height: 500px;
-  padding: 30px;
+  width: 650px;
+  height: 650px;
 }
 @media screen and (max-width: 1024px) {
   .lightbox_overlay .lightbox_wrapper .lightbox_img {
     width: 80%;
   }
 }
+.lightbox_overlay .lightbox_wrapper .lightbox_img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+.lightbox_overlay .lightbox_text {
+  font-size: 24px;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: -8%;
+}
 @media screen and (max-width: 425px) {
-  .lightbox_overlay .lightbox_wrapper .lightbox_img {
-    width: 90%;
+  .lightbox_overlay .lightbox_text {
+    font-size: 18px;
   }
 }
-.lightbox_overlay .lightbox_wrapper .lightbox_img h1 {
-  font-size: 60px;
-  font-style: italic;
-  text-align: center;
+.lightbox_overlay .lightbox_reference {
+  left: 0%;
 }
-@media screen and (max-width: 425px) {
-  .lightbox_overlay .lightbox_wrapper .lightbox_img h1 {
-    font-size: 40px;
-  }
+.lightbox_overlay .lightbox_categorie {
+  right: 0%;
 }
 .lightbox_overlay.active-lightbox {
   display: flex;
-}
-.lightbox_overlay .lightbox_photo_text {
-  font-size: 30px;
-  color: #000000;
 }
 
 /* CSS single-photo.php */

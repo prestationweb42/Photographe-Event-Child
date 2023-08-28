@@ -25,32 +25,66 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            @media screen and (max-width: 1024px) {
-                top: 85%;
-                //
+            @media screen and (max-width: 1150px) {
+                // top: 85%;
+                display: none;
             }
         }
+
         .before_arrow {
             width: 200px;
             left: 10%;
-            @media screen and (max-width: 1024px) {
-                left: 11%;
+            @media screen and (max-width: 1400px) {
+                left: 5%;
             }
-            @media screen and (max-width: 425px) {
-                left: 6%;
+            @media screen and (max-width: 1200px) {
+                left: 2%;
             }
         }
+
         .after_arrow {
             width: 200px;
             right: 10%;
-            @media screen and (max-width: 1024px) {
-                right: 11%;
+            @media screen and (max-width: 1400px) {
+                right: 5%;
             }
-            @media screen and (max-width: 425px) {
-                top: 91%;
-                right: 6%;
+            @media screen and (max-width: 1200px) {
+                right: 2%;
             }
         }
+
+        .after_chevron,
+        .before_chevron {
+            position: absolute;
+            font-size: 60px;
+            color: #fff;
+            font-weight: 100;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            display: none;
+            @media screen and (max-width: 1150px) {
+                display: block;
+            }
+            @media screen and (max-width: 425px) {
+                font-size: 40px;
+            }
+        }
+
+        .before_chevron {
+            left: 2%;
+            @media screen and (max-width: 425px) {
+                left: 1%;
+            }
+        }
+
+        .after_chevron {
+            right: 2%;
+            @media screen and (max-width: 425px) {
+                right: 1%;
+            }
+        }
+
         .close_lightbox {
             position: absolute;
             top: 10%;
@@ -61,36 +95,47 @@
                 right: 10%;
             }
         }
+
         .lightbox_img {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgb(231, 231, 231);
-            width: 700px;
-            height: 500px;
-            padding: 30px;
+            width: 650px;
+            height: 650px;
             @media screen and (max-width: 1024px) {
                 width: 80%;
             }
-            @media screen and (max-width: 425px) {
-                width: 90%;
-            }
-            h1 {
-                font-size: 60px;
-                font-style: italic;
-                text-align: center;
-                @media screen and (max-width: 425px) {
-                    font-size: 40px;
-                }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
             }
         }
     }
+
+    .lightbox_text {
+        font-size: 24px;
+        color: #ffffff;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: -8%;
+        @media screen and (max-width: 425px) {
+            font-size: 18px;
+        }
+    }
+
+    .lightbox_reference {
+        left: 0%;
+    }
+
+    .lightbox_categorie {
+        right: 0%;
+    }
+
     &.active-lightbox {
         display: flex;
-    }
-    .lightbox_photo_text {
-        font-size: 30px;
-        color: #000000;
     }
 }
