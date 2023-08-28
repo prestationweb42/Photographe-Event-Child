@@ -33,18 +33,9 @@ add_theme_support('post-thumbnails');
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support('title-tag');
 
-/**
- * Enqueue child styles.
- */
-function child_enqueue_script()
-{
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/sass/style.css', array(), 100);
-    wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/js/main.js', array(), '0.0.1', true);
-}
 
-
-add_action('wp_enqueue_scripts', 'child_enqueue_script');
 //
+require_once get_template_directory() . '/inc/child_script_function.php';
 require_once get_template_directory() . '/inc/load_jquery_function.php';
 require_once get_template_directory() . '/inc/load_ajax_function.php';
 require_once get_template_directory() . '/inc/load_all_imgs_function.php';
