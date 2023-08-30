@@ -41,3 +41,4 @@ require_once get_template_directory() . '/inc/load_ajax_function.php';
 require_once get_template_directory() . '/inc/load_all_imgs_function.php';
 require_once get_template_directory() . '/inc/load_more_imgs_function.php';
 require_once get_template_directory() . '/inc/filtered_function.php';
+require_once get_template_directory() . '/inc/lightbox_script_function.php';
