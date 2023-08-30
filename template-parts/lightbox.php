@@ -1,21 +1,21 @@
 <div class="lightbox_overlay">
     <div class="lightbox_wrapper">
         <div class="before_arrow">
-            <img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/before.svg"
+            <img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/before.svg"
                 alt="icone précédent">
         </div>
         <div class="before_chevron">
             &#10216;
         </div>
         <div class="after_arrow">
-            <img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/after.svg"
+            <img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/after.svg"
                 alt="icone suivant">
         </div>
         <div class="after_chevron">
             &#10217;
         </div>
         <div class="close_lightbox">
-            <img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/close.png"
+            <img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/close.png"
                 alt="icone suivant">
         </div>
         <div class="lightbox_img">
