@@ -25,11 +25,11 @@ function load_more_imgs()
         <div class="icon_eye">
             <a href="<?php echo $post_url; ?>">
                 <img
-                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/icon-eye.svg">
             </a>
         </div>
         <div class="icon_fullscreen"><img
-                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
+                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/Icon_fullscreen.png">
         </div>
     </div>
     <?php $image_id = get_field('image'); // On récupère cette fois l'ID
