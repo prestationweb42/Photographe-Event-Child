@@ -189,6 +189,8 @@
             .post_img {
                 width: 49%;
                 height: 550px;
+                position: relative;
+                margin: 0 auto;
                 @media screen and (max-width: 768px) {
                     width: 90%;
                     margin: auto;
