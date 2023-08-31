@@ -356,6 +356,64 @@ table {
     opacity: 1;
   }
 }
+.post_img_overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transition: 300ms;
+}
+.post_img_overlay .icon_eye {
+  width: 46px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.post_img_overlay .icon_eye a {
+  width: 100%;
+  height: 100%;
+}
+.post_img_overlay .icon_eye a img {
+  width: 100%;
+  margin: 0;
+}
+.post_img_overlay .icon_fullscreen {
+  height: 35px;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.post_img_overlay .text_category,
+.post_img_overlay .text_reference {
+  width: auto;
+  font-size: 14px;
+  font-family: "Space Mono", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+}
+.post_img_overlay .text_reference {
+  bottom: 20px;
+  left: 20px;
+}
+.post_img_overlay .text_category {
+  bottom: 20px;
+  right: 20px;
+}
+
+.post_img:hover .post_img_overlay {
+  transform: scale(1);
+}
+
 .hero_section {
   width: 100%;
   height: 90vh;
@@ -616,62 +674,6 @@ table {
      object-fit: cover;
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
-}
-.section_post_imgs_container .post_img_overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  transform: scale(0);
-  transition: 300ms;
-}
-.section_post_imgs_container .post_img_overlay .icon_eye {
-  width: 46px;
-  height: 32px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.section_post_imgs_container .post_img_overlay .icon_eye a {
-  width: 100%;
-  height: 100%;
-}
-.section_post_imgs_container .post_img_overlay .icon_eye a img {
-  width: 100%;
-  margin: 0;
-}
-.section_post_imgs_container .post_img_overlay .icon_fullscreen {
-  height: 35px;
-  width: auto;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-}
-.section_post_imgs_container .post_img_overlay .text_category,
-.section_post_imgs_container .post_img_overlay .text_reference {
-  width: auto;
-  font-size: 14px;
-  font-family: "Space Mono", sans-serif;
-  text-transform: uppercase;
-  color: #fff;
-  position: absolute;
-}
-.section_post_imgs_container .post_img_overlay .text_reference {
-  bottom: 20px;
-  left: 20px;
-}
-.section_post_imgs_container .post_img_overlay .text_category {
-  bottom: 20px;
-  right: 20px;
-}
-.section_post_imgs_container .post_img:hover .post_img_overlay {
-  transform: scale(1);
 }
 
 .div_btn_load_more {
