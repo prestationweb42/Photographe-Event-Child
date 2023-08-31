@@ -41,18 +41,18 @@
             </div>
         </div>
     </section><!-- .section_post_contact -->
-    <!-- Affichage section contact -->
+    <!-- Contact section display -->
     <section class="section_post_other_imgs">
         <div class="post_other_text">
             <h3>Vous aimerez aussi</h3>
         </div>
         <article class="post_other_imgs_container">
             <?php
-                    // récupération de la catégorie
+                    // Category recovery
                     $category = array('mariage', 'concert', 'television', 'reception');
-                    // récupération du format
+                    // Format recovery
                     $format = array('paysage', 'portrait');
-                    // définition des arguments
+                    // definition of arguments
                     $args = array(
                         'orderby' => 'rand',
                         'post_type' => 'photo',
@@ -71,12 +71,32 @@
                             ),
                         ),
                     );
-                    // Définition / execution de wp query
+                    // Définition / Execution of wp query
                     $query = new WP_Query($args);
-                    // Boucle d'execution de wp query
+                    // Wp query execution loop
                     while ($query->have_posts()) : $query->the_post();
+                        $post_url = get_permalink();
                     ?>
             <div class="post_img">
+                <div class="post_img_overlay">
+                    <div class="text_category"><?php the_field('categories'); ?></div>
+                    <div class="text_reference"><?php the_field('reference'); ?></div>
+                    <div class="icon_eye">
+                        <a href="<?php echo $post_url; ?>" class="lightbox_trigger">
+                            <img
+                                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/icon-eye.svg">
+                        </a>
+                    </div>
+                    <div class="icon_fullscreen">
+                        <a href="<?php echo wp_get_attachment_url($post_thumbnails_ID); ?>" class=""
+                            data-lightbox="photos"
+                            data-title="<span><?php echo $references; ?></span><span><?php echo $categorie; ?></span>">
+                            <img
+                                src="
+                    http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/Icon_fullscreen.png">
+                        </a>
+                    </div>
+                </div>
                 <?php get_template_part('template-parts/post-img'); ?>
             </div>
             <?php endwhile;
