@@ -37,4 +37,16 @@ jQuery(function ($) {
         });
     });
 });
+// Display None Section Btn Load All
+$(document).ready(function () {
+    const sectionBtnLoadAllImgs = $(".section_btn_load_all_imgs");
+    const btnLoadAllImgs = $(".btn_load_all_imgs");
 
+    function displayNoneSectionBtn(el) {
+        btnLoadAllImgs.on("click", function () {
+            el.hide();
+        });
+    }
+
+    displayNoneSectionBtn(sectionBtnLoadAllImgs);
+});
