@@ -211,6 +211,7 @@ table {
   font-weight: 400;
   line-height: 23px;
   text-transform: uppercase;
+  color: #000;
 }
 .main .header_desktop .header__menu__desktop a:hover {
   font-weight: 700;
