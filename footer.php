@@ -1,6 +1,6 @@
 <footer id="footer_menu" class="footer_menu">
     <?php get_template_part('template-parts/modale'); ?>
-    <?php get_template_part('template-parts/lightbox'); ?>
+    <!--<?php get_template_part('template-parts/lightbox'); ?>-->
     <?php wp_nav_menu(
         array(
             'theme_location' => 'footer',
