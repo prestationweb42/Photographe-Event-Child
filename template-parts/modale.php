@@ -1,4 +1,4 @@
-<div class="popup_overlay">
+<div class="popup_modale">
     <div class="popup_container">
         <div class="popup_header_img">
             <img src="	http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/contact_header.png"
