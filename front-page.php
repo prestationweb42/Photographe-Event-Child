@@ -63,7 +63,7 @@
             $post_per_page = 2;
             // Argument definition
             $args = array(
-                // 'orderby' => 'title',
+                'orderby' => 'rand',
                 'post_type' => 'photo',
                 'posts_per_page' => $post_per_page,
                 // 'paged' => 10,
@@ -73,25 +73,30 @@
             // Execution loop of wp-query
             while ($query->have_posts()) : $query->the_post();
                 $post_url = get_permalink();
+                // $references = get_field('reference');
             ?>
-    <!-- Overlay Img -->
     <div class="post_img">
+        <!-- Overlay Img -->
         <div class="post_img_overlay">
-            <div class="text_category"><?php the_field('categories'); ?></div>
-            <div class="text_reference"><?php the_field('reference'); ?></div>
+            <div class="text_category">tata</div>
+            <div class="text_reference">toto
+            </div>
             <div class="icon_eye">
-                <a href="<?php echo $post_url; ?>">
+                <a href="<?php echo $post_url; ?>" class="lightbox_trigger">
                     <img
-                        src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/icon-eye.svg">
+                        src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/icon-eye.svg">
                 </a>
             </div>
-            <div class="icon_fullscreen"><img
-                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/imgs/Icon_fullscreen.png">
+            <div class="icon_fullscreen">
+                <img
+                    src="
+                    http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/Icon_fullscreen.png">
             </div>
         </div>
         <!-- Overlay Img -->
         <?php get_template_part('template-parts/post-img'); ?>
     </div>
+    <?php get_template_part('template-parts/lightbox'); ?>
     <?php endwhile;
             wp_reset_postdata() ?>
 </section><!-- section_post_imgs_container -->
