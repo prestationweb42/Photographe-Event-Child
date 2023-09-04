@@ -783,7 +783,7 @@ table {
   }
 }
 
-.popup_overlay {
+.popup_modale {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -796,7 +796,7 @@ table {
   left: 0;
   display: none;
 }
-.popup_overlay .popup_container {
+.popup_modale .popup_container {
   background: white;
   border: 5px solid #000;
   border-radius: 2px;
@@ -806,29 +806,29 @@ table {
   position: relative;
 }
 @media screen and (max-width: 425px) {
-  .popup_overlay .popup_container {
+  .popup_modale .popup_container {
     max-width: 90%;
   }
 }
-.popup_overlay .popup_container .popup_header_img {
+.popup_modale .popup_container .popup_header_img {
   width: 145%;
   height: 105%;
   margin-top: 10px;
   margin-bottom: 30px;
   transform: translateX(-15%);
 }
-.popup_overlay .popup_container .popup_header_img img {
+.popup_modale .popup_container .popup_header_img img {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.popup_overlay .popup_container.is-display {
+.popup_modale .popup_container.is-display {
   animation-name: scaleIn;
   animation-duration: 1000ms;
   animation-timing-function: ease-in-out;
 }
-.popup_overlay.is-open {
+.popup_modale.is-open {
   display: flex;
   animation: fadieIn 400ms ease-in-out; /* Ajouter une transition d'opacité */
 }
