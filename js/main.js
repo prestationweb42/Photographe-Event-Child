@@ -11,7 +11,7 @@ menuBurger.addEventListener("click", () => {
  * Animation contact Modale + Form
  */
 // Class Modal
-const popUpOverlay = document.querySelector(".popup_overlay");
+const popUpOverlay = document.querySelector(".popup_modale");
 const popUpContainer = document.querySelector(".popup_container");
 // Link Contact Menu Header
 const menuContactHeader = document.querySelector(
