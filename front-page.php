@@ -81,12 +81,12 @@
                         <div class="text_reference"><?php the_field('reference'); ?></div>
                         <div class="icon_eye">
                             <a href="<?php echo $post_url; ?>" class="lightbox_trigger">
-                                <img src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/icon-eye.svg">
+                                <img src="<?php echo get_template_directory_uri() . '/assets/img/icon-eye.svg' ?>">
                             </a>
                         </div>
                         <div class="icon_fullscreen">
                             <img src="
-                    http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/Icon_fullscreen.png">
+                    <?php echo get_template_directory_uri() . '/assets/img/Icon_fullscreen.png' ?>">
                         </div>
                     </div>
                     <!-- Overlay Img -->
@@ -96,7 +96,7 @@
             <?php endwhile;
             wp_reset_postdata() ?>
         </section><!-- section_post_imgs_container -->
-        <div class="div_btn_load_more">
+        <div class=" div_btn_load_more">
             <div class="btn_load_more">
                 <span id="loadMoreBtn">Charger Plus</span>
             </div>
