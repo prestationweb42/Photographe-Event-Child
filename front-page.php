@@ -2,9 +2,9 @@
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <section class="hero_section">
+<section class="hero_section">
 
-            <?php
+    <?php
             // récupération de la catégorie
             $category = array('mariage', 'concert', 'television', 'reception');
 
@@ -32,32 +32,33 @@
             // Boucle d'execution de wp query
             while ($query->have_posts()) : $query->the_post();
             ?>
-                <div class="hero_img">
-                    <?php get_template_part('template-parts/post-img'); ?>
-                </div>
-            <?php endwhile;
+    <div class="hero_img">
+        <?php get_template_part('template-parts/post-img'); ?>
+    </div>
+    <?php endwhile;
             wp_reset_postdata() ?>
 
-            <h1 class="hero_section_title">
-                <svg viewbox="0 0 10 2">
-                    <text x="5" y="1" text-anchor="middle" font-size="0.7" fill="none" stroke-width=".02" stroke="#fff" font-family="space mono" font-style="italic" font-weight=900 text-transform="uppercase">PHOTOGRAPHE
-                        EVENT
-                    </text>
-                </svg>
-            </h1>
-        </section><!-- .hero_section-->
+    <h1 class="hero_section_title">
+        <svg viewbox="0 0 10 2">
+            <text x="5" y="1" text-anchor="middle" font-size="0.7" fill="none" stroke-width=".02" stroke="#fff"
+                font-family="space mono" font-style="italic" font-weight=900 text-transform="uppercase">PHOTOGRAPHE
+                EVENT
+            </text>
+        </svg>
+    </h1>
+</section><!-- .hero_section-->
 
-        <!-- Include Section Filters -->
-        <?php get_template_part('template-parts/front-page/filters'); ?>
+<!-- Include Section Filters -->
+<?php get_template_part('template-parts/front-page/filters'); ?>
 
-        <!-- Section Display Results Filtered  -->
-        <section id="section_result_filtered" class="section_post_imgs_container">
-        </section>
+<!-- Section Display Results Filtered  -->
+<section id="section_result_filtered" class="section_post_imgs_container">
+</section>
 
 
-        <!-- Section Display More images -->
-        <section id="section_display_more" class="section_post_imgs_container display_none">
-            <?php
+<!-- Section Display More images -->
+<section id="section_display_more" class="section_post_imgs_container display_none">
+    <?php
             // Post per page definition
             $post_per_page = 2;
             // Argument definition
@@ -74,33 +75,33 @@
                 $post_url = get_permalink();
                 // $references = get_field('reference');
             ?>
-                <div class="post_img">
-                    <!-- Overlay Img -->
-                    <div class="post_img_overlay">
-                        <div class="text_category"><?php the_field('categories'); ?></div>
-                        <div class="text_reference"><?php the_field('reference'); ?></div>
-                        <div class="icon_eye">
-                            <a href="<?php echo $post_url; ?>" class="lightbox_trigger">
-                                <img src="<?php echo get_template_directory_uri() . '/assets/img/icon-eye.svg' ?>">
-                            </a>
-                        </div>
-                        <div class="icon_fullscreen">
-                            <img src="
-                    <?php echo get_template_directory_uri() . '/assets/img/Icon_fullscreen.png' ?>">
-                        </div>
-                    </div>
-                    <!-- Overlay Img -->
-                    <?php get_template_part('template-parts/post-img'); ?>
-                </div>
-                <?php get_template_part('template-parts/lightbox'); ?>
-            <?php endwhile;
-            wp_reset_postdata() ?>
-        </section><!-- section_post_imgs_container -->
-        <div class=" div_btn_load_more">
-            <div class="btn_load_more">
-                <span id="loadMoreBtn">Charger Plus</span>
+    <div class="post_img">
+        <!-- Overlay Img -->
+        <div class="post_img_overlay">
+            <div class="text_category"><?php the_field('categories'); ?></div>
+            <div class="text_reference"><?php the_field('reference'); ?></div>
+            <div class="icon_eye">
+                <a href="<?php echo $post_url; ?>" class="lightbox_trigger">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/icon-eye.svg' ?>">
+                </a>
             </div>
-        </div><!-- .div_btn_load_more -->
+            <div class="icon_fullscreen">
+                <img src="
+                    <?php echo get_template_directory_uri() . '/assets/img/Icon_fullscreen.png' ?>">
+            </div>
+        </div>
+        <!-- Overlay Img -->
+        <?php get_template_part('template-parts/post-img'); ?>
+    </div>
+    <?php get_template_part('template-parts/lightbox'); ?>
+    <?php endwhile;
+            wp_reset_postdata() ?>
+</section><!-- section_post_imgs_container -->
+<div class="div_btn_load_more">
+    <div class="btn_load_more">
+        <span id="loadMoreBtn">Charger Plus</span>
+    </div>
+</div><!-- .div_btn_load_more -->
 
 <?php endwhile;
 endif; ?>
