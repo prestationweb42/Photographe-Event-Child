@@ -45,7 +45,6 @@ add_theme_support('title-tag');
 
 
 //
-require_once get_template_directory() . '/inc/child_script_function.php';
 require_once get_template_directory() . '/inc/load_jquery_function.php';
 require_once get_template_directory() . '/inc/load_ajax_function.php';
 require_once get_template_directory() . '/inc/load_all_imgs_function.php';
