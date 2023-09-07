@@ -7,6 +7,7 @@ function ajax_scripts()
 {
     // Register the script
     wp_enqueue_script('jquery-script', get_stylesheet_directory_uri() . '/js/j-query.js', array('jquery'), false, true);
+    wp_enqueue_script('lightbox-script', get_stylesheet_directory_uri() . '/js/lightbox.js', array('jquery'), '0.0.1', true);
 
     // Localize the script with new data
     $script_data_array = array(
