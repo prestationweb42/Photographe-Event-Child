@@ -21,27 +21,18 @@ lightboxOpen.forEach(function (div, index) {
         console.log(imageTitre);
         // img
         let imageSrc = div.getAttribute("data-image");
-        if (imageSrc) {
-            let lightboxImage =
-                lightboxOverlay.querySelector(".lightbox__image");
-            if (lightboxImage) {
-                lightboxImage.setAttribute("src", imageSrc);
-            } else {
-                console.log("Élément .lightbox__image introuvable.");
-            }
-        } else {
-            console.log("Attribut data-image introuvable ou vide.");
-        }
+        let lightboxImage = lightboxOverlay.querySelector(".lightbox__image");
+        lightboxImage.setAttribute("src", imageSrc);
+
         // categorie
         let imagecateg = div.getAttribute("data-categorie");
-        console.log(imagecateg);
         let lightboxcateg = lightboxOverlay.querySelector(
             ".lightbox_categorie"
         );
         lightboxcateg.textContent = imagecateg;
+
         // reference
         let imageRef = div.getAttribute("data-reference");
-        console.log(imageRef);
         let lightboxReference = lightboxOverlay.querySelector(
             ".lightbox_reference"
         );
