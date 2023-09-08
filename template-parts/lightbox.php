@@ -16,23 +16,9 @@
             <img src="<?php echo get_template_directory_uri() . '/assets/img/close.png' ?>" alt="icone fermer">
         </div>
         <div class="lightbox_img">
-            <?php $args = array(
-                'post_type' => 'photo',
-                'posts_per_page' => 1,
-            );
-
-            $lightbox_query = new WP_Query($args); ?>
-            <?php if ($lightbox_query->have_posts()) : while ($lightbox_query->have_posts()) : $lightbox_query->the_post(); ?>
-                    <div class=" lightbox_text lightbox_reference"><?php the_field('reference'); ?>
-                    </div>
-                    <div class="lightbox_text lightbox_categorie"><?php the_field('categories'); ?></div>
-                    <?php $image_id = get_field('image');
-                    if ($image_id) {
-                        echo wp_get_attachment_image($image_id, 'large');
-                    } ?>
-            <?php endwhile;
-                wp_reset_postdata();
-            endif; ?>
+            <img class="lightbox__image" src="" alt="Image">
+            <div class=" lightbox_text lightbox_reference"></div>
+            <div class="lightbox_text lightbox_categorie"></div>
         </div><!-- .lightbox_img-->
     </div><!-- .lightbox_wrapper-->
 </div><!-- .lightbox_overlay-->
