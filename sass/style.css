@@ -890,6 +890,10 @@ table {
     max-width: 97%;
   }
 }
+.wpcf7-form .form_reference span input {
+  text-transform: uppercase;
+  font-size: 22px;
+}
 .wpcf7-form .form_textarea {
   width: 260px;
   margin: 30px auto 20px auto;

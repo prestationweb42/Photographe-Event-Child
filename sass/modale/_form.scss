@@ -31,6 +31,11 @@
             }
         }
     }
+    // Styles form_reference
+    .form_reference span input {
+        text-transform: uppercase;
+        font-size: 22px;
+    }
     // Styles Textarea
     .form_textarea {
         width: 260px;
