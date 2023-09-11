@@ -24,12 +24,11 @@ function load_more_imgs()
         <div class="text_reference">Reference : <?php the_field('reference'); ?></div>
         <div class="icon_eye">
             <a href="<?php echo $post_url; ?>">
-                <img
-                    src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/icon-eye.svg">
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/icon-eye.svg' ?>">
             </a>
         </div>
         <div class="icon_fullscreen"><img
-                src="http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/Icon_fullscreen.png">
+                src="<?php echo get_template_directory_uri() . '/assets/img/Icon_fullscreen.png' ?>">
         </div>
     </div>
     <?php $image_id = get_field('image'); // On récupère cette fois l'ID
