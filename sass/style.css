@@ -1292,18 +1292,13 @@ table {
     display: none;
   }
 }
-#main_single_photo_page .section_post_contact_nav .post_photo_navigation #post_photo_img {
-  width: 81px;
-  height: 71px;
-  border: 1px solid black;
-}
-#main_single_photo_page .section_post_contact_nav .post_photo_navigation #post_photo_img .post_photo {
-  width: 40px;
-}
-#main_single_photo_page .section_post_contact_nav .post_photo_navigation #post_photo_nav {
+#main_single_photo_page .section_post_contact_nav .post_photo_navigation .post_links {
   width: 81px;
   display: flex;
   justify-content: space-between;
+}
+#main_single_photo_page .section_post_contact_nav .post_photo_navigation #dynamicImage {
+  transition: all 0.3s ease-in-out;
 }
 #main_single_photo_page .section_post_other_imgs {
   width: 100%;
