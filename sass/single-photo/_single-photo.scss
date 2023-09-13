@@ -159,18 +159,13 @@
             @media screen and (max-width: 768px) {
                 display: none;
             }
-            #post_photo_img {
-                width: 81px;
-                height: 71px;
-                border: 1px solid black;
-                .post_photo {
-                    width: 40px;
-                }
-            }
-            #post_photo_nav{
+            .post_links {
                 width: 81px;
                 display: flex;
                 justify-content: space-between;
+            }
+            #dynamicImage {
+                transition: all 0.3s ease-in-out;
             }
         }
     }
