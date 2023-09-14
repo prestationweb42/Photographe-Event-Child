@@ -57,6 +57,7 @@
                         data-image="<?php echo $next_image; ?>"><img
                             src="<?php echo get_template_directory_uri(); ?>/assets/img/next_arrow.png"></a>
                     <?php endif; ?>
+
                 </div>
             </div>
         </div><!-- .post_photo_navigation-->
