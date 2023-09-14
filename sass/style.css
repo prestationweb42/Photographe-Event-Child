@@ -953,7 +953,9 @@ table {
   z-index: 999;
   top: 0;
   left: 0;
-  display: none;
+  display: none; /* initialement caché */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 .lightbox_overlay .lightbox_wrapper {
   position: relative;
@@ -1096,6 +1098,9 @@ table {
   right: 0%;
 }
 .lightbox_overlay.active-lightbox {
+  opacity: 1; /* Ajoutez cette ligne */
+}
+.lightbox_overlay.show-lightbox {
   display: flex;
 }
 

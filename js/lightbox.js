@@ -10,12 +10,22 @@ let closeLightbox = document.querySelector(".close_lightbox");
 // Function Close Lightbox
 closeLightbox.addEventListener("click", () => {
     lightboxOverlay.classList.remove("active-lightbox");
+    lightboxOverlay.addEventListener(
+        "transitionend",
+        function () {
+            lightboxOverlay.classList.remove("show-lightbox");
+        },
+        { once: true }
+    );
 });
 // Function Open Lightbox
 lightboxOpen.forEach(function (div, index) {
     div.addEventListener("click", e => {
         e.preventDefault();
-        lightboxOverlay.classList.add("active-lightbox");
+        lightboxOverlay.classList.add("show-lightbox");
+        setTimeout(() => {
+            lightboxOverlay.classList.add("active-lightbox");
+        }, 50);
         //
         let imageTitre = div.getAttribute("data-title");
         console.log(imageTitre);
