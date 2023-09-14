@@ -7,7 +7,7 @@ add_filter('wpcf7_form_tag', function ($tag) {
 
     if ('your-reference' === $name) {
         global $post;
-        $reference_value = get_post_meta($post->ID, 'reference', true); // Remplacez 'reference' par le bon meta key.
+        $reference_value = get_post_meta($post->ID, 'reference', true); 
 
         if ($reference_value) {
             if (is_object($tag)) {
