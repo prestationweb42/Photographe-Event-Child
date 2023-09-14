@@ -38,7 +38,7 @@
                     $current_image = get_the_post_thumbnail_url(get_the_ID());
                     ?>
                     <!-- Img -->
-                    <img id="dynamicImage" src="<?php echo $current_image; ?>" alt="Current Post" width="81" height="81" />
+                    <img id="dynamicImage" src="<?php echo $current_image; ?>" alt="Current Post" width="81" height="81" style="transition: opacity 0.5s;" />
                     <!-- Links -->
                     <div class="post_links">
                         <div class="prev_post_img">

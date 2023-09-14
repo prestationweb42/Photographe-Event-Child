@@ -10,19 +10,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (prevLink) {
         prevLink.addEventListener("mouseover", function () {
-            dynamicImage.src = this.getAttribute("data-image");
+            dynamicImage.style.opacity = "0";
+            setTimeout(() => {
+                dynamicImage.src = this.getAttribute("data-image");
+            }, 50);
         });
         prevLink.addEventListener("mouseout", function () {
-            dynamicImage.src = originalImageSrc;
+            dynamicImage.style.opacity = "0";
+            setTimeout(() => {
+                dynamicImage.src = originalImageSrc;
+                dynamicImage.style.opacity = "1";
+            }, 50);
         });
     }
 
     if (nextLink) {
         nextLink.addEventListener("mouseover", function () {
-            dynamicImage.src = this.getAttribute("data-image");
+            dynamicImage.style.opacity = "0";
+            setTimeout(() => {
+                dynamicImage.src = this.getAttribute("data-image");
+            }, 50);
         });
         nextLink.addEventListener("mouseout", function () {
-            dynamicImage.src = originalImageSrc;
+            dynamicImage.style.opacity = "0";
+            setTimeout(() => {
+                dynamicImage.src = originalImageSrc;
+                dynamicImage.style.opacity = "1";
+            }, 50);
         });
     }
 });

@@ -1297,8 +1297,9 @@ table {
   display: flex;
   justify-content: space-between;
 }
-#main_single_photo_page .section_post_contact_nav .post_photo_navigation #dynamicImage {
-  transition: all 0.3s ease-in-out;
+#main_single_photo_page .section_post_contact_nav .post_photo_navigation .image-transition {
+  transition: all 0.5s ease-in-out;
+  width: 200px;
 }
 #main_single_photo_page .section_post_other_imgs {
   width: 100%;
