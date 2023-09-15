@@ -7,7 +7,7 @@ let lightboxOverlay = document.querySelector(".lightbox_overlay");
 let lightboxOpen = document.querySelectorAll(".icon_fullscreen");
 // Close Lightbox - Btn Class
 let closeLightbox = document.querySelector(".close_lightbox");
-// Function Close Lightbox
+// Function Close Lightbox + Animation
 closeLightbox.addEventListener("click", () => {
     lightboxOverlay.classList.remove("active-lightbox");
     lightboxOverlay.addEventListener(
@@ -18,7 +18,7 @@ closeLightbox.addEventListener("click", () => {
         { once: true }
     );
 });
-// Function Open Lightbox
+// Function Open Lightbox + Animation
 lightboxOpen.forEach(function (div, index) {
     div.addEventListener("click", e => {
         e.preventDefault();
