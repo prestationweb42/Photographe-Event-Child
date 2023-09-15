@@ -89,12 +89,15 @@
 
         .close_lightbox {
             position: absolute;
-            top: 10%;
-            right: 20%;
+            top: 3%;
+            right: 22%;
             cursor: pointer;
             @media screen and (max-width: 1024px) {
-                top: 20%;
-                right: 10%;
+                top: 5%;
+                right: 5%;
+            }
+            @media screen and (max-width: 425px) {
+                top: 10%;
             }
         }
 
@@ -104,10 +107,15 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgb(231, 231, 231);
-            width: 650px;
-            height: 650px;
+            width: auto;
+            height: 800px;
             @media screen and (max-width: 1024px) {
                 width: 80%;
+                height: 750px;
+            }
+            @media screen and (max-width: 425px) {
+                // width: 80%;
+                height: 550px;
             }
             img {
                 width: 100%;
@@ -123,24 +131,32 @@
         color: #ffffff;
         text-transform: uppercase;
         position: absolute;
-        bottom: -8%;
         @media screen and (max-width: 425px) {
             font-size: 18px;
         }
     }
 
+    .lightbox_title {
+        width: 100%;
+        top: -4%;
+        display: flex;
+        justify-content: center;
+    }
+
     .lightbox_reference {
         left: 0%;
+        bottom: -4%;
     }
 
     .lightbox_categorie {
         right: 0%;
+        bottom: -4%;
     }
 
     &.active-lightbox {
         opacity: 1; /* Ajoutez cette ligne */
     }
-    
+
     &.show-lightbox {
         display: flex;
     }

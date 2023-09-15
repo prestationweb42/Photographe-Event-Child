@@ -1047,14 +1047,19 @@ table {
 }
 .lightbox_overlay .lightbox_wrapper .close_lightbox {
   position: absolute;
-  top: 10%;
-  right: 20%;
+  top: 3%;
+  right: 22%;
   cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
   .lightbox_overlay .lightbox_wrapper .close_lightbox {
-    top: 20%;
-    right: 10%;
+    top: 5%;
+    right: 5%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .close_lightbox {
+    top: 10%;
   }
 }
 .lightbox_overlay .lightbox_wrapper .lightbox_img {
@@ -1063,12 +1068,18 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgb(231, 231, 231);
-  width: 650px;
-  height: 650px;
+  width: auto;
+  height: 800px;
 }
 @media screen and (max-width: 1024px) {
   .lightbox_overlay .lightbox_wrapper .lightbox_img {
     width: 80%;
+    height: 750px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .lightbox_overlay .lightbox_wrapper .lightbox_img {
+    height: 550px;
   }
 }
 .lightbox_overlay .lightbox_wrapper .lightbox_img img {
@@ -1084,18 +1095,25 @@ table {
   color: #ffffff;
   text-transform: uppercase;
   position: absolute;
-  bottom: -8%;
 }
 @media screen and (max-width: 425px) {
   .lightbox_overlay .lightbox_text {
     font-size: 18px;
   }
 }
+.lightbox_overlay .lightbox_title {
+  width: 100%;
+  top: -4%;
+  display: flex;
+  justify-content: center;
+}
 .lightbox_overlay .lightbox_reference {
   left: 0%;
+  bottom: -4%;
 }
 .lightbox_overlay .lightbox_categorie {
   right: 0%;
+  bottom: -4%;
 }
 .lightbox_overlay.active-lightbox {
   opacity: 1; /* Ajoutez cette ligne */
