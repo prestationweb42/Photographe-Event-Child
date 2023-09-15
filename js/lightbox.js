@@ -9,8 +9,10 @@ let lightboxOpen = document.querySelectorAll(".icon_fullscreen");
 let closeLightbox = document.querySelector(".close_lightbox");
 // Btn Before
 let beforeArrow = document.querySelector(".before_arrow");
+let beforeChevron = document.querySelector(".before_chevron");
 // Btn After
 let afterArrow = document.querySelector(".after_arrow");
+let afterChevron = document.querySelector(".after_chevron");
 
 // Function Update Lightbox
 function updateLightbox(div) {
@@ -88,8 +90,8 @@ lightboxOpen.forEach(function (div, index) {
     });
 });
 
-// Function Navigation
-beforeArrow.addEventListener("click", () => {
+// Function Before Navigation
+function navigateBefore() {
     let currentIndex = parseInt(
         lightboxOverlay.getAttribute("data-current-index"),
         10
@@ -99,9 +101,13 @@ beforeArrow.addEventListener("click", () => {
         lightboxOverlay.setAttribute("data-current-index", currentIndex);
         updateLightbox(lightboxOpen[currentIndex]);
     }
-});
+}
+// Click Before Navigation
+beforeArrow.addEventListener("click", navigateBefore);
+beforeChevron.addEventListener("click", navigateBefore);
 
-afterArrow.addEventListener("click", () => {
+// Function After Navigation
+function navigateAfter() {
     let currentIndex = parseInt(
         lightboxOverlay.getAttribute("data-current-index"),
         10
@@ -111,4 +117,7 @@ afterArrow.addEventListener("click", () => {
         lightboxOverlay.setAttribute("data-current-index", currentIndex);
         updateLightbox(lightboxOpen[currentIndex]);
     }
-});
+}
+// Click After Navigation
+afterArrow.addEventListener("click", navigateAfter);
+afterChevron.addEventListener("click", navigateAfter);
