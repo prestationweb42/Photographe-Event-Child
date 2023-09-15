@@ -18,7 +18,7 @@
 <section id="section_display_more" class="section_post_imgs_container display_none">
     <?php
             // Post per page definition
-            $post_per_page = 2;
+            $post_per_page = 6;
             // Argument definition
             $args = array(
                 'orderby' => 'rand',
