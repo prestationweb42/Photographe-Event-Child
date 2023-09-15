@@ -18,6 +18,7 @@
         <div class="lightbox_img">
             <img class="lightbox__image" src="" alt="Image">
             <div class=" lightbox_text lightbox_reference"></div>
+            <div class="lightbox_text lightbox_title"></div>
             <div class="lightbox_text lightbox_categorie"></div>
         </div><!-- .lightbox_img-->
     </div><!-- .lightbox_wrapper-->
