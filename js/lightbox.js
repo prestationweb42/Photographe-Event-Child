@@ -12,14 +12,22 @@ let beforeArrow = document.querySelector(".before_arrow");
 // Btn After
 let afterArrow = document.querySelector(".after_arrow");
 
+// Function Update Lightbox
 function updateLightbox(div) {
-    let lightboxImage = lightboxOverlay.querySelector(".lightbox__image");
+    // Update Categorie
+    let lightboxImage = lightboxOverlay.querySelector(".lightbox_image");
     let imageSrc = div.getAttribute("data-image");
     lightboxImage.setAttribute("src", imageSrc);
 
+    // Update Categorie
     let lightboxcateg = lightboxOverlay.querySelector(".lightbox_categorie");
     let imagecateg = div.getAttribute("data-categorie");
     lightboxcateg.textContent = imagecateg;
+
+    // Update Title
+    let lightboxTitle = lightboxOverlay.querySelector(".lightbox_title");
+    let imageTitle = div.getAttribute("data-title");
+    lightboxTitle.textContent = imageTitle;
 
     let lightboxReference = lightboxOverlay.querySelector(
         ".lightbox_reference"
@@ -53,11 +61,10 @@ lightboxOpen.forEach(function (div, index) {
         let imageTitre = div.getAttribute("data-title");
         let lightboxTitle = lightboxOverlay.querySelector(".lightbox_title");
         lightboxTitle.textContent = imageTitre;
-        console.log(imageTitre);
 
         // Img
         let imageSrc = div.getAttribute("data-image");
-        let lightboxImage = lightboxOverlay.querySelector(".lightbox__image");
+        let lightboxImage = lightboxOverlay.querySelector(".lightbox_image");
         lightboxImage.setAttribute("src", imageSrc);
 
         // Categorie
