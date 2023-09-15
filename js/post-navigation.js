@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let dynamicImage = document.getElementById("dynamicImage");
     let prevLink = document.getElementById("prevLink");
     let nextLink = document.getElementById("nextLink");
+    let originalImageSrc = null;
 
-    let originalImageSrc = dynamicImage.src;
+    if (document.body.classList.contains("single-photo")) {
+        originalImageSrc = dynamicImage.src;
+    }
 
     if (prevLink) {
         prevLink.addEventListener("mouseover", function () {
