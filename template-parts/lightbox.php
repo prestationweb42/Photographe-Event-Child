@@ -16,7 +16,7 @@
             <img src="<?php echo get_template_directory_uri() . '/assets/img/close.png' ?>" alt="icone fermer">
         </div>
         <div class="lightbox_img">
-            <img class="lightbox__image" src="" alt="Image">
+            <img class="lightbox_image" src="" alt="Image">
             <div class=" lightbox_text lightbox_reference"></div>
             <div class="lightbox_text lightbox_title"></div>
             <div class="lightbox_text lightbox_categorie"></div>
