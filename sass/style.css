@@ -795,6 +795,13 @@ table {
   top: 0;
   left: 0;
   display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+.popup_modale.is-visible {
+  opacity: 1;
+  visibility: visible;
 }
 .popup_modale .popup_container {
   background: white;
@@ -804,6 +811,11 @@ table {
   height: auto;
   overflow-x: hidden;
   position: relative;
+}
+.popup_modale .popup_container.is-display {
+  animation-name: scaleIn;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
 }
 @media screen and (max-width: 425px) {
   .popup_modale .popup_container {
@@ -823,33 +835,14 @@ table {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.popup_modale .popup_container.is-display {
-  animation-name: scaleIn;
-  animation-duration: 1000ms;
-  animation-timing-function: ease-in-out;
-}
-.popup_modale.is-open {
-  display: flex;
-  animation: fadieIn 400ms ease-in-out; /* Ajouter une transition d'opacité */
-}
 
 @keyframes scaleIn {
   from {
     scale: 0;
     opacity: 0;
-    rotate: -180deg;
   }
   to {
     scale: 1;
-    opacity: 1;
-    rotate: 0deg;
-  }
-}
-@keyframes fadieIn {
-  from {
-    opacity: 0;
-  }
-  to {
     opacity: 1;
   }
 }
