@@ -7,10 +7,9 @@ const headerTitleLink = document.querySelector("#header_title_link");
 menuBurger.addEventListener("click", () => {
     menuBurger.classList.toggle("is-active");
     menuMobile.classList.toggle("is-active");
-    // headerTitleLink.classList.toggle("fade-in");
 });
 /**
- * Animation contact Modale + Form
+ * Animation contact Modale + Contact Form
  */
 // Class Modal
 const popUpOverlay = document.querySelector(".popup_modale");
@@ -25,7 +24,9 @@ const menuContactMobile = document.querySelector(
 );
 // function Open Modale Form
 function toggleModal() {
-    popUpOverlay.classList.toggle("is-open");
+    popUpOverlay.style.display = "flex";
+    void popUpOverlay.offsetWidth;
+    popUpOverlay.classList.add("is-visible");
     popUpContainer.classList.toggle("is-display");
 }
 // Open Modale Form
@@ -39,7 +40,7 @@ if (contactSinglePageModal) {
 }
 // Function Close Modale Form
 function closeModal() {
-    popUpOverlay.classList.remove("is-open");
+    popUpOverlay.classList.remove("is-visible");
     popUpContainer.classList.remove("is-display");
 }
 // Listener event close modal click outside
@@ -53,9 +54,18 @@ document.addEventListener("keydown", event => {
     if (
         event.key === "Escape" &&
         popUpOverlay.classList.contains("is-open") &&
-        popUpContainer.classList.contains("is-display")
+        popUpContainer.classList.contains("is-visible")
     ) {
         closeModal();
+    }
+});
+// Listener for transition end to hide the modal
+popUpOverlay.addEventListener("transitionend", function (event) {
+    if (
+        event.propertyName === "opacity" &&
+        !popUpOverlay.classList.contains("is-visible")
+    ) {
+        popUpOverlay.style.display = "none";
     }
 });
 /**
