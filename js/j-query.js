@@ -1,3 +1,4 @@
+// Front Page Load More Posts
 var front_page = 2;
 jQuery(function ($) {
     $("body").on("click", ".btn_load_more", function () {
@@ -17,7 +18,7 @@ jQuery(function ($) {
         });
     });
 });
-single - page.php;
+// Single Page Load All Posts
 var single_page = 2;
 jQuery(function ($) {
     $("body").on("click", ".btn_load_all_imgs", function () {
