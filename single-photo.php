@@ -72,26 +72,17 @@
         </div>
         <article class="post_other_imgs_container">
             <?php
-                    // Category recovery
-                    $category = array('mariage', 'concert', 'television', 'reception');
-                    // Format recovery
-                    $format = array('paysage', 'portrait');
+                    // Category recovery 
+                    $current_category = get_field('categories');
                     // definition of arguments
                     $args = array(
-                        'orderby' => 'rand',
                         'post_type' => 'photo',
-                        'posts_per_page' => 2,
+                        'posts_per_page' => -1,
                         'tax_query' => array(
-                            'relation' => 'AND',
-                            array(
-                                'taxonomy' => 'format',
-                                'field' => 'slug',
-                                'terms' => $format,
-                            ),
                             array(
                                 'taxonomy' => 'categorie',
-                                'field' => 'slug',
-                                'terms' => $category,
+                                'field'    => 'slug',
+                                'terms' => $current_category,
                             ),
                         ),
                     );
