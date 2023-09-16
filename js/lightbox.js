@@ -50,44 +50,47 @@ closeLightbox.addEventListener("click", () => {
     );
 });
 // Function Open Lightbox + Animation
-lightboxOpen.forEach(function (div, index) {
-    div.addEventListener("click", e => {
-        e.preventDefault();
-        // Animation Open Lightbox
-        lightboxOverlay.classList.add("show-lightbox");
-        setTimeout(() => {
-            lightboxOverlay.classList.add("active-lightbox");
-        }, 50);
+document.addEventListener("click", function (e) {
+    const div = e.target.closest(".icon_fullscreen");
+    if (!div) return;
+    e.preventDefault();
+    // Animation Open Lightbox
+    lightboxOverlay.classList.add("show-lightbox");
+    setTimeout(() => {
+        lightboxOverlay.classList.add("active-lightbox");
+    }, 50);
 
-        // Title
-        let imageTitre = div.getAttribute("data-title");
-        let lightboxTitle = lightboxOverlay.querySelector(".lightbox_title");
-        lightboxTitle.textContent = imageTitre;
+    // Title
+    let imageTitre = div.getAttribute("data-title");
+    let lightboxTitle = lightboxOverlay.querySelector(".lightbox_title");
+    lightboxTitle.textContent = imageTitre;
 
-        // Img
-        let imageSrc = div.getAttribute("data-image");
-        let lightboxImage = lightboxOverlay.querySelector(".lightbox_image");
-        lightboxImage.setAttribute("src", imageSrc);
+    // Img
+    let imageSrc = div.getAttribute("data-image");
+    let lightboxImage = lightboxOverlay.querySelector(".lightbox_image");
+    lightboxImage.setAttribute("src", imageSrc);
 
-        // Categorie
-        let imagecateg = div.getAttribute("data-categorie");
-        let lightboxcateg = lightboxOverlay.querySelector(
-            ".lightbox_categorie"
-        );
-        lightboxcateg.textContent = imagecateg;
+    // Categorie
+    let imagecateg = div.getAttribute("data-categorie");
+    let lightboxcateg = lightboxOverlay.querySelector(".lightbox_categorie");
+    lightboxcateg.textContent = imagecateg;
 
-        // Reference
-        let imageRef = div.getAttribute("data-reference");
-        let lightboxReference = lightboxOverlay.querySelector(
-            ".lightbox_reference"
-        );
-        lightboxReference.textContent = imageRef;
+    // Reference
+    let imageRef = div.getAttribute("data-reference");
+    let lightboxReference = lightboxOverlay.querySelector(
+        ".lightbox_reference"
+    );
+    lightboxReference.textContent = imageRef;
 
-        // Set Attribute Current Index
-        lightboxOverlay.setAttribute("data-current-index", index);
-        //
-        updateLightbox(div);
-    });
+    // Trouver l'index actuel de 'div' dans la liste des .icon_fullscreen
+    const currentIndex = Array.from(
+        document.querySelectorAll(".icon_fullscreen")
+    ).indexOf(div);
+
+    // Set Attribute Current Index
+    lightboxOverlay.setAttribute("data-current-index", currentIndex);
+    //
+    updateLightbox(div);
 });
 
 // Function Before Navigation
