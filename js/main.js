@@ -1,4 +1,6 @@
-// **** Animation header Btn Menu Burger ****
+/**
+ * Animation header Btn Menu Burger
+ */
 const menuBurger = document.querySelector(".btn_menu");
 const menuMobile = document.querySelector(".header_mobile");
 const headerTitleLink = document.querySelector("#header_title_link");
