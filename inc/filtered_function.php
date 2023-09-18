@@ -54,24 +54,8 @@ function filter_results()
             $filtered_query->the_post();
             $post_url = get_permalink();
 ?>
-<div class="post_img">
-    <div class="post_img_overlay">
-        <div class="text_category"><?php the_field('categories'); ?></div>
-        <div class="text_reference"><?php the_field('reference'); ?></div>
-        <div class="icon_eye">
-            <a href="<?php echo $post_url; ?>">
-                <img src="<?php echo get_template_directory_uri() .  '/assets/img/icon-eye.svg' ?>">
-            </a>
-        </div>
-        <div class="icon_fullscreen">
-            <img src="<?php echo get_template_directory_uri() .  '/assets/img/Icon_fullscreen.png' ?>">
-        </div>
-    </div>
-    <?php $image_id = get_field('image');
-                if ($image_id) {
-                    echo wp_get_attachment_image($image_id, 'large');
-                } ?>
-</div>
+<!-- Template Post Card -->
+<?php get_template_part('template-parts/post-card'); ?>
 <?php
         }
         wp_reset_postdata();
