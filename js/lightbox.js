@@ -13,6 +13,12 @@ let beforeChevron = document.querySelector(".before_chevron");
 // Btn After
 let afterArrow = document.querySelector(".after_arrow");
 let afterChevron = document.querySelector(".after_chevron");
+// Create variable to stock elements .icon_fullscreen
+let allLightboxDivs = Array.from(document.querySelectorAll(".icon_fullscreen"));
+// Update variable when add suplly elements
+function updateLightboxArray() {
+    allLightboxDivs = Array.from(document.querySelectorAll(".icon_fullscreen"));
+}
 
 // Function Update Lightbox
 function updateLightbox(div) {
@@ -99,10 +105,10 @@ function navigateBefore() {
         lightboxOverlay.getAttribute("data-current-index"),
         10
     );
-    if (currentIndex > 0) {
+    if (currentIndex > 0 && currentIndex < allLightboxDivs.length) {
         currentIndex--;
         lightboxOverlay.setAttribute("data-current-index", currentIndex);
-        updateLightbox(lightboxOpen[currentIndex]);
+        updateLightbox(allLightboxDivs[currentIndex]);
     }
 }
 // Click Before Navigation
@@ -115,10 +121,10 @@ function navigateAfter() {
         lightboxOverlay.getAttribute("data-current-index"),
         10
     );
-    if (currentIndex < lightboxOpen.length - 1) {
+    if (currentIndex >= 0 && currentIndex < allLightboxDivs.length - 1) {
         currentIndex++;
         lightboxOverlay.setAttribute("data-current-index", currentIndex);
-        updateLightbox(lightboxOpen[currentIndex]);
+        updateLightbox(allLightboxDivs[currentIndex]);
     }
 }
 // Click After Navigation
