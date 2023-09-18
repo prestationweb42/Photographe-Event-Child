@@ -2,7 +2,7 @@
 var front_page;
 var alreadyDisplayedPosts = [];
 // Add Post IDs -> alreadyDisplayedPosts each load posts
-function updateAlreadyDisplayedPosts() {
+function updateAlreadyDisplayedFrontPosts() {
     $(".section_post_imgs_container .post_img").each(function () {
         const postId = $(this).data("post-id");
         if (alreadyDisplayedPosts.indexOf(postId) === -1) {
@@ -13,7 +13,7 @@ function updateAlreadyDisplayedPosts() {
 
 jQuery(function ($) {
     // Call the function Posts IDs
-    updateAlreadyDisplayedPosts();
+    updateAlreadyDisplayedFrontPosts();
     $("body").on("click", ".btn_load_more", function () {
         var data = {
             action: "load_front_posts_by_ajax",
@@ -26,7 +26,7 @@ jQuery(function ($) {
             if ($.trim(response) != "") {
                 $("#section_result_filtered").append(response);
                 updateLightboxArray();
-                updateAlreadyDisplayedPosts();
+                updateAlreadyDisplayedFrontPosts();
                 front_page++;
             } else {
                 $(".btn_load_more").hide();
@@ -34,9 +34,23 @@ jQuery(function ($) {
         });
     });
 });
+
 // Single Page Load All Posts
-var single_page = 2;
+var single_page;
+var alreadyDisplayedSinglePosts = [];
+// Add Post IDs -> alreadyDisplayedPosts each load posts
+function updateAlreadyDisplayedSinglePosts() {
+    $(".post_other_imgs_container .post_img").each(function () {
+        const postId = $(this).data("post-id");
+        if (alreadyDisplayedPosts.indexOf(postId) === -1) {
+            alreadyDisplayedPosts.push(postId);
+        }
+    });
+}
+
 jQuery(function ($) {
+    // Call the function Posts IDs
+    updateAlreadyDisplayedSinglePosts();
     $("body").on("click", ".btn_load_all_imgs", function () {
         var data = {
             action: "load_single_posts_by_ajax",
@@ -49,6 +63,7 @@ jQuery(function ($) {
             if ($.trim(response) != "") {
                 $(".post_other_imgs_container").append(response);
                 updateLightboxArray();
+                updateAlreadyDisplayedSinglePosts();
                 single_page++;
             } else {
                 $(".btn_load_all_imgs").hide();
