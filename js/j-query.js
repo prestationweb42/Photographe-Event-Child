@@ -10,7 +10,7 @@ jQuery(function ($) {
 
         $.post(photo.ajaxurl, data, function (response) {
             if ($.trim(response) != "") {
-                $("#section_display_more").append(response);
+                $("#section_result_filtered").append(response);
                 front_page++;
             } else {
                 $(".btn_load_more").hide();
