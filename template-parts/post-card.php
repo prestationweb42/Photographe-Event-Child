@@ -1,4 +1,4 @@
-<div class="post_img">
+<div class="post_img" data-post-id="<?php echo get_the_ID(); ?>">
     <?php $post_url = get_permalink(); ?>
     <!-- Overlay Img -->
     <div class="post_img_overlay">
