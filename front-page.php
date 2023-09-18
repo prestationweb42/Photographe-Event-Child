@@ -9,13 +9,12 @@
 <!-- Include Section Filters -->
 <?php get_template_part('template-parts/front-page/filters'); ?>
 
-<!-- Section Display Results Filtered  -->
-<section id="section_result_filtered" class="section_post_imgs_container">
-</section>
-
+<!-- Section Display Results Filtered 
+<section id="section_display_more" class="section_post_imgs_container">
+</section> -->
 
 <!-- Section Display More images -->
-<section id="section_display_more" class="section_post_imgs_container display_none">
+<section id="section_result_filtered" class="section_post_imgs_container">
     <?php
             // Post per page definition
             $post_per_page = 6;
