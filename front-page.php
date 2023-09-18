@@ -17,7 +17,7 @@
 <section id="section_result_filtered" class="section_post_imgs_container">
     <?php
             // Post per page definition
-            $post_per_page = 6;
+            $post_per_page = 2;
             // Argument definition
             $args = array(
                 'orderby' => 'rand',
