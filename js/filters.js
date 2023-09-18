@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             defaultImagesSection.style.display = "block";
             btnLoadMore.style.display = "block";
         } else {
-            defaultImagesSection.style.display = "none";
+            // Display none BTN load more
             btnLoadMore.style.display = "none";
         }
     }
@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Calling the function to check filters after loading the results
                 checkFiltersAndDisplayDefaultSection();
+
+                // Update Lightbox Elments
+                updateLightboxArray();
             }
         };
         var formData = new FormData();
@@ -52,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             initialFiltersSet = false;
             selectedFilterCategory = this.getAttribute("data-filter");
             loadResults();
+            updateLightboxArray();
         });
     }
     //
