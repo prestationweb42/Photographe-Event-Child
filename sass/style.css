@@ -1127,7 +1127,7 @@ table {
 }
 #main_single_photo_page .section_post_photos {
   max-width: 100%;
-  height: 800px;
+  height: 80vh;
   font-family: "Space Mono", monospace;
   display: flex;
 }
