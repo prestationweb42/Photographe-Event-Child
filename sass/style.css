@@ -1127,7 +1127,7 @@ table {
 }
 #main_single_photo_page .section_post_photos {
   max-width: 100%;
-  height: 80vh;
+  height: 77vh;
   font-family: "Space Mono", monospace;
   display: flex;
 }
@@ -1229,7 +1229,7 @@ table {
 }
 #main_single_photo_page .section_post_contact_nav {
   width: 100%;
-  height: 130px;
+  height: 120px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -1302,7 +1302,6 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  gap: 10px;
 }
 @media screen and (max-width: 768px) {
   #main_single_photo_page .section_post_contact_nav .post_photo_navigation {
