@@ -2,17 +2,17 @@
  * Animation + Navigation Lightbox Modale
  */
 // Class Lightbox Overlay
-let lightboxOverlay = document.querySelector(".lightbox_overlay");
+const lightboxOverlay = document.querySelector(".lightbox_overlay");
 // Class Btn Open Lightbox
-let lightboxOpen = document.querySelectorAll(".icon_fullscreen");
+const lightboxOpen = document.querySelectorAll(".icon_fullscreen");
 // Close Lightbox - Btn Class
-let closeLightbox = document.querySelector(".close_lightbox");
+const closeLightbox = document.querySelector(".close_lightbox");
 // Btn Before
-let beforeArrow = document.querySelector(".before_arrow");
-let beforeChevron = document.querySelector(".before_chevron");
+const beforeArrow = document.querySelector(".before_arrow");
+const beforeChevron = document.querySelector(".before_chevron");
 // Btn After
-let afterArrow = document.querySelector(".after_arrow");
-let afterChevron = document.querySelector(".after_chevron");
+const afterArrow = document.querySelector(".after_arrow");
+const afterChevron = document.querySelector(".after_chevron");
 // Lightbox Reference
 const lightboxRef = document.querySelector(".lightbox_reference");
 // Lightbox Category
@@ -29,21 +29,21 @@ function updateLightboxArray() {
 // Function Update Lightbox
 function updateLightbox(div) {
     // Update Categorie
-    let lightboxImage = lightboxOverlay.querySelector(".lightbox_image");
+    const lightboxImage = lightboxOverlay.querySelector(".lightbox_image");
     let imageSrc = div.getAttribute("data-image");
     lightboxImage.setAttribute("src", imageSrc);
 
     // Update Categorie
-    let lightboxcateg = lightboxOverlay.querySelector(".lightbox_categorie");
+    const lightboxcateg = lightboxOverlay.querySelector(".lightbox_categorie");
     let imagecateg = div.getAttribute("data-categorie");
     lightboxcateg.textContent = imagecateg;
 
     // Update Title
-    let lightboxTitle = lightboxOverlay.querySelector(".lightbox_title");
+    const lightboxTitle = lightboxOverlay.querySelector(".lightbox_title");
     let imageTitle = div.getAttribute("data-title");
     lightboxTitle.textContent = imageTitle;
 
-    let lightboxReference = lightboxOverlay.querySelector(
+    const lightboxReference = lightboxOverlay.querySelector(
         ".lightbox_reference"
     );
     let imageRef = div.getAttribute("data-reference");
@@ -61,11 +61,13 @@ closeLightbox.addEventListener("click", () => {
         { once: true }
     );
     // Réinitialiser l'affichage des flèches lors de la fermeture de la lightbox
-    beforeArrow.style.display = "block";
-    afterArrow.style.display = "block";
-    lightboxRef.style.display = "block";
-    lightboxCateg.style.display = "block";
-    lightboxTitre.style.display = "block";
+    setTimeout(() => {
+        beforeArrow.style.display = "block";
+        afterArrow.style.display = "block";
+        lightboxRef.style.display = "block";
+        lightboxCateg.style.display = "block";
+        lightboxTitre.style.display = "flex";
+    }, "200");
 });
 // Function Open Lightbox + Animation
 document.addEventListener("click", function (e) {
@@ -86,7 +88,7 @@ document.addEventListener("click", function (e) {
         afterArrow.style.display = "block";
         lightboxRef.style.display = "block";
         lightboxCateg.style.display = "block";
-        lightboxTitre.style.display = "block";
+        lightboxTitre.style.display = "flex";
     }
 
     // Animation Open Lightbox
@@ -96,22 +98,22 @@ document.addEventListener("click", function (e) {
     }, 50);
 
     // Title
-    let imageTitre = div.getAttribute("data-title");
+    const imageTitre = div.getAttribute("data-title");
     let lightboxTitle = lightboxOverlay.querySelector(".lightbox_title");
     lightboxTitle.textContent = imageTitre;
 
     // Img
-    let imageSrc = div.getAttribute("data-image");
+    const imageSrc = div.getAttribute("data-image");
     let lightboxImage = lightboxOverlay.querySelector(".lightbox_image");
     lightboxImage.setAttribute("src", imageSrc);
 
     // Categorie
-    let imagecateg = div.getAttribute("data-categorie");
+    const imagecateg = div.getAttribute("data-categorie");
     let lightboxcateg = lightboxOverlay.querySelector(".lightbox_categorie");
     lightboxcateg.textContent = imagecateg;
 
     // Reference
-    let imageRef = div.getAttribute("data-reference");
+    const imageRef = div.getAttribute("data-reference");
     let lightboxReference = lightboxOverlay.querySelector(
         ".lightbox_reference"
     );
