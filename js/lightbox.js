@@ -13,6 +13,12 @@ let beforeChevron = document.querySelector(".before_chevron");
 // Btn After
 let afterArrow = document.querySelector(".after_arrow");
 let afterChevron = document.querySelector(".after_chevron");
+// Lightbox Reference
+const lightboxRef = document.querySelector(".lightbox_reference");
+// Lightbox Category
+const lightboxCateg = document.querySelector(".lightbox_categorie");
+// Lightbox Title
+const lightboxTitre = document.querySelector(".lightbox_title");
 // Create variable to stock elements .icon_fullscreen
 let allLightboxDivs = Array.from(document.querySelectorAll(".icon_fullscreen"));
 // Update variable when add suplly elements
@@ -54,12 +60,35 @@ closeLightbox.addEventListener("click", () => {
         },
         { once: true }
     );
+    // Réinitialiser l'affichage des flèches lors de la fermeture de la lightbox
+    beforeArrow.style.display = "block";
+    afterArrow.style.display = "block";
+    lightboxRef.style.display = "block";
+    lightboxCateg.style.display = "block";
+    lightboxTitre.style.display = "block";
 });
 // Function Open Lightbox + Animation
 document.addEventListener("click", function (e) {
     const div = e.target.closest(".icon_fullscreen");
     if (!div) return;
     e.preventDefault();
+
+    // Vérification si dans <article class="post_photo_img">
+    const isInPostPhotoImg = div.closest(".post_photo_img");
+    if (isInPostPhotoImg) {
+        beforeArrow.style.display = "none";
+        afterArrow.style.display = "none";
+        lightboxRef.style.display = "none";
+        lightboxCateg.style.display = "none";
+        lightboxTitre.style.display = "none";
+    } else {
+        beforeArrow.style.display = "block";
+        afterArrow.style.display = "block";
+        lightboxRef.style.display = "block";
+        lightboxCateg.style.display = "block";
+        lightboxTitre.style.display = "block";
+    }
+
     // Animation Open Lightbox
     lightboxOverlay.classList.add("show-lightbox");
     setTimeout(() => {
