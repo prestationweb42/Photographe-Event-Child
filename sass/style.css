@@ -746,6 +746,7 @@ table {
   #footer_menu {
     flex-direction: column;
     height: auto;
+    padding-top: 10px;
   }
 }
 #footer_menu .site__footer__menu {
