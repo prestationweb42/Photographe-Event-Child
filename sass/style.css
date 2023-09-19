@@ -1245,7 +1245,7 @@ table {
   #main_single_photo_page .section_post_contact_nav .post_contact_text {
     height: 100px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: start;
     width: 280px;
   }
