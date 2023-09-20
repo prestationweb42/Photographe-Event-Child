@@ -1116,6 +1116,12 @@ table {
   display: flex;
 }
 
+/* Class to display none Lightbox elements Hero Img Single Page  */
+.is_display_none {
+  display: none;
+  opacity: 0;
+}
+
 /* CSS single-photo.php */
 #main_single_photo_page {
   max-width: 1200px;

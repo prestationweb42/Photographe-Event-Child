@@ -60,13 +60,15 @@ closeLightbox.addEventListener("click", () => {
         },
         { once: true }
     );
-    // Reset arrow display when closing lightbox
+    // Reset Lightbox Elements display when closing lightbox
     setTimeout(() => {
-        beforeArrow.style.display = "block";
-        afterArrow.style.display = "block";
-        lightboxRef.style.display = "block";
-        lightboxCateg.style.display = "block";
-        lightboxTitre.style.display = "flex";
+        beforeArrow.classList.remove("is_display_none");
+        beforeChevron.classList.remove("is_display_none");
+        afterArrow.classList.remove("is_display_none");
+        afterChevron.classList.remove("is_display_none");
+        lightboxRef.classList.remove("is_display_none");
+        lightboxCateg.classList.remove("is_display_none");
+        lightboxTitre.classList.remove("is_display_none");
     }, "200");
 });
 // Function Open Lightbox + Animation
@@ -78,17 +80,13 @@ document.addEventListener("click", function (e) {
     // Checking if in <article class="post_photo_img">
     const isInPostPhotoImg = div.closest(".post_photo_img");
     if (isInPostPhotoImg) {
-        beforeArrow.style.display = "none";
-        afterArrow.style.display = "none";
-        lightboxRef.style.display = "none";
-        lightboxCateg.style.display = "none";
-        lightboxTitre.style.display = "none";
-    } else {
-        beforeArrow.style.display = "block";
-        afterArrow.style.display = "block";
-        lightboxRef.style.display = "block";
-        lightboxCateg.style.display = "block";
-        lightboxTitre.style.display = "flex";
+        beforeArrow.classList.add("is_display_none");
+        beforeChevron.classList.add("is_display_none");
+        afterArrow.classList.add("is_display_none");
+        afterChevron.classList.add("is_display_none");
+        lightboxRef.classList.add("is_display_none");
+        lightboxCateg.classList.add("is_display_none");
+        lightboxTitre.classList.add("is_display_none");
     }
 
     // Animation Open Lightbox
