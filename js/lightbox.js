@@ -60,7 +60,7 @@ closeLightbox.addEventListener("click", () => {
         },
         { once: true }
     );
-    // Réinitialiser l'affichage des flèches lors de la fermeture de la lightbox
+    // Reset arrow display when closing lightbox
     setTimeout(() => {
         beforeArrow.style.display = "block";
         afterArrow.style.display = "block";
@@ -75,7 +75,7 @@ document.addEventListener("click", function (e) {
     if (!div) return;
     e.preventDefault();
 
-    // Vérification si dans <article class="post_photo_img">
+    // Checking if in <article class="post_photo_img">
     const isInPostPhotoImg = div.closest(".post_photo_img");
     if (isInPostPhotoImg) {
         beforeArrow.style.display = "none";
