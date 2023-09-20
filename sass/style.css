@@ -1242,7 +1242,7 @@ table {
 @media screen and (max-width: 768px) {
   #main_single_photo_page .section_post_photos .post_photo_img .post_img img {
     height: auto;
-    width: 90%;
+    width: 100%;
   }
 }
 #main_single_photo_page .section_post_contact_nav {
