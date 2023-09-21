@@ -155,7 +155,6 @@ table {
   align-items: center;
   max-width: 100%;
   height: 80px;
-  margin-bottom: 38px;
   background-color: #fff;
   position: relative;
   box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.031372549);
@@ -165,7 +164,6 @@ table {
 @media screen and (max-width: 768px) {
   .main .header_desktop {
     justify-content: space-between;
-    margin-bottom: 20px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.0901960784);
   }
 }
@@ -1139,6 +1137,7 @@ table {
 #main_single_photo_page .section_post_photos {
   max-width: 100%;
   height: 77vh;
+  margin-top: 38px;
   font-family: "Space Mono", monospace;
   display: flex;
   gap: 20px;
@@ -1152,6 +1151,7 @@ table {
   #main_single_photo_page .section_post_photos {
     flex-direction: column-reverse;
     height: auto;
+    margin-top: 20px;
   }
 }
 #main_single_photo_page .section_post_photos .post_photo_desc {
