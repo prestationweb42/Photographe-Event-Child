@@ -10,7 +10,7 @@ function load_more_imgs()
     $args = array(
         'post_type' => 'photo',
         'post_status' => 'publish',
-        'posts_per_page' => 2,
+        'posts_per_page' => -1,
         'paged' => $_POST['page'],
         'post__not_in' => explode(',', $_POST['exclude']),
     );
