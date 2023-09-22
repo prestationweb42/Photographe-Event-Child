@@ -1,3 +1,6 @@
+/**
+ * Filered Functions Category - Format - Date
+ */
 document.addEventListener("DOMContentLoaded", function () {
     // Initialization of filters.
     let selectedFilterCategory = "";
