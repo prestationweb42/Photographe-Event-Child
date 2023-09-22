@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Initialization of filters.
-    let selectedFilterCategory = "mariage";
-    let selectedFilterFormat = "paysage";
-    let selectedFilterDate = "2022";
-    // Varaibles
+    let selectedFilterCategory = "";
+    let selectedFilterFormat = "";
+    let selectedFilterDate = "";
+    // Variables
     const defaultImagesSection = document.querySelector(".display_none");
     const btnLoadMore = document.querySelector(".div_btn_load_more");
     let initialFiltersSet = true;
@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
         };
         var formData = new FormData();
         formData.append("action", "filter_results");
-        formData.append("filter1", selectedFilterCategory);
-        formData.append("filter2", selectedFilterFormat);
-        formData.append("filter3", selectedFilterDate);
+        formData.append("category", selectedFilterCategory);
+        formData.append("format", selectedFilterFormat);
+        formData.append("date", selectedFilterDate);
 
         xhr.send(formData);
         // During initial loading, check if all filters are empty and hide the default section if necessary
