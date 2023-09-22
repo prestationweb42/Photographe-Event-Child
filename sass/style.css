@@ -1368,6 +1368,7 @@ table {
 #main_single_photo_page .section_post_other_imgs {
   width: 100%;
   height: auto;
+  padding-bottom: 20px;
 }
 #main_single_photo_page .section_post_other_imgs .post_other_text {
   display: flex;
@@ -1439,7 +1440,7 @@ table {
 #main_single_photo_page .section_btn_load_all_imgs .btn_load_all_imgs {
   width: 270px;
   height: 50px;
-  margin: 50px auto;
+  margin: 30px auto 50px;
 }
 @media screen and (max-width: 1024px) {
   #main_single_photo_page .section_btn_load_all_imgs .btn_load_all_imgs {
