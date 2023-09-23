@@ -7,7 +7,7 @@
             <span id="span_icon_category" class="span_icon_filter">&#8964;
             </span>
         </div>
-        <ul id="list_items_category" class="list_items_filter menu_close">
+        <ul id="list_items_category" class="list_items_filter">
             <?php
             $terms = get_terms('categorie');
             foreach ($terms as $term) {
