@@ -16,15 +16,15 @@ function load_more_imgs()
     );
     $query_more_imgs = new WP_Query($args);
 ?>
-<?php if ($query_more_imgs->have_posts()) : ?>
-<?php while ($query_more_imgs->have_posts()) : $query_more_imgs->the_post();
+    <?php if ($query_more_imgs->have_posts()) : ?>
+        <?php while ($query_more_imgs->have_posts()) : $query_more_imgs->the_post();
             $post_url = get_permalink();
         ?>
-<!-- Template Post Card -->
-<?php get_template_part('template-parts/post-card'); ?>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
+            <!-- Template Post Card -->
+            <?php get_template_part('template-parts/photo_block'); ?>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+    <?php endif; ?>
 <?php
     wp_die();
 }

@@ -68,7 +68,7 @@ function filter_results()
             $post_url = get_permalink();
 ?>
             <!-- Template Post Card -->
-            <?php get_template_part('template-parts/post-card'); ?>
+            <?php get_template_part('template-parts/photo_block'); ?>
 <?php
         }
         wp_reset_postdata();

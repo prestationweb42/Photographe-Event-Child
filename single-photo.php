@@ -37,7 +37,7 @@
         <!-- Col Right Photo -->
         <article class="post_photo_img">
             <!-- Post Card -->
-            <?php get_template_part('template-parts/post-card'); ?>
+            <?php get_template_part('template-parts/photo_block'); ?>
         </article>
     </section><!-- .section_post_photos -->
     <!-- Affichage section contact -->
@@ -111,7 +111,7 @@
                         $post_url = get_permalink();
                     ?>
             <!-- Template Post Card -->
-            <?php get_template_part('template-parts/post-card'); ?>
+            <?php get_template_part('template-parts/photo_block'); ?>
             <?php endwhile;
                     wp_reset_postdata() ?>
         </article>

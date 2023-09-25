@@ -32,7 +32,7 @@
                 $post_url = get_permalink();
             ?>
                 <!-- Post Card -->
-                <?php get_template_part('template-parts/post-card'); ?>
+                <?php get_template_part('template-parts/photo_block'); ?>
 
             <?php endwhile;
             wp_reset_postdata() ?>
