@@ -3,7 +3,7 @@ var front_page;
 var alreadyDisplayedPosts = [];
 // Add Post IDs -> alreadyDisplayedPosts each load posts
 function updateAlreadyDisplayedFrontPosts() {
-    $(".section_post_imgs_container .photo_block").each(function () {
+    $(".section_photo_block_container .photo_block").each(function () {
         const postId = $(this).data("post-id");
         if (alreadyDisplayedPosts.indexOf(postId) === -1) {
             alreadyDisplayedPosts.push(postId);

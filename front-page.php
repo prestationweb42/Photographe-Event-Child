@@ -10,11 +10,11 @@
         <?php get_template_part('template-parts/front-page/filters'); ?>
 
         <!-- Section Display Results Filtered 
-<section id="section_display_more" class="section_post_imgs_container">
+<section id="section_display_more" class="section_photo_block_container">
 </section> -->
 
         <!-- Section Display More images -->
-        <section id="section_result_filtered" class="section_post_imgs_container">
+        <section id="section_result_filtered" class="section_photo_block_container">
             <?php
             // Post per page
             $post_per_page = 12;
@@ -36,7 +36,7 @@
 
             <?php endwhile;
             wp_reset_postdata() ?>
-        </section><!-- section_post_imgs_container -->
+        </section><!-- section_photo_block_container -->
         <div class="div_btn_load_more">
             <div class="btn_load_more">
                 <span id="loadMoreBtn">Charger Plus</span>

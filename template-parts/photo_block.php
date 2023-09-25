@@ -1,7 +1,7 @@
 <div class="photo_block" data-post-id="<?php echo get_the_ID(); ?>">
     <?php $post_url = get_permalink(); ?>
     <!-- Overlay Img -->
-    <div class="post_img_overlay">
+    <div class="photo_block_overlay">
         <div class="text_category"><?php the_field('categories'); ?></div>
         <div class="text_reference"><?php the_field('reference'); ?></div>
         <div class="icon_eye">

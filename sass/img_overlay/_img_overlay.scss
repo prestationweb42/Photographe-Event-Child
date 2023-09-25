@@ -1,4 +1,4 @@
-.post_img_overlay {
+.photo_block_overlay {
     position: absolute;
     left: 0;
     right: 0;
@@ -7,7 +7,7 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
-    transform: scale(0); 
+    transform: scale(0);
     transition: 300ms;
     .icon_eye {
         width: 46px;
@@ -51,6 +51,6 @@
         right: 20px;
     }
 }
-.photo_block:hover .post_img_overlay {
+.photo_block:hover .photo_block_overlay {
     transform: scale(1);
 }
