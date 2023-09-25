@@ -71,7 +71,20 @@ jQuery(function ($) {
         });
     });
 });
-// Display None Section Btn Load All
+// Display None Section Btn Load More Front Page
+$(document).ready(function () {
+    const sectionBtnLoadMoreImgs = $(".div_btn_load_more");
+    const btnLoadMoreImgs = $(".btn_load_more");
+
+    function displayNoneSectionBtn(el) {
+        btnLoadMoreImgs.on("click", function () {
+            el.hide();
+        });
+    }
+
+    displayNoneSectionBtn(sectionBtnLoadMoreImgs);
+});
+// Display None Section Btn Load All Single Page
 $(document).ready(function () {
     const sectionBtnLoadAllImgs = $(".section_btn_load_all_imgs");
     const btnLoadAllImgs = $(".btn_load_all_imgs");
