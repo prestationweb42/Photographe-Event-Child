@@ -9,10 +9,6 @@
         <!-- Include Section Filters -->
         <?php get_template_part('template-parts/front-page/filters'); ?>
 
-        <!-- Section Display Results Filtered 
-<section id="section_display_more" class="section_photo_block_container">
-</section> -->
-
         <!-- Section Display More images -->
         <section id="section_result_filtered" class="section_photo_block_container">
             <?php
